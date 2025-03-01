@@ -32,7 +32,8 @@ const Logo = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <LogoSVG className='text-orange-500' height={48} />
-      <span className='bg-gradient-to-r from-white to-gray-400 bg-clip-text text-2xl font-semibold text-transparent'>
+
+      <span className='bg-gradient-to-r from-primary to-primary/40 bg-clip-text text-2xl font-semibold text-transparent'>
         {displayText}
       </span>
     </div>

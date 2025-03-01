@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -12,7 +11,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
-  const navigation = [{ name: 'Home', path: '/' }]
+  const navigation = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' }
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +28,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed z-50 w-full transition-all duration-300 ${
-        scrolled ? 'bg-primary/80 backdrop-blur-md' : 'bg-transparent'
+        scrolled
+          ? 'shadow-lg shadow-secondary/5 backdrop-blur-md'
+          : 'bg-transparent'
       }`}
     >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -42,8 +46,8 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-orange-500 ${
-                    pathname === item.path ? 'text-secondary' : 'text-gray-300'
+                  className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-accent ${
+                    pathname === item.path ? 'text-primary' : 'text-secondary'
                   }`}
                 >
                   {item.name}
@@ -54,7 +58,7 @@ const Navbar = () => {
           <div className='md:hidden'>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className='inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:text-orange-500 focus:outline-none'
+              className='inline-flex items-center justify-center rounded-md p-2 text-primary hover:text-accent focus:outline-none'
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -68,7 +72,7 @@ const Navbar = () => {
           isOpen ? 'h-auto opacity-100' : 'h-0 overflow-hidden opacity-0'
         }`}
       >
-        <div className='space-y-1 bg-primary/80 px-2 pb-3 pt-2 backdrop-blur-md sm:px-3'>
+        <div className='space-y-1 px-2 pb-3 pt-2 backdrop-blur-md sm:px-3'>
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -76,7 +80,7 @@ const Navbar = () => {
               className={`block rounded-md px-3 py-2 text-base font-medium ${
                 pathname === item.path
                   ? 'text-secondary'
-                  : 'text-gray-300 hover:text-white'
+                  : 'text-primary/80 hover:text-primary'
               }`}
               onClick={() => setIsOpen(false)}
             >

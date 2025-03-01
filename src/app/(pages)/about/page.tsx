@@ -10,19 +10,19 @@ const About = () => {
       title: 'Enterprise Architecture',
       description:
         'Led the design and implementation of scalable enterprise systems serving millions of users',
-      icon: <Rocket className='text-red-cmyk h-6 w-6' />
+      icon: <Rocket className='size-6 text-accent' />
     },
     {
       title: 'Technical Leadership',
       description:
         'Successfully managed and mentored teams of developers across multiple projects',
-      icon: <Lightbulb className='text-red-cmyk h-6 w-6' />
+      icon: <Lightbulb className='size-6 text-accent' />
     },
     {
       title: 'Innovation',
       description:
         'Pioneered the adoption of cutting-edge technologies in enterprise environments',
-      icon: <CheckCircle className='text-red-cmyk h-6 w-6' />
+      icon: <CheckCircle className='size-6 text-accent' />
     }
   ]
 
@@ -35,8 +35,8 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className='mb-16'
         >
-          <h1 className='mb-6 text-4xl font-bold text-white'>About Me</h1>
-          <div className='prose prose-lg max-w-none text-gray-300'>
+          <h1 className='mb-6 text-4xl font-bold text-primary'>About Me</h1>
+          <div className='prose prose-lg max-w-none text-secondary'>
             <p className='mb-4'>
               As a Senior Full Stack Software Engineer and Enterprise Systems
               Architect, I bring over two decades of experience in designing,
@@ -61,22 +61,22 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className='mb-16'
         >
-          <h2 className='mb-8 text-3xl font-semibold text-white'>
+          <h2 className='mb-8 text-3xl font-semibold text-primary'>
             Key Accomplishments
           </h2>
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
             {accomplishments.map((item, index) => (
               <Card
                 key={index}
-                className='bg-indigo-dye/20 border-indigo-dye p-6 transition-shadow hover:shadow-lg'
+                className='p-6 transition-shadow hover:shadow-lg'
               >
                 <div className='flex items-start space-x-4'>
-                  <div className='flex-shrink-0'>{item.icon}</div>
+                  <div className='shrink-0'>{item.icon}</div>
                   <div>
-                    <h3 className='mb-2 text-xl font-semibold text-white'>
+                    <h3 className='mb-2 text-xl font-semibold text-primary'>
                       {item.title}
                     </h3>
-                    <p className='text-gray-300'>{item.description}</p>
+                    <p className='text-secondary'>{item.description}</p>
                   </div>
                 </div>
               </Card>
@@ -84,7 +84,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        <Separator className='bg-indigo-dye my-12' />
+        <Separator className='my-12' />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,15 +92,15 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className='mb-16'
         >
-          <h2 className='mb-8 text-3xl font-semibold text-white'>
+          <h2 className='mb-8 text-3xl font-semibold text-primary'>
             Professional Approach
           </h2>
           <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
             <div className='space-y-4'>
-              <h3 className='text-xl font-semibold text-white'>
+              <h3 className='text-xl font-semibold text-primary'>
                 Technical Excellence
               </h3>
-              <p className='text-gray-300'>
+              <p className='text-secondary'>
                 I believe in writing clean, maintainable code that follows
                 industry best practices. My solutions are built with scalability
                 and performance in mind, ensuring they can grow with your
@@ -108,30 +108,30 @@ const About = () => {
               </p>
             </div>
             <div className='space-y-4'>
-              <h3 className='text-xl font-semibold text-white'>
+              <h3 className='text-xl font-semibold text-primary'>
                 Collaborative Development
               </h3>
-              <p className='text-gray-300'>
+              <p className='text-secondary'>
                 I work closely with stakeholders to understand their needs and
                 deliver solutions that exceed expectations. Clear communication
                 and agile methodologies are key to my development process.
               </p>
             </div>
             <div className='space-y-4'>
-              <h3 className='text-xl font-semibold text-white'>
+              <h3 className='text-xl font-semibold text-primary'>
                 Continuous Learning
               </h3>
-              <p className='text-gray-300'>
+              <p className='text-secondary'>
                 Technology evolves rapidly, and I&apos;m committed to staying at
                 the forefront. I regularly explore new technologies and
                 methodologies to bring innovative solutions to complex problems.
               </p>
             </div>
             <div className='space-y-4'>
-              <h3 className='text-xl font-semibold text-white'>
+              <h3 className='text-xl font-semibold text-primary'>
                 Result-Driven Focus
               </h3>
-              <p className='text-gray-300'>
+              <p className='text-secondary'>
                 Every project I undertake is approached with a clear focus on
                 delivering measurable results. I believe in creating solutions
                 that not only work well but also provide real business value.

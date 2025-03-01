@@ -60,7 +60,7 @@ const Hero = () => {
 
         <button
           onClick={scrollToContent}
-          className={`animate-bounce text-secondary transition-colors duration-300 hover:text-orange-500 dark:text-primary/80 ${
+          className={`animate-bounce text-secondary transition-colors duration-300 hover:text-accent dark:text-primary/80 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
           aria-label='Scroll down'
