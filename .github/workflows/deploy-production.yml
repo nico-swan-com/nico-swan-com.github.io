@@ -1,4 +1,4 @@
-name: Deploy nicoswan.com site
+name: Deploy production nicoswan.com site
 
 on:
   push:
@@ -168,10 +168,11 @@ jobs:
       - name: Set environment variables
         id: vars
         env:
+          NAMESPACE: production
           CI_PROJECT_NAME: nicoswan-com
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
-          echo "NAMESPACE=production" >> $GITHUB_ENV
+          echo "NAMESPACE=$NAMESPACE" >> $GITHUB_ENV
           echo "CI_PROJECT_NAME=$CI_PROJECT_NAME" >> $GITHUB_ENV
           SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
           echo "SHORT_SHA=$SHORT_SHA" >> $GITHUB_ENV
