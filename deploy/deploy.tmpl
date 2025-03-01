@@ -55,7 +55,7 @@ metadata:
   namespace: $NAMESPACE
   name: $CI_PROJECT_NAME
 spec:
-  replicas: 2
+  replicas: $REPLICAS
   selector:
     matchLabels:
       app: $CI_PROJECT_NAME
