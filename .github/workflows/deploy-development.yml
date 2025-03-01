@@ -74,6 +74,7 @@ jobs:
 
       - name: Template update
         env:
+          REPLICAS: 1
           NAMESPACE: ${{ env.NAMESPACE }}
           CI_PROJECT_NAME: ${{ env.CI_PROJECT_NAME }}
           SHORT_SHA: ${{ env.SHORT_SHA }}
