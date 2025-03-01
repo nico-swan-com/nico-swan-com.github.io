@@ -158,10 +158,8 @@ jobs:
     needs: publish-dockerhub
 
     steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifacts
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
