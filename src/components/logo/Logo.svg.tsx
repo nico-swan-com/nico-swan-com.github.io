@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const LogoSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 52' {...props}>
     <path
@@ -9,5 +9,5 @@ const LogoSVG = (props: SVGProps<SVGSVGElement>) => (
     />
     <title>Logo</title>
   </svg>
-);
-export default LogoSVG;
+)
+export default LogoSVG

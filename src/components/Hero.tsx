@@ -1,21 +1,21 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import { ArrowDownCircle } from 'lucide-react';
+import { useEffect, useState } from 'react'
+import { ArrowDownCircle } from 'lucide-react'
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
+    setIsVisible(true)
+  }, [])
 
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,
       behavior: 'smooth'
-    });
-  };
+    })
+  }
 
   return (
     <div className='relative flex h-screen items-center justify-center overflow-hidden'>
@@ -69,7 +69,7 @@ const Hero = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
