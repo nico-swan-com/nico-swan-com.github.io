@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "prettier --check . && next build",
+    "build:static": "BUILD_TYPE=static npm run build",
+    "build:standalone": "BUILD_TYPE=standalone npm run build && npm run build:server",
+    "build:server": "tsc --project tsconfig.standalone.json",
+    "start:next": "next start",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
