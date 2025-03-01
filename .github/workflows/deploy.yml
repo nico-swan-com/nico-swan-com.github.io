@@ -114,37 +114,10 @@ jobs:
           timeout: 300000
 
   # Kubernetes
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        id: setup
-        uses: ./.github/actions/setup-node
-
-      - name: Build
-        env:
-          BUILD_TYPE: default
-          NEXT_TELEMETRY_DISABLED: 1
-        run: |
-          echo "Building $BUILD_TYPE"
-          ${{ steps.setup.outputs.manager }} run build
-        shell: bash
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: ./
-
-  deploy-dockerhub:
+  publish-dockerhub:
     name: Build Publish docker image to docker hub (nicoswan/nicoswan-com)
     runs-on: ubuntu-latest
     environment: production
-    needs: build
     steps:
       - name: Docker meta
         id: meta
@@ -184,7 +157,7 @@ jobs:
     name: Deploy to Kubernetes cygnus-labs.com
     runs-on: ubuntu-latest
     environment: production
-    needs: deploy-dockerhub
+    needs: publish-dockerhub
 
     steps:
       - name: Download build artifacts
