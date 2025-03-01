@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowDownCircle } from 'lucide-react'
+//import { ArrowDownCircle } from 'lucide-react'
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false)
