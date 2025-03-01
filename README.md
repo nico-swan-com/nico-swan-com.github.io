@@ -23,4 +23,4 @@ This project has a pipeline that deploy to several locations
 
 - Static standalone version to [GitHub pages](https://nico-swan-com.github.io/)
 - My Cpanel web hosting with as a NodeJS application [nicoswan.com](https://www.nicoswan.com)
-- My lab kubernetes instance as a containerised application as [cygnus-labs.com](https://http://nicoswan.production.cygnus-labs.com)
+- My lab kubernetes instance as a containerized application as [cygnus-labs.com](https://nicoswan-com.production.cygnus-labs.com)
