@@ -37,9 +37,9 @@ const experienceData: Experience[] = [
     description:
       'Senior Full Stack Engineer within the financial industry, placing strong emphasis on regulatory compliance and security throughout the entire development lifecycle. Developing and maintaining microservices and internal UI consoles essential for delivering business banking services to clients.',
     achievements: [
-      'Settlements Console Ownership: Took full ownership of the settlements console, used internally to manage client payments and deposits. Streamlined and standardized UI components, resulting in a more maintainable codebase. Enhanced user experience by applying UX principles, improving overall usability',
-      'Entitlements Capability Development: As a member of the platform team, developed the Entitlements capability to enable attribute-based policy-driven security for authorization across the stack. This capability met regulatory compliance which contributed to BCB securing a French EMI licence',
-      'Approval Flow Capability: Designed and implemented an approval workflow that requires a four-eye process for any user actions that change data, safeguarding against internal fraud. This contributed to obtaining the French EMI license',
+      'Settlements Console Ownership: Took full ownership of the settlements console, used internally to manage client payments and deposits. Streamlined and standardised UI components, resulting in a more maintainable codebase. Enhanced user experience by applying UX principles, improving overall usability',
+      'Entitlements Capability Development: As a member of the platform team, developed the Entitlements capability to enable attribute-based policy-driven security for authorisation across the stack. This capability met regulatory compliance which contributed to BCB securing a French EMI licence',
+      'Approval Flow Capability: Designed and implemented an approval workflow that requires a four-eye process for any user actions that change data, safeguarding against internal fraud. This contributed to obtaining the French EMI licence',
       'Billing Capability: Developed a comprehensive billing capability spanning multiple functions, ensuring reliable and flexible invoicing for clients through the integration of best practices',
       'Maintained focus on regulatory compliance and security throughout the entire development lifecycle'
     ],
@@ -62,14 +62,14 @@ const experienceData: Experience[] = [
     company: 'NTT Ltd. (formerly Dimension Data)',
     period: 'August 2015 – July 2021',
     description:
-      'Building customized capabilities into platforms such as Service-Now and developing microservices to integrate with various platforms within our architecture. Leading a team of 13 members across South-Africa and Australia, managing three portfolios: Managed Networks, Managed Data Centers, and Communication and Collaboration.',
+      'Building customised capabilities into platforms such as Service-Now and developing microservices to integrate with various platforms within our architecture. Leading a team of 13 members across South-Africa and Australia, managing three portfolios: Managed Networks, Managed Data Centres, and Communication and Collaboration.',
     achievements: [
-      'Building customized capabilities into Service-Now platform for one of the largest implementations',
+      'Building customised capabilities into Service-Now platform for one of the largest implementations',
       'Developing microservices to integrate with various platforms within our architecture',
       'Leading team of 13 members consisting of Business Analysts, Technical Analysts, ITSM Application Developers and portfolio Team Leads',
       'Managing day-to-day operations following project management framework and ensuring successful transition into regions',
       'Dimension Data FY18 Quarterly winner for Professional Excellence',
-      'Received 3 Dimension Data and NTT Ltd. recognition awards for Professional Excellence, Technical Excellence, and recognizing others'
+      'Received 3 Dimension Data and NTT Ltd. recognition awards for Professional Excellence, Technical Excellence, and recognising others'
     ],
     technologies: [
       'ServiceNow',
@@ -85,18 +85,17 @@ const experienceData: Experience[] = [
   },
   {
     id: 3,
-    role: 'Owner & Technical Director',
+    role: 'Principal Architect & Lead Developer',
     company: 'Artesi SA CC',
-    period: '2025 – Present',
+    period: '2025',
     description:
-      'Acquired the company after securing a contract to build a comprehensive business management platform. Leading full-stack development of an enterprise system replacing a legacy FileMaker application, featuring SARS VAT compliance, FICA verification, order management, production workflows, and secure file handling.',
+      'Architected and delivered the flagship "Enterprise Business Management Platform", a comprehensive system replacing a legacy FileMaker application. Leading full-stack development of this enterprise system featuring SARS VAT compliance, FICA verification, order management, production workflows, and secure file handling.',
     achievements: [
-      'Secured contract for enterprise platform development, transitioning from consultant to business owner',
       'Architecting full-stack solution: Next.js frontend, NestJS backend, PostgreSQL, MinIO (S3)',
       'Implementing South African regulatory compliance (SARS VAT, FICA customer verification)',
       'Designing role-based workflows for intake, production, and management staff',
       'Building secure client file upload portal replacing third-party file transfer services',
-      'Managing complete project lifecycle as sole developer and business owner'
+      'Managing complete project lifecycle: requirements, architecture, development, and deployment'
     ],
     technologies: [
       'TypeScript',
@@ -351,7 +350,7 @@ const impactMetrics = [
   },
   {
     icon: Shield,
-    value: 'EMI License',
+    value: 'EMI Licence',
     label: 'Regulatory Compliance'
   },
   {
@@ -389,13 +388,13 @@ const Experience = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <Linkedin className='h-4 w-4' />
+                  <Linkedin className='size-4' />
                   LinkedIn Profile
                 </a>
               </Button>
               <Button asChild variant='outline' className='gap-2'>
                 <Link href='/contact'>
-                  <FileText className='h-4 w-4' />
+                  <FileText className='size-4' />
                   Contact Me
                 </Link>
               </Button>
@@ -418,7 +417,7 @@ const Experience = () => {
               >
                 <div className='flex items-center gap-3'>
                   <div className='rounded-lg bg-accent/10 p-2'>
-                    <metric.icon className='h-5 w-5 text-accent' />
+                    <metric.icon className='size-5 text-accent' />
                   </div>
                   <div>
                     <p className='text-xl font-bold text-primary'>
@@ -443,11 +442,13 @@ const Experience = () => {
         >
           <p className='text-lg leading-relaxed text-secondary'>
             Over 25 years transforming business challenges into purpose-driven
-            solutions. I help organizations overcome barriers by focusing on
-            their "why"—delivering measurable ROI through technical excellence,
-            strategic leadership, and scalable architecture. Currently building
-            secure, regulatory-compliant financial systems at BCB Group, where I
-            developed capabilities that secured a French EMI license.
+            solutions across multiple industries and countries. I help
+            organisations overcome barriers by focusing on their
+            &quot;why&quot;—delivering measurable ROI through technical
+            excellence, strategic leadership, and scalable architecture.
+            Currently building secure, regulatory-compliant financial systems at
+            BCB Group, where I developed capabilities that secured a French EMI
+            licence.
           </p>
         </motion.div>
 
@@ -497,7 +498,7 @@ const Experience = () => {
                         }`}
                       >
                         <Briefcase
-                          className={`h-5 w-5 ${
+                          className={`size-5 ${
                             selectedExp?.id === exp.id
                               ? 'text-accent-foreground'
                               : 'text-accent'
@@ -512,7 +513,7 @@ const Experience = () => {
                           {exp.company}
                         </p>
                         <div className='mt-1.5 flex items-center text-sm text-muted-foreground'>
-                          <Calendar className='mr-1.5 h-3.5 w-3.5' />
+                          <Calendar className='mr-1.5 size-3.5' />
                           <span>{exp.period}</span>
                         </div>
                       </div>
@@ -542,7 +543,7 @@ const Experience = () => {
                   </CardTitle>
                   <p className='mt-2 text-secondary'>{selectedExp.company}</p>
                   <div className='mt-2 flex items-center text-muted-foreground'>
-                    <Calendar className='mr-2 h-4 w-4' />
+                    <Calendar className='mr-2 size-4' />
                     <span>{selectedExp.period}</span>
                   </div>
                 </CardHeader>
@@ -557,7 +558,7 @@ const Experience = () => {
                   <ul className='mb-6 space-y-3'>
                     {selectedExp.achievements.map((achievement, index) => (
                       <li key={index} className='flex items-start'>
-                        <ArrowUpRight className='mr-2 mt-1 h-5 w-5 shrink-0 text-accent' />
+                        <ArrowUpRight className='mr-2 mt-1 size-5 shrink-0 text-accent' />
                         <span className='text-secondary'>{achievement}</span>
                       </li>
                     ))}
@@ -653,13 +654,13 @@ const Experience = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    <Linkedin className='h-5 w-5' />
+                    <Linkedin className='size-5' />
                     Connect on LinkedIn
                   </a>
                 </Button>
                 <Button asChild variant='outline' size='lg' className='gap-2'>
                   <Link href='/portfolio'>
-                    <FileText className='h-5 w-5' />
+                    <FileText className='size-5' />
                     View Portfolio
                   </Link>
                 </Button>

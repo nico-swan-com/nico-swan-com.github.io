@@ -34,25 +34,26 @@ const impactMetrics = [
   },
   {
     icon: Shield,
-    value: 'EMI License',
+    value: 'EMI Licence',
     label: 'Regulatory Compliance',
     description:
-      'Secured French banking license through ABAC & approval systems'
+      'Secured French banking licence through ABAC & approval systems'
   },
   {
     icon: Award,
     value: '25+ Years',
     label: 'Industry Experience',
-    description: 'Financial services, telecom, enterprise platforms'
+    description: 'Business management platforms, R&D, enterprise systems'
   }
 ]
 
 const domainExpertise = [
-  { name: 'Financial Services & Banking', highlight: true },
-  { name: 'Regulatory Compliance', highlight: true },
+  { name: 'Business Management Platforms', highlight: true },
+  { name: 'R&D PoC Projects', highlight: true },
   { name: 'Enterprise Architecture', highlight: false },
   { name: 'Microservices & APIs', highlight: false },
   { name: 'Team Leadership', highlight: true },
+  { name: 'Cloud Infrastructure', highlight: false },
   { name: 'Security & ABAC', highlight: false }
 ]
 
@@ -73,10 +74,9 @@ const Portfolio = () => {
                 Full Stack Engineer & Technical Leader
               </h1>
               <p className='max-w-3xl text-xl text-secondary'>
-                25+ years building enterprise systems that generate revenue,
-                ensure compliance, and scale globally. I solve your toughest
-                problems: regulatory requirements, distributed teams, and
-                complex architectures.
+                25+ years building enterprise systems across multiple industries
+                and countries. I solve your toughest problems: regulatory
+                requirements, distributed teams, and complex architectures.
               </p>
             </div>
             <div className='flex gap-3'>
@@ -86,13 +86,13 @@ const Portfolio = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <Linkedin className='h-4 w-4' />
+                  <Linkedin className='size-4' />
                   Connect on LinkedIn
                 </a>
               </Button>
               <Button asChild variant='outline' className='gap-2'>
                 <Link href='/contact'>
-                  <FileText className='h-4 w-4' />
+                  <FileText className='size-4' />
                   Contact Me
                 </Link>
               </Button>
@@ -118,7 +118,7 @@ const Portfolio = () => {
               >
                 <div className='flex items-start gap-4'>
                   <div className='rounded-lg bg-accent/10 p-2'>
-                    <metric.icon className='h-6 w-6 text-accent' />
+                    <metric.icon className='size-6 text-accent' />
                   </div>
                   <div>
                     <p className='text-2xl font-bold text-primary'>
@@ -190,7 +190,7 @@ const Portfolio = () => {
             >
               <Card className='group flex h-full flex-col overflow-hidden transition-all hover:border-accent/50 hover:shadow-lg'>
                 <div className='relative flex h-48 items-center justify-center bg-gradient-to-br from-accent/10 to-accent/5'>
-                  <Building2 className='h-16 w-16 text-accent/30 transition-colors group-hover:text-accent/50' />
+                  <Building2 className='size-16 text-accent/30 transition-colors group-hover:text-accent/50' />
                   {/* Featured badge for key projects */}
                   {index < 3 && (
                     <Badge className='absolute right-3 top-3 bg-accent text-xs text-accent-foreground'>
@@ -251,7 +251,7 @@ const Portfolio = () => {
                             target='_blank'
                             rel='noopener noreferrer'
                           >
-                            <Github className='h-4 w-4' />
+                            <Github className='size-4' />
                             Code
                           </a>
                         </Button>
@@ -268,7 +268,7 @@ const Portfolio = () => {
                             target='_blank'
                             rel='noopener noreferrer'
                           >
-                            <ExternalLink className='h-4 w-4' />
+                            <ExternalLink className='size-4' />
                             Live Demo
                           </a>
                         </Button>
@@ -284,7 +284,7 @@ const Portfolio = () => {
                   >
                     <Link href={`/portfolio/${project.id}`}>
                       View Architecture & Details
-                      <ArrowRight className='ml-2 h-4 w-4' />
+                      <ArrowRight className='ml-2 size-4' />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -307,8 +307,8 @@ const Portfolio = () => {
                   Looking for a Senior Full Stack Engineer?
                 </h2>
                 <p className='mb-4 text-secondary'>
-                  I bring 25+ years of experience in financial services,
-                  regulatory compliance, and building teams that deliver.
+                  I bring 25+ years of experience in business management
+                  platforms, R&D PoC projects, and building teams that deliver.
                 </p>
                 <div className='flex flex-wrap justify-center gap-2 lg:justify-start'>
                   <Badge
@@ -356,13 +356,13 @@ const Portfolio = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    <Linkedin className='h-5 w-5' />
+                    <Linkedin className='size-5' />
                     View LinkedIn Profile
                   </a>
                 </Button>
                 <Button asChild variant='outline' size='lg' className='gap-2'>
                   <Link href='/experience'>
-                    <FileText className='h-5 w-5' />
+                    <FileText className='size-5' />
                     Full Experience
                   </Link>
                 </Button>

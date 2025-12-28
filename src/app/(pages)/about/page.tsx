@@ -2,14 +2,14 @@
 
 import { motion } from 'framer-motion'
 import {
-  CheckCircle,
   Lightbulb,
   Rocket,
   Shield,
   TrendingUp,
   Users,
   Linkedin,
-  FileText
+  FileText,
+  Quote
 } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -17,12 +17,32 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
+const testimonials = [
+  {
+    name: 'John Andrews',
+    title:
+      'Business & Technology Innovation and Transformation | Practice Lead @ Accenture',
+    relationship: 'Senior colleague at NTT/Dimension Data',
+    date: 'July 2021',
+    quote:
+      "Nico is a smart thinking professional, technology savvy, with the business acumen and execution focus to make a real difference in any team, function or organisation. Moreover, he's able to communicate in an engaging way, bringing people along with him in a collaborative and open style. Nico has high ambitions, has achieved a great deal, and no doubt will continue to deliver against his ambitions, being an asset to whatever organisation he works with."
+  },
+  {
+    name: 'Brian White',
+    title: 'Vice President New Product Introduction for the Americas',
+    relationship: 'Direct manager at TEOCO/AIRCOM',
+    date: 'April 2014',
+    quote:
+      'Nico was a pivotal leader in the delivery of perhaps the largest Telecom Performance Management platform deployed to date. He took on increasingly important positions and surpassed expectations in each role. His work ethic and professionalism are second to none. I look forward to the opportunity to work with Nico again in future.'
+  }
+]
+
 const About = () => {
   const accomplishments = [
     {
       title: 'Regulatory Compliance',
       description:
-        "Developed ABAC entitlements and approval workflows that secured BCB Group's French EMI banking license",
+        "Developed ABAC entitlements and approval workflows that secured BCB Group's French EMI banking licence",
       icon: <Shield className='size-6 text-accent' />
     },
     {
@@ -60,13 +80,13 @@ const About = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <Linkedin className='h-4 w-4' />
+                  <Linkedin className='size-4' />
                   LinkedIn Profile
                 </a>
               </Button>
               <Button asChild variant='outline' className='gap-2'>
                 <Link href='/contact'>
-                  <FileText className='h-4 w-4' />
+                  <FileText className='size-4' />
                   Contact Me
                 </Link>
               </Button>
@@ -76,15 +96,18 @@ const About = () => {
           <div className='prose prose-lg mt-6 max-w-none text-secondary'>
             <p className='mb-4 text-lg leading-relaxed'>
               Senior Full Stack Software Engineer with 25+ years building
-              enterprise systems in financial services, telecommunications, and
-              managed services. I specialize in regulatory compliance,
-              distributed architectures, and leading engineering teams across
-              multiple time zones.
+              enterprise systems across multiple industries (financial services,
+              telecommunications, managed services, and more) and countries
+              (United States, United Kingdom, Australia, India, South Africa,
+              Europe, Middle East, Central America and Africa). I specialise in
+              business management platforms, R&D PoC projects, distributed
+              architectures, and leading engineering teams across multiple time
+              zones.
             </p>
             <p className='text-lg leading-relaxed'>
               Currently at BCB Group, I developed the entitlements and approval
               workflow capabilities that were critical to securing a French EMI
-              banking license. I combine deep technical expertise with business
+              banking licence. I combine deep technical expertise with business
               acumen—having generated $3.7M+ in revenue through technical
               leadership and custom solutions.
             </p>
@@ -114,7 +137,16 @@ const About = () => {
               Microservices
             </Badge>
             <Badge variant='outline' className='border-accent text-secondary'>
-              GCP/AWS
+              GCP (Cloud SQL)
+            </Badge>
+            <Badge variant='outline' className='border-accent text-secondary'>
+              Kubernetes
+            </Badge>
+            <Badge variant='outline' className='border-accent text-secondary'>
+              Azure Functions
+            </Badge>
+            <Badge variant='outline' className='border-accent text-secondary'>
+              AWS S3
             </Badge>
           </div>
         </motion.div>
@@ -164,7 +196,7 @@ const About = () => {
           <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
-                <Rocket className='h-5 w-5 text-accent' />
+                <Rocket className='size-5 text-accent' />
                 <h3 className='text-xl font-semibold text-primary'>
                   Enterprise Architecture
                 </h3>
@@ -177,7 +209,7 @@ const About = () => {
             </div>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
-                <Shield className='h-5 w-5 text-accent' />
+                <Shield className='size-5 text-accent' />
                 <h3 className='text-xl font-semibold text-primary'>
                   Regulatory Compliance
                 </h3>
@@ -190,7 +222,7 @@ const About = () => {
             </div>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
-                <Users className='h-5 w-5 text-accent' />
+                <Users className='size-5 text-accent' />
                 <h3 className='text-xl font-semibold text-primary'>
                   Cross-Timezone Leadership
                 </h3>
@@ -203,7 +235,7 @@ const About = () => {
             </div>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
-                <Lightbulb className='h-5 w-5 text-accent' />
+                <Lightbulb className='size-5 text-accent' />
                 <h3 className='text-xl font-semibold text-primary'>
                   Business Impact Focus
                 </h3>
@@ -217,11 +249,60 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Recruiter Call-to-Action */}
+        <Separator className='my-12' />
+
+        {/* Testimonials */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
+          className='mb-16'
+        >
+          <h2 className='mb-8 text-3xl font-semibold text-primary'>
+            What Others Say
+          </h2>
+          <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                className='relative border-accent/20 bg-gradient-to-br from-background to-accent/5 p-6'
+              >
+                <Quote className='absolute right-6 top-6 size-8 text-accent/20' />
+                <div className='mb-4'>
+                  <p className='italic leading-relaxed text-secondary'>
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                </div>
+                <div className='border-t border-border pt-4'>
+                  <p className='font-semibold text-primary'>
+                    {testimonial.name}
+                  </p>
+                  <p className='text-sm text-secondary'>{testimonial.title}</p>
+                  <p className='mt-1 text-xs text-muted-foreground'>
+                    {testimonial.relationship} • {testimonial.date}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+          <p className='mt-4 text-center text-sm text-muted-foreground'>
+            View more recommendations on{' '}
+            <a
+              href='https://www.linkedin.com/in/nicoswan/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-accent hover:underline'
+            >
+              LinkedIn
+            </a>
+          </p>
+        </motion.div>
+
+        {/* Recruiter Call-to-Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           <Card className='border-accent/30 bg-gradient-to-r from-accent/10 via-accent/5 to-background p-8'>
             <div className='flex flex-col items-center gap-8 lg:flex-row'>
@@ -232,7 +313,7 @@ const About = () => {
                 <p className='mb-4 text-secondary'>
                   Looking for a senior engineer who can architect solutions,
                   lead teams, and deliver business value? Let&apos;s talk about
-                  how I can contribute to your organization.
+                  how I can contribute to your organisation.
                 </p>
               </div>
               <div className='flex flex-col gap-3 sm:flex-row'>
@@ -242,13 +323,13 @@ const About = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    <Linkedin className='h-5 w-5' />
+                    <Linkedin className='size-5' />
                     Connect on LinkedIn
                   </a>
                 </Button>
                 <Button asChild variant='outline' size='lg' className='gap-2'>
                   <Link href='/experience'>
-                    <FileText className='h-5 w-5' />
+                    <FileText className='size-5' />
                     View Experience
                   </Link>
                 </Button>

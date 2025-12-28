@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import NextImage from 'next/image'
 import type { Project } from '@/lib/projects'
 
 interface ProjectDetailClientProps {
@@ -23,7 +24,7 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
         >
           <Button variant='ghost' className='mb-8' asChild>
             <Link href='/portfolio'>
-              <ArrowLeft className='mr-2 h-4 w-4' />
+              <ArrowLeft className='mr-2 size-4' />
               Back to Portfolio
             </Link>
           </Button>
@@ -37,10 +38,12 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
 
           <div className='mb-8'>
             <div className='relative h-96 w-full overflow-hidden rounded-lg'>
-              <img
+              <NextImage
                 src={project.imageUrl}
                 alt={project.title}
-                className='h-full w-full object-cover'
+                fill
+                className='object-cover'
+                priority
               />
             </div>
           </div>
@@ -65,7 +68,7 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <Github className='mr-2 h-4 w-4' />
+                  <Github className='mr-2 size-4' />
                   View on GitHub
                 </a>
               </Button>
@@ -77,7 +80,7 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <ExternalLink className='mr-2 h-4 w-4' />
+                  <ExternalLink className='mr-2 size-4' />
                   Live Demo
                 </a>
               </Button>
@@ -120,7 +123,7 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
                       key={index}
                       className='flex items-start gap-2 text-secondary'
                     >
-                      <CheckCircle className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
+                      <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -139,7 +142,7 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
                       key={index}
                       className='flex items-start gap-2 text-secondary'
                     >
-                      <CheckCircle className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
+                      <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                       <span>{challenge}</span>
                     </li>
                   ))}
@@ -158,7 +161,7 @@ const ProjectDetailClient = ({ project }: ProjectDetailClientProps) => {
                       key={index}
                       className='flex items-start gap-2 text-secondary'
                     >
-                      <CheckCircle className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
+                      <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                       <span>{achievement}</span>
                     </li>
                   ))}

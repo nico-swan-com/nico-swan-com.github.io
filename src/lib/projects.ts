@@ -49,12 +49,12 @@ Why this project? Built to demonstrate expertise in: modern React/Next.js patter
       'Media management with bytea storage',
       'Comprehensive admin dashboard',
       'Artist profile management',
-      'Product catalog with advanced filtering',
+      'Product catalogue with advanced filtering',
       'Security headers and CSRF protection',
       'Database health monitoring',
-      'Docker containerization support'
+      'Docker containerisation support'
     ],
-    architecture: `The application follows a feature-based architecture where code is organized by business domain rather than technical layer. This approach ensures that related code is co-located, making it easier to maintain and scale.
+    architecture: `The application follows a feature-based architecture where code is organised by business domain rather than technical layer. This approach ensures that related code is co-located, making it easier to maintain and scale.
 
 The system uses a three-layer pattern:
 1. Repository Layer: Handles data access and database operations
@@ -68,7 +68,7 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
       'Implementing efficient image processing and storage in PostgreSQL as bytea',
       'Designing a scalable rate limiting system without external dependencies',
       'Creating a flexible role-based access control system',
-      'Optimizing database queries for large product catalogs',
+      'Optimising database queries for large product catalogues',
       'Implementing secure payment webhook handling',
       'Managing complex state across multiple features'
     ],
@@ -77,7 +77,7 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
       'Showcases clean separation of concerns with three-layer architecture',
       'Implements comprehensive security measures including rate limiting and CSRF protection',
       'Features scalable feature-based architecture supporting easy feature additions',
-      'Includes optimized image processing pipeline with automatic format conversion',
+      'Includes optimised image processing pipeline with automatic format conversion',
       'Demonstrates admin dashboard patterns with role-based permissions'
     ]
   },
@@ -85,10 +85,10 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
     id: 'bcb-entitlements-platform',
     title: 'BCB Entitlements & Authorization Platform',
     description:
-      'Enterprise-grade attribute-based access control (ABAC) system that enabled BCB Group to secure their French EMI license. Powers authorization across the entire banking technology stack.',
-    longDescription: `Developed a comprehensive Entitlements capability for BCB Group, a regulated financial services company. This platform implements attribute-based policy-driven security for authorization across the entire technology stack.
-
-The system was critical to BCB Group securing their French Electronic Money Institution (EMI) license, demonstrating its compliance with stringent European financial regulations. The platform handles complex authorization scenarios across microservices, ensuring that every action within the banking system is properly authorized based on user attributes, roles, and contextual policies.
+      'Enterprise-grade attribute-based access control (ABAC) system that enabled BCB Group to secure their French EMI licence. Powers authorisation across the entire banking technology stack.',
+    longDescription: `Developed a comprehensive Entitlements capability for BCB Group, a regulated financial services company. This platform implements attribute-based policy-driven security for authorisation across the entire technology stack.
+        
+The system was critical to BCB Group securing their French Electronic Money Institution (EMI) licence, demonstrating its compliance with stringent European financial regulations. The platform handles complex authorisation scenarios across microservices, ensuring that every action within the banking system is properly authorised based on user attributes, roles, and contextual policies.
 
 This project showcases deep expertise in financial services security, regulatory compliance, and enterprise architecture patterns essential for banking technology.`,
     technologies: [
@@ -106,8 +106,8 @@ This project showcases deep expertise in financial services security, regulatory
     imageUrl: '/placeholder.svg',
     features: [
       'Attribute-Based Access Control (ABAC) implementation',
-      'Policy-driven authorization engine',
-      'Cross-service authorization propagation',
+      'Policy-driven authorisation engine',
+      'Cross-service authorisation propagation',
       'Audit logging for regulatory compliance',
       'Fine-grained permission management',
       'Real-time policy evaluation',
@@ -127,14 +127,14 @@ Key architectural components:
 The system uses an event-driven approach for attribute synchronization and implements caching strategies to minimize latency in authorization decisions.`,
     challenges: [
       'Designing a system that meets stringent financial regulatory requirements',
-      'Implementing low-latency authorization across distributed microservices',
+      'Implementing low-latency authorisation across distributed microservices',
       'Creating a flexible policy language that non-technical compliance officers can understand',
       'Ensuring complete audit trails for regulatory audits',
       'Migrating from legacy RBAC to ABAC without service disruption'
     ],
     achievements: [
-      'Critical contribution to BCB Group securing French EMI license',
-      'Sub-millisecond authorization decisions across the stack',
+      'Critical contribution to BCB Group securing French EMI licence',
+      'Sub-millisecond authorisation decisions across the stack',
       'Zero security incidents since deployment',
       'Reduced compliance audit preparation time by 60%',
       'Enabled complex multi-tenancy scenarios for enterprise clients'
@@ -147,9 +147,9 @@ The system uses an event-driven approach for attribute synchronization and imple
       'Financial-grade approval workflow implementing four-eye principle for all data-modifying operations. Safeguards against internal fraud and meets banking regulatory requirements.',
     longDescription: `Designed and implemented a comprehensive approval workflow system for BCB Group that requires a four-eye process for any user actions that change data. This system is essential for safeguarding against internal fraud and meeting banking regulatory requirements.
 
-The workflow engine handles complex approval scenarios including multi-level approvals, delegation, escalation, and time-based expiration. It integrates seamlessly with all internal consoles and microservices, ensuring that no critical data modification can occur without proper authorization and review.
+The workflow engine handles complex approval scenarios including multi-level approvals, delegation, escalation, and time-based expiration. It integrates seamlessly with all internal consoles and microservices, ensuring that no critical data modification can occur without proper authorisation and review.
 
-This capability was instrumental in BCB Group obtaining their French EMI license, demonstrating the company's commitment to operational security and regulatory compliance.`,
+This capability was instrumental in BCB Group obtaining their French EMI licence, demonstrating the company's commitment to operational security and regulatory compliance.`,
     technologies: [
       'TypeScript',
       'Node.js',
@@ -182,7 +182,7 @@ The system consists of:
 3. Audit Service: Records all approval events for compliance
 4. Integration Layer: Connects with all data-modifying services
 
-CQRS pattern separates read and write operations, allowing for optimized query patterns for approval dashboards while maintaining strict consistency for approval decisions.`,
+CQRS pattern separates read and write operations, allowing for optimised query patterns for approval dashboards while maintaining strict consistency for approval decisions.`,
     challenges: [
       'Ensuring zero-downtime deployment for a critical financial system',
       'Handling complex approval scenarios with multiple conditional branches',
@@ -191,23 +191,23 @@ CQRS pattern separates read and write operations, allowing for optimized query p
       'Integrating with legacy systems that had no approval concepts'
     ],
     achievements: [
-      'Key contribution to French EMI license approval',
+      'Key contribution to French EMI licence approval',
       'Zero internal fraud incidents since implementation',
       '99.99% system availability',
       'Processes over 10,000 approvals daily',
-      'Reduced approval cycle time by 40% through workflow optimization'
+      'Reduced approval cycle time by 40% through workflow optimisation'
     ]
   },
   {
     id: 'ntt-servicenow-platform',
     title: 'Enterprise ServiceNow Implementation',
     description:
-      'Led one of the largest ServiceNow implementations globally, building customized capabilities and integrations for NTT/Dimension Data serving millions of users across managed networks and data centers.',
-    longDescription: `As R&D Software Engineer and Senior Services Manager at NTT Ltd. (formally Dimension Data), led the development of customized capabilities for one of the largest ServiceNow implementations in the world.
+      'Led one of the largest ServiceNow implementations globally, building customised capabilities and integrations for NTT/Dimension Data serving millions of users across managed networks and data centres.',
+    longDescription: `As R&D Software Engineer and Senior Services Manager at NTT Ltd. (formerly Dimension Data), led the development of customised capabilities for one of the largest ServiceNow implementations in the world.
 
-This platform serves NTT's global managed services operations across Managed Networks, Managed Data Centers, and Communication and Collaboration portfolios. Led a team of 13 members across South Africa and Australia, ensuring successful delivery and regional transitions.
+This platform serves NTT's global managed services operations across Managed Networks, Managed Data Centres, and Communication and Collaboration portfolios. Led a team of 13 members across South Africa and Australia, ensuring successful delivery and regional transitions.
 
-Recognized with multiple excellence awards including Dimension Data FY18 Quarterly winner for Professional Excellence, demonstrating exceptional technical and leadership capabilities.`,
+Recognised with multiple excellence awards including Dimension Data FY18 Quarterly winner for Professional Excellence, demonstrating exceptional technical and leadership capabilities.`,
     technologies: [
       'ServiceNow',
       'JavaScript',
@@ -239,7 +239,7 @@ Key architectural decisions:
 1. Integration Layer: REST and SOAP APIs connecting ServiceNow to network management, monitoring, and provisioning systems
 2. Workflow Engine: Custom workflows for complex multi-step service delivery
 3. Reporting Layer: Real-time dashboards and analytics for operations
-4. CMDB: Extended configuration management for network and data center assets`,
+4. CMDB: Extended configuration management for network and data centre assets`,
     challenges: [
       'Scaling ServiceNow for one of the world largest implementations',
       'Integrating with diverse legacy systems across multiple regions',
@@ -251,16 +251,16 @@ Key architectural decisions:
       'Delivered one of the largest ServiceNow implementations globally',
       'Led team of 13 across South Africa and Australia',
       'Won Dimension Data FY18 Quarterly Award for Professional Excellence',
-      'Received 3 recognition awards for Professional Excellence, Technical Excellence, and Recognizing Others',
-      'Successfully managed 3 portfolios: Managed Networks, Data Centers, and Communications'
+      'Received 3 recognition awards for Professional Excellence, Technical Excellence, and Recognising Others',
+      'Successfully managed 3 portfolios: Managed Networks, Data Centres, and Communications'
     ]
   },
   {
     id: 'teoco-support-operations',
     title: 'Global 24/7 Support Operations',
     description:
-      'Built and managed a $3.7M revenue-generating support organization with 34 engineers across US and India, serving enterprise telecommunications clients including AT&T.',
-    longDescription: `At TEOCO (formally AIRCOM International), established and managed a world-class 24/7 technical support organization from the ground up. This department served major telecommunications clients including AT&T, delivering custom solutions and enterprise support.
+      'Built and managed a $3.7M revenue-generating support organisation with 34 engineers across US and India, serving enterprise telecommunications clients including AT&T.',
+    longDescription: `At TEOCO (formally AIRCOM International), established and managed a world-class 24/7 technical support organisation from the ground up. This department served major telecommunications clients including AT&T, delivering custom solutions and enterprise support.
 
 Generated significant revenue through both support services ($3M on a $20M project) and professional services ($700K in custom solutions). Built the team from scratch, implementing processes, training programs, and operational excellence frameworks.
 
@@ -285,12 +285,12 @@ This role demonstrates strong leadership capabilities, revenue generation, and t
       'SLA management and tracking',
       'Tier 3 technical escalation',
       'Knowledge base development',
-      'Training program creation',
-      'Process optimization',
+      'Training programme creation',
+      'Process optimisation',
       'Change control management',
       'Data quality assurance'
     ],
-    architecture: `Built a scalable support organization following ITIL best practices:
+    architecture: `Built a scalable support organisation following ITIL best practices:
 
 1. Tier Structure: Three-tier support model with clear escalation paths
 2. Follow-the-Sun: 24/7 coverage with teams in US and India
@@ -298,7 +298,7 @@ This role demonstrates strong leadership capabilities, revenue generation, and t
 4. Metrics and Reporting: Real-time SLA tracking and executive dashboards
 5. Continuous Improvement: Regular process reviews and optimization`,
     challenges: [
-      'Building a support organization from scratch',
+      'Building a support organisation from scratch',
       'Establishing 24/7 operations across multiple time zones',
       'Managing cultural differences between US and India teams',
       'Meeting stringent SLAs for enterprise telecommunications clients',
