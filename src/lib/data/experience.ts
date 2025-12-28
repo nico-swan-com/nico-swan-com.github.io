@@ -8,9 +8,55 @@ export interface Experience {
   description: string
   achievements: string[]
   technologies: string[]
+  excludeFromResume?: boolean
 }
 
-export const experienceData: Experience[] = [
+export const skills = {
+  languages: ['TypeScript', 'JavaScript', 'Node.js', 'SQL', 'HTML/CSS'],
+  frontend: ['React', 'Next.js', 'Tailwind CSS', 'Redux', 'Framer Motion'],
+  backend: [
+    'NestJS',
+    'PostgreSQL',
+    'Redis',
+    'MinIO (S3)',
+    'REST APIs',
+    'Microservices'
+  ],
+  ops: ['Docker', 'Kubernetes', 'GCP', 'Azure', 'GitLab CI/CD', 'Terraform']
+}
+
+export const experienceSummary =
+  'Senior Full Stack Engineer & Architect with 25+ years of experience delivering secure, regulatory-compliant financial platforms (EMI/SARS). Expert in modernizing legacy systems using TypeScript, Node.js, and Cloud-Native architectures. Proven track record of leading distributed teams and driving revenue growth through technical excellence.'
+
+export const recentExperience: Experience[] = [
+  {
+    id: 3,
+    role: 'Principal Architect & Lead Developer',
+    company: 'Artesi SA CC',
+    period: '2025 – Present',
+    description:
+      'Architected and delivered the flagship "Enterprise Business Management Platform", a comprehensive system replacing a legacy FileMaker application. Leading full-stack development of this enterprise system featuring SARS VAT compliance, FICA verification, order management, production workflows, and secure file handling.',
+    achievements: [
+      'Architecting full-stack solution: Next.js frontend, NestJS backend, PostgreSQL, MinIO (S3)',
+      'Implementing South African regulatory compliance (SARS VAT, FICA customer verification)',
+      'Designing role-based workflows for intake, production, and management staff',
+      'Building secure client file upload portal replacing third-party file transfer services',
+      'Managing complete project lifecycle: requirements, architecture, development, and deployment'
+    ],
+    technologies: [
+      'TypeScript',
+      'Next.js',
+      'NestJS',
+      'PostgreSQL',
+      'TypeORM',
+      'MinIO (S3)',
+      'Docker',
+      'GitLab CI/CD',
+      'SARS/FICA Compliance',
+      'Redis'
+    ],
+    excludeFromResume: true
+  },
   {
     id: 1,
     role: 'Senior Full Stack Software Engineer',
@@ -60,43 +106,16 @@ export const experienceData: Experience[] = [
       'TypeScript',
       'Microservices',
       'ITIL',
-      'Azure',
+      'Azure serverless functions',
       'Scaled Agile Framework',
       'Project Management'
-    ]
-  },
-  {
-    id: 3,
-    role: 'Principal Architect & Lead Developer',
-    company: 'Artesi SA CC',
-    period: '2025',
-    description:
-      'Architected and delivered the flagship "Enterprise Business Management Platform", a comprehensive system replacing a legacy FileMaker application. Leading full-stack development of this enterprise system featuring SARS VAT compliance, FICA verification, order management, production workflows, and secure file handling.',
-    achievements: [
-      'Architecting full-stack solution: Next.js frontend, NestJS backend, PostgreSQL, MinIO (S3)',
-      'Implementing South African regulatory compliance (SARS VAT, FICA customer verification)',
-      'Designing role-based workflows for intake, production, and management staff',
-      'Building secure client file upload portal replacing third-party file transfer services',
-      'Managing complete project lifecycle: requirements, architecture, development, and deployment'
-    ],
-    technologies: [
-      'TypeScript',
-      'Next.js',
-      'NestJS',
-      'PostgreSQL',
-      'TypeORM',
-      'MinIO (S3)',
-      'Docker',
-      'GitLab CI/CD',
-      'SARS/FICA Compliance',
-      'Redis'
     ]
   },
   {
     id: 13,
     role: 'Technical Consultant / Product Developer',
     company: 'Artesi SA CC',
-    period: 'January 2014 – 2024',
+    period: 'January 2014 – July 2015',
     description:
       'Contract role building the flagship product Incidentia—a business intelligence and analytics platform focused on human capital management, productivity, and process management. Remained on standby after initial development phase.',
     achievements: [
@@ -110,6 +129,8 @@ export const experienceData: Experience[] = [
       'TypeScript',
       'Node.js',
       'RESTful APIs',
+      'Scala',
+      'Adobe Action script',
       'Microservices',
       'PostgreSQL',
       'AGILE/LEAN',
@@ -144,7 +165,10 @@ export const experienceData: Experience[] = [
       'Team Leadership',
       'Process Design'
     ]
-  },
+  }
+]
+
+export const earlyCareerExperience: Experience[] = [
   {
     id: 5,
     role: 'Multiple Engineering Roles',
@@ -319,6 +343,9 @@ export const experienceData: Experience[] = [
   }
 ]
 
+// Determine which list to use for the main experience page or combine them
+export const experienceData = [...recentExperience, ...earlyCareerExperience]
+
 export const impactMetrics = [
   {
     icon: TrendingUp,
@@ -341,6 +368,3 @@ export const impactMetrics = [
     label: 'Industry Experience'
   }
 ]
-
-export const experienceSummary =
-  'Over 25 years transforming business challenges into purpose-driven solutions across multiple industries and countries. I help organisations overcome barriers by focusing on their "why"—delivering measurable ROI through technical excellence, strategic leadership, and scalable architecture. Currently building secure, regulatory-compliant financial systems at BCB Group, where I developed capabilities that secured a French EMI licence.'

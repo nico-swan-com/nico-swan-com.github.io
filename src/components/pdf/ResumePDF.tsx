@@ -1,8 +1,10 @@
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer'
-import { experienceData, experienceSummary } from '@/lib/data/experience'
-
-// Register fonts if needed, but Helvetica is standard
-// Font.register({ family: 'Inter', src: '...' })
+import {
+  recentExperience,
+  earlyCareerExperience,
+  experienceSummary,
+  skills
+} from '@/lib/data/experience'
 
 const styles = StyleSheet.create({
   page: {
@@ -39,20 +41,35 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   sectionTitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Helvetica-Bold',
     color: '#0f172a',
     marginBottom: 8,
     borderBottomWidth: 1,
     borderBottomColor: '#f1f5f9',
-    paddingBottom: 2
+    paddingBottom: 2,
+    textTransform: 'uppercase'
   },
   text: {
     marginBottom: 6,
     textAlign: 'justify'
   },
+  skillsContainer: {
+    flexDirection: 'row',
+    marginBottom: 4
+  },
+  skillsLabel: {
+    width: 80,
+    fontFamily: 'Helvetica-Bold',
+    fontSize: 9,
+    color: '#0f172a'
+  },
+  skillsContent: {
+    flex: 1,
+    color: '#334155'
+  },
   jobContainer: {
-    marginBottom: 15
+    marginBottom: 12
   },
   jobHeader: {
     flexDirection: 'row',
@@ -61,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems: 'baseline'
   },
   role: {
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: 'Helvetica-Bold',
     color: '#0f172a'
   },
@@ -76,7 +93,7 @@ const styles = StyleSheet.create({
     marginBottom: 4
   },
   description: {
-    marginBottom: 6
+    marginBottom: 4
   },
   bulletPoint: {
     flexDirection: 'row',
@@ -94,7 +111,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 4,
-    marginTop: 4
+    marginTop: 2
   },
   techBadge: {
     fontSize: 8,
@@ -102,6 +119,28 @@ const styles = StyleSheet.create({
     padding: '2 6',
     borderRadius: 4,
     color: '#475569'
+  },
+  earlyCareerRow: {
+    flexDirection: 'row',
+    marginBottom: 4,
+    justifyContent: 'space-between'
+  },
+  earlyCareerRole: {
+    fontSize: 10,
+    fontFamily: 'Helvetica-Bold',
+    color: '#0f172a',
+    width: '40%'
+  },
+  earlyCareerCompany: {
+    fontSize: 10,
+    color: '#334155',
+    width: '40%'
+  },
+  earlyCareerPeriod: {
+    fontSize: 9,
+    color: '#64748b',
+    width: '20%',
+    textAlign: 'right'
   }
 })
 
@@ -125,36 +164,73 @@ export const ResumePDF = () => (
         <Text style={styles.text}>{experienceSummary}</Text>
       </View>
 
-      {/* Experience */}
+      {/* Technical Expertise */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Technical Expertise</Text>
+        <View style={styles.skillsContainer}>
+          <Text style={styles.skillsLabel}>Languages:</Text>
+          <Text style={styles.skillsContent}>
+            {skills.languages.join(', ')}
+          </Text>
+        </View>
+        <View style={styles.skillsContainer}>
+          <Text style={styles.skillsLabel}>Frontend:</Text>
+          <Text style={styles.skillsContent}>{skills.frontend.join(', ')}</Text>
+        </View>
+        <View style={styles.skillsContainer}>
+          <Text style={styles.skillsLabel}>Backend/Data:</Text>
+          <Text style={styles.skillsContent}>{skills.backend.join(', ')}</Text>
+        </View>
+        <View style={styles.skillsContainer}>
+          <Text style={styles.skillsLabel}>Ops/Cloud:</Text>
+          <Text style={styles.skillsContent}>{skills.ops.join(', ')}</Text>
+        </View>
+      </View>
+
+      {/* Professional Experience */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Experience</Text>
-        {experienceData.map((exp) => (
-          <View key={exp.id} style={styles.jobContainer}>
-            <View style={styles.jobHeader}>
-              <Text style={styles.role}>{exp.role}</Text>
-              <Text style={styles.period}>{exp.period}</Text>
-            </View>
-            <Text style={styles.company}>{exp.company}</Text>
-            <Text style={styles.description}>{exp.description}</Text>
+        {recentExperience
+          .filter((exp) => !exp.excludeFromResume)
+          .map((exp) => (
+            <View key={exp.id} style={styles.jobContainer}>
+              <View style={styles.jobHeader}>
+                <Text style={styles.role}>{exp.role}</Text>
+                <Text style={styles.period}>{exp.period}</Text>
+              </View>
+              <Text style={styles.company}>{exp.company}</Text>
+              <Text style={styles.description}>{exp.description}</Text>
 
-            {/* Achievements */}
-            <View>
-              {exp.achievements.map((achievement, i) => (
-                <View key={i} style={styles.bulletPoint}>
-                  <Text style={styles.bullet}>•</Text>
-                  <Text style={styles.bulletContent}>{achievement}</Text>
-                </View>
-              ))}
-            </View>
+              {/* Achievements */}
+              <View>
+                {exp.achievements.map((achievement, i) => (
+                  <View key={i} style={styles.bulletPoint}>
+                    <Text style={styles.bullet}>•</Text>
+                    <Text style={styles.bulletContent}>{achievement}</Text>
+                  </View>
+                ))}
+              </View>
 
-            {/* Technologies */}
-            <View style={styles.technologies}>
-              {exp.technologies.map((tech, i) => (
-                <Text key={i} style={styles.techBadge}>
-                  {tech}
-                </Text>
-              ))}
+              {/* Technologies */}
+              <View style={styles.technologies}>
+                {exp.technologies.map((tech, i) => (
+                  <Text key={i} style={styles.techBadge}>
+                    {tech}
+                  </Text>
+                ))}
+              </View>
             </View>
+          ))}
+      </View>
+
+      {/* Early Career */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Early Career History</Text>
+        {earlyCareerExperience.map((exp) => (
+          <View key={exp.id} style={styles.earlyCareerRow}>
+            <Text style={styles.earlyCareerRole}>{exp.role}</Text>
+            <Text style={styles.earlyCareerCompany}>{exp.company}</Text>
+            <Text style={styles.earlyCareerPeriod}>{exp.period}</Text>
           </View>
         ))}
       </View>
