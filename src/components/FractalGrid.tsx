@@ -8,13 +8,14 @@ const FractalGrid: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!mountRef.current) {
+    const mount = mountRef.current
+    if (!mount) {
       return
     }
 
     const scene = createScene()
     const camera = createCamera()
-    const renderer = createRenderer(mountRef.current)
+    const renderer = createRenderer(mount)
 
     const geometry = createGridGeometry()
     const material = createPointsMaterial()
@@ -41,7 +42,7 @@ const FractalGrid: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize)
-      mountRef.current?.removeChild(renderer.domElement)
+      mount.removeChild(renderer.domElement)
     }
   }, [])
 
