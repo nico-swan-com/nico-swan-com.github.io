@@ -3,7 +3,8 @@ import {
   recentExperience,
   earlyCareerExperience,
   experienceSummary,
-  skills
+  skills,
+  contactInfo
 } from '@/lib/data/experience'
 
 const styles = StyleSheet.create({
@@ -134,12 +135,12 @@ const styles = StyleSheet.create({
   earlyCareerCompany: {
     fontSize: 10,
     color: '#334155',
-    width: '40%'
+    width: '30%'
   },
   earlyCareerPeriod: {
     fontSize: 9,
     color: '#64748b',
-    width: '20%',
+    width: '30%',
     textAlign: 'right'
   }
 })
@@ -152,9 +153,13 @@ export const ResumePDF = () => (
         <Text style={styles.name}>Nico Swan</Text>
         <Text style={styles.title}>Senior Full Stack Software Engineer</Text>
         <View style={styles.contact}>
-          <Text>nicoswan.com</Text>
+          <Text>{contactInfo.email}</Text>
           <Text>|</Text>
-          <Text>linkedin.com/in/nicoswan</Text>
+          <Text>{contactInfo.phone}</Text>
+          <Text>|</Text>
+          <Text>{contactInfo.website}</Text>
+          <Text>|</Text>
+          <Text>{contactInfo.linkedin}</Text>
         </View>
       </View>
 
@@ -199,26 +204,31 @@ export const ResumePDF = () => (
                 <Text style={styles.period}>{exp.period}</Text>
               </View>
               <Text style={styles.company}>{exp.company}</Text>
-              <Text style={styles.description}>{exp.description}</Text>
+              {(exp.resumeDescription ?? exp.description) !== '' && (
+                <Text style={styles.description}>
+                  {exp.resumeDescription ?? exp.description}
+                </Text>
+              )}
 
               {/* Achievements */}
               <View>
-                {exp.achievements.map((achievement, i) => (
-                  <View key={i} style={styles.bulletPoint}>
-                    <Text style={styles.bullet}>•</Text>
-                    <Text style={styles.bulletContent}>{achievement}</Text>
-                  </View>
-                ))}
+                {(exp.resumeAchievements ?? exp.achievements).map(
+                  (achievement, i) => (
+                    <View key={i} style={styles.bulletPoint}>
+                      <Text style={styles.bullet}>•</Text>
+                      <Text style={styles.bulletContent}>{achievement}</Text>
+                    </View>
+                  )
+                )}
               </View>
 
               {/* Technologies */}
-              <View style={styles.technologies}>
-                {exp.technologies.map((tech, i) => (
-                  <Text key={i} style={styles.techBadge}>
-                    {tech}
-                  </Text>
-                ))}
-              </View>
+              <Text style={styles.technologies}>
+                <Text style={{ fontFamily: 'Helvetica-Bold' }}>
+                  Environment:{' '}
+                </Text>
+                {exp.technologies.join(', ')}
+              </Text>
             </View>
           ))}
       </View>
