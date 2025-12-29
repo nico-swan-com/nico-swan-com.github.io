@@ -45,6 +45,14 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))'
       },
+      transitionDelay: {
+        '400': '400ms',
+        '600': '600ms',
+        '800': '800ms',
+        '1500': '1500ms',
+        '2000': '2000ms',
+        '3000': '3000ms'
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
