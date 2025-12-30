@@ -10,7 +10,7 @@ export const accomplishments: Accomplishment[] = [
     iconName: 'Shield',
     title: 'Regulatory Compliance',
     description:
-      "Developed ABAC entitlements and approval workflows that secured BCB Group's French EMI banking licence"
+      'Expert in ABAC/RBAC authorization, approval workflows, audit trails, and financial compliance (EMI licensing, SARS VAT, FICA)'
   },
   {
     id: 'revenue',

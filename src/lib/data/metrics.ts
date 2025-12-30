@@ -19,10 +19,10 @@ export const impactMetrics: ImpactMetric[] = [
   },
   {
     iconName: 'Shield',
-    value: 'EMI Licence',
-    label: 'Regulatory Compliance',
+    value: 'Compliance',
+    label: 'Regulatory Expertise',
     description:
-      'Secured French banking licence through ABAC & approval systems'
+      'EMI licensing, SARS VAT, FICA verification, ABAC authorization systems'
   },
   {
     iconName: 'Award',
