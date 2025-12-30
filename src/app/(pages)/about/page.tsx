@@ -1,42 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import {
-  Lightbulb,
-  Rocket,
-  Shield,
-  TrendingUp,
-  Users,
-  Linkedin,
-  FileText,
-  Quote
-} from 'lucide-react'
+import { Lightbulb, Rocket, Shield, Users, Quote } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { testimonials, accomplishmentsData } from '@/lib/data/about'
+import { testimonials, accomplishments, coreTech } from '@/lib/data'
+import { getIcon } from '@/lib/icons'
+import { TechBadgeList, RecruiterCTA, SocialButtons } from '@/components/shared'
 
 const About = () => {
-  const accomplishments = accomplishmentsData.map((item) => {
-    let icon
-    switch (item.id) {
-      case 'regulatory':
-        icon = <Shield className='size-6 text-accent' />
-        break
-      case 'revenue':
-        icon = <TrendingUp className='size-6 text-accent' />
-        break
-      case 'leadership':
-        icon = <Users className='size-6 text-accent' />
-        break
-      default:
-        icon = <Shield className='size-6 text-accent' />
-    }
-    return { ...item, icon }
-  })
-
   return (
     <div className='pt-16'>
       <div className='mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8'>
@@ -51,24 +23,10 @@ const About = () => {
             <div>
               <h1 className='mb-4 text-4xl font-bold text-primary'>About Me</h1>
             </div>
-            <div className='flex gap-3'>
-              <Button asChild variant='default' className='gap-2'>
-                <a
-                  href='https://www.linkedin.com/in/nicoswan/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <Linkedin className='size-4' />
-                  LinkedIn Profile
-                </a>
-              </Button>
-              <Button asChild variant='outline' className='gap-2'>
-                <Link href='/contact'>
-                  <FileText className='size-4' />
-                  Contact Me
-                </Link>
-              </Button>
-            </div>
+            <SocialButtons
+              linkedInLabel='LinkedIn Profile'
+              contactLabel='Contact Me'
+            />
           </div>
 
           <div className='prose prose-lg mt-6 max-w-none text-secondary'>
@@ -92,40 +50,11 @@ const About = () => {
           </div>
 
           {/* Core Technologies */}
-          <div className='mt-6 flex flex-wrap gap-2'>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              TypeScript
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              Node.js
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              React/Next.js
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              NestJS
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              PostgreSQL
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              Docker
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              Microservices
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              GCP (Cloud SQL)
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              Kubernetes
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              Azure Functions
-            </Badge>
-            <Badge variant='outline' className='border-accent text-secondary'>
-              AWS S3
-            </Badge>
+          <div className='mt-6'>
+            <TechBadgeList
+              technologies={coreTech}
+              badgeClassName='border-accent text-secondary'
+            />
           </div>
         </motion.div>
 
@@ -139,24 +68,27 @@ const About = () => {
             Key Accomplishments
           </h2>
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-            {accomplishments.map((item, index) => (
-              <Card
-                key={index}
-                className='border-accent/20 bg-gradient-to-br from-background to-accent/5 p-6 transition-shadow hover:shadow-lg'
-              >
-                <div className='flex items-start space-x-4'>
-                  <div className='shrink-0 rounded-lg bg-accent/10 p-2'>
-                    {item.icon}
+            {accomplishments.map((item, index) => {
+              const Icon = getIcon(item.iconName)
+              return (
+                <Card
+                  key={index}
+                  className='border-accent/20 bg-gradient-to-br from-background to-accent/5 p-6 transition-shadow hover:shadow-lg'
+                >
+                  <div className='flex items-start space-x-4'>
+                    <div className='shrink-0 rounded-lg bg-accent/10 p-2'>
+                      <Icon className='size-6 text-accent' />
+                    </div>
+                    <div>
+                      <h3 className='mb-2 text-xl font-semibold text-primary'>
+                        {item.title}
+                      </h3>
+                      <p className='text-secondary'>{item.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-semibold text-primary'>
-                      {item.title}
-                    </h3>
-                    <p className='text-secondary'>{item.description}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              )
+            })}
           </div>
         </motion.div>
 
@@ -240,9 +172,9 @@ const About = () => {
             What Others Say
           </h2>
           <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
-            {testimonials.map((testimonial, index) => (
+            {testimonials.slice(0, 2).map((testimonial) => (
               <Card
-                key={index}
+                key={testimonial.id}
                 className='relative border-accent/20 bg-gradient-to-br from-background to-accent/5 p-6'
               >
                 <Quote className='absolute right-6 top-6 size-8 text-accent/20' />
@@ -256,9 +188,11 @@ const About = () => {
                     {testimonial.name}
                   </p>
                   <p className='text-sm text-secondary'>{testimonial.title}</p>
-                  <p className='mt-1 text-xs text-muted-foreground'>
-                    {testimonial.relationship} • {testimonial.date}
-                  </p>
+                  {testimonial.relationship && testimonial.date && (
+                    <p className='mt-1 text-xs text-muted-foreground'>
+                      {testimonial.relationship} • {testimonial.date}
+                    </p>
+                  )}
                 </div>
               </Card>
             ))}
@@ -277,44 +211,14 @@ const About = () => {
         </motion.div>
 
         {/* Recruiter Call-to-Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Card className='border-accent/30 bg-gradient-to-r from-accent/10 via-accent/5 to-background p-8'>
-            <div className='flex flex-col items-center gap-8 lg:flex-row'>
-              <div className='flex-1 text-center lg:text-left'>
-                <h2 className='mb-3 text-2xl font-bold text-primary'>
-                  Let&apos;s Build Something Great
-                </h2>
-                <p className='mb-4 text-secondary'>
-                  Looking for a senior engineer who can architect solutions,
-                  lead teams, and deliver business value? Let&apos;s talk about
-                  how I can contribute to your organisation.
-                </p>
-              </div>
-              <div className='flex flex-col gap-3 sm:flex-row'>
-                <Button asChild size='lg' className='gap-2'>
-                  <a
-                    href='https://www.linkedin.com/in/nicoswan/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <Linkedin className='size-5' />
-                    Connect on LinkedIn
-                  </a>
-                </Button>
-                <Button asChild variant='outline' size='lg' className='gap-2'>
-                  <Link href='/experience'>
-                    <FileText className='size-5' />
-                    View Experience
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
+        <RecruiterCTA
+          headline="Let's Build Something Great"
+          description="Looking for a senior engineer who can architect solutions, lead teams, and deliver business value? Let's talk about how I can contribute to your organisation."
+          primaryLink='/experience'
+          primaryLabel='View Experience'
+          showTechBadges={false}
+          animationDelay={0.6}
+        />
       </div>
     </div>
   )

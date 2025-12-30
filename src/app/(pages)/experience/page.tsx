@@ -2,24 +2,21 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import {
-  Briefcase,
-  Calendar,
-  ArrowUpRight,
-  Linkedin,
-  FileText
-} from 'lucide-react'
+import { Briefcase, Calendar, ArrowUpRight } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import {
   type Experience,
   experienceData,
-  impactMetrics,
   experienceSummary
 } from '@/lib/data/experience'
+import { impactMetrics } from '@/lib/data'
 import { ResumeDownloadButton } from '@/components/pdf/ResumeDownloadButton'
+import {
+  ImpactMetricsGrid,
+  RecruiterCTA,
+  SocialButtons
+} from '@/components/shared'
 
 const Experience = () => {
   const [selectedExp, setSelectedExp] = useState<Experience | null>(
@@ -44,22 +41,10 @@ const Experience = () => {
             </div>
             <div className='flex gap-3'>
               <ResumeDownloadButton />
-              <Button asChild variant='default' className='gap-2'>
-                <a
-                  href='https://www.linkedin.com/in/nicoswan/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <Linkedin className='size-4' />
-                  LinkedIn Profile
-                </a>
-              </Button>
-              <Button asChild variant='outline' className='gap-2'>
-                <Link href='/contact'>
-                  <FileText className='size-4' />
-                  Contact Me
-                </Link>
-              </Button>
+              <SocialButtons
+                linkedInLabel='LinkedIn Profile'
+                contactLabel='Contact Me'
+              />
             </div>
           </div>
         </motion.div>
@@ -71,28 +56,7 @@ const Experience = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className='mb-8'
         >
-          <div className='grid grid-cols-2 gap-4 sm:grid-cols-4'>
-            {impactMetrics.map((metric, index) => (
-              <Card
-                key={index}
-                className='border-accent/20 bg-gradient-to-br from-background to-accent/5 p-4'
-              >
-                <div className='flex items-center gap-3'>
-                  <div className='rounded-lg bg-accent/10 p-2'>
-                    <metric.icon className='size-5 text-accent' />
-                  </div>
-                  <div>
-                    <p className='text-xl font-bold text-primary'>
-                      {metric.value}
-                    </p>
-                    <p className='text-xs text-muted-foreground'>
-                      {metric.label}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <ImpactMetricsGrid metrics={impactMetrics} />
         </motion.div>
 
         {/* Summary */}
@@ -246,83 +210,15 @@ const Experience = () => {
         </div>
 
         {/* Recruiter Call-to-Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className='mt-16'
-        >
-          <Card className='border-accent/30 bg-gradient-to-r from-accent/10 via-accent/5 to-background p-8'>
-            <div className='flex flex-col items-center gap-8 lg:flex-row'>
-              <div className='flex-1 text-center lg:text-left'>
-                <h2 className='mb-3 text-2xl font-bold text-primary'>
-                  Interested in Working Together?
-                </h2>
-                <p className='mb-4 text-secondary'>
-                  I bring 25+ years of hands-on experience in financial
-                  services, regulatory compliance, and building high-performing
-                  engineering teams.
-                </p>
-                <div className='flex flex-wrap justify-center gap-2 lg:justify-start'>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    TypeScript/JavaScript
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    Node.js
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    React/Next.js
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    PostgreSQL
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    AWS/Docker
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    Microservices
-                  </Badge>
-                </div>
-              </div>
-              <div className='flex flex-col gap-3 sm:flex-row'>
-                <Button asChild size='lg' className='gap-2'>
-                  <a
-                    href='https://www.linkedin.com/in/nicoswan/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <Linkedin className='size-5' />
-                    Connect on LinkedIn
-                  </a>
-                </Button>
-                <Button asChild variant='outline' size='lg' className='gap-2'>
-                  <Link href='/portfolio'>
-                    <FileText className='size-5' />
-                    View Portfolio
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
+        <div className='mt-16'>
+          <RecruiterCTA
+            headline='Interested in Working Together?'
+            description='I bring 25+ years of hands-on experience in financial services, regulatory compliance, and building high-performing engineering teams.'
+            primaryLink='/contact'
+            primaryLabel='Contact Me'
+            animationDelay={0.5}
+          />
+        </div>
       </div>
     </div>
   )
