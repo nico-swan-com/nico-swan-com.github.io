@@ -6,8 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  audit:
+    name: Audit dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup and audit dependencies
+        uses: ./.github/actions/setup-node
+
   publish-dockerhub:
     name: Build Publish docker image to docker hub
+    needs: audit
     runs-on: ubuntu-latest
     environment: production
     steps:

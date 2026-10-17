@@ -1,5 +1,6 @@
 import FractalGrid from '@/components/FractalGrid'
 import Hero from '@/components/Hero'
+import { AboutSection } from '@/components/AboutSection'
 
 export default function Home() {
   return (
@@ -8,6 +9,9 @@ export default function Home() {
       <main>
         <section>
           <Hero />
+        </section>
+        <section>
+          <AboutSection />
         </section>
       </main>
     </>

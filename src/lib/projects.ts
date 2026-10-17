@@ -317,7 +317,7 @@ This role demonstrates strong leadership capabilities, revenue generation, and t
     title: 'Incidentia BI & Analytics Platform',
     description:
       'Business intelligence platform for human capital management, productivity analytics, and process management. Built as Technical Consultant for Artesi SA CC (2014-2024).',
-    longDescription: `As Technical Consultant and Product Developer for Artesi SA, architected and developed Incidentia—a comprehensive business intelligence and business analytics platform. The platform focuses on human capital management, productivity tracking, and process management.
+    longDescription: `As Technical Consultant and Product Developer for Artesi SA, architected and developed Incidentia, a business intelligence and analytics platform focused on human capital management, productivity tracking, and process management.
 
 Implemented AGILE and LEAN methodologies, provided system architecture direction, and developed the platform's UX v2, RESTful APIs, microservices architecture, and dashboard components.
 

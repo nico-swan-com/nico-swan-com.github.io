@@ -3,9 +3,11 @@ FROM node:current-alpine3.21 AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
+RUN npm audit --omit=dev
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
+RUN npm prune --omit=dev
 
 # Release image
 FROM node:current-alpine3.21
