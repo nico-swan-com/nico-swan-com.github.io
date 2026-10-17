@@ -1,0 +1,44 @@
+# Keep the build context small and free of secrets / local build output.
+
+# VCS and tooling
+.git
+.github
+.husky
+.vscode
+.idea
+*.md
+Dockerfile*
+.dockerignore
+
+# Dependencies (installed fresh in the image)
+node_modules
+.pnp
+.pnp.*
+.yarn
+
+# Build output and caches
+.next
+_next
+out
+build
+coverage
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Compiled custom server (cPanel build only); the standalone build emits its own server.js
+/server.js
+
+# Secrets / environment files
+.env*
+*.pem
+
+# Deployment manifests are not needed in the image
+deploy
+
+# Misc
+.DS_Store
+.vercel
