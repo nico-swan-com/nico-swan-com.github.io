@@ -10,7 +10,7 @@
     "build:server": "tsc --project tsconfig.standalone.json",
     "start:next": "next start",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "husky",
     "audit": "npm audit --omit=dev"
@@ -44,7 +44,6 @@
     "three": "^0.174.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

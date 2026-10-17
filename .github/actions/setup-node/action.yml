@@ -54,3 +54,7 @@ runs:
     - name: 'Install dependencies'
       run: ${{ steps.detect.outputs.manager }} ${{ steps.detect.outputs.command }}
       shell: bash
+
+    - name: 'Audit dependencies'
+      run: npm audit --omit=dev
+      shell: bash

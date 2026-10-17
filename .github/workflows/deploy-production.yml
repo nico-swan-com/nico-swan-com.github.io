@@ -18,9 +18,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  audit:
+    name: Audit dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup and audit dependencies
+        uses: ./.github/actions/setup-node
+
   # Github pages
   build-pages:
     name: Build Github pages
+    needs: audit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,6 +70,7 @@ jobs:
   # Cpanel
   build-cpanel:
     name: Build standalone
+    needs: audit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -116,6 +128,7 @@ jobs:
   # Kubernetes
   publish-dockerhub:
     name: Build Publish docker image to docker hub (nicoswan/nicoswan-com)
+    needs: audit
     runs-on: ubuntu-latest
     environment: production
     steps:
