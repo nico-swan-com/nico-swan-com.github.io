@@ -6,6 +6,7 @@ RUN npm ci
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
+RUN npm prune --omit=dev
 
 # Release image
 FROM node:current-alpine3.21

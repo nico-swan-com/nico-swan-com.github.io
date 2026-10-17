@@ -9,23 +9,13 @@ import {
   Clock,
   Send,
   CheckCircle,
-  ArrowRight,
-  TrendingUp,
-  Users,
-  Shield,
-  Award
+  ArrowRight
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-
-const impactMetrics = [
-  { icon: TrendingUp, value: '$3.7M+', label: 'Revenue Generated' },
-  { icon: Users, value: '34+', label: 'Engineers Led' },
-  { icon: Shield, value: 'EMI License', label: 'Regulatory Compliance' },
-  { icon: Award, value: '25+ Years', label: 'Industry Experience' }
-]
+import { impactMetrics, coreTech } from '@/lib/data'
+import { ImpactMetricsGrid, TechBadgeList } from '@/components/shared'
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -99,28 +89,7 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className='mb-12'
         >
-          <div className='grid grid-cols-2 gap-4 sm:grid-cols-4'>
-            {impactMetrics.map((metric, index) => (
-              <Card
-                key={index}
-                className='border-accent/20 bg-gradient-to-br from-background to-accent/5 p-4'
-              >
-                <div className='flex items-center gap-3'>
-                  <div className='rounded-lg bg-accent/10 p-2'>
-                    <metric.icon className='size-5 text-accent' />
-                  </div>
-                  <div>
-                    <p className='text-xl font-bold text-primary'>
-                      {metric.value}
-                    </p>
-                    <p className='text-xs text-muted-foreground'>
-                      {metric.label}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <ImpactMetricsGrid metrics={impactMetrics} />
         </motion.div>
 
         <div className='grid gap-8 lg:grid-cols-2'>
@@ -395,56 +364,10 @@ const Contact = () => {
                 <CardTitle className='text-primary'>Core Tech Stack</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className='flex flex-wrap gap-2'>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    TypeScript
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    Node.js
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    React/Next.js
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    NestJS
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    PostgreSQL
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    Docker
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    AWS/GCP
-                  </Badge>
-                  <Badge
-                    variant='outline'
-                    className='border-accent text-secondary'
-                  >
-                    Microservices
-                  </Badge>
-                </div>
+                <TechBadgeList
+                  technologies={coreTech}
+                  badgeClassName='border-accent text-secondary'
+                />
               </CardContent>
             </Card>
 

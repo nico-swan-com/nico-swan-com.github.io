@@ -22,20 +22,33 @@ export const testimonials = [
 export const accomplishmentsData = [
   {
     id: 'regulatory',
-    title: 'Regulatory Compliance',
+    title: 'Bridging TradFi & DeFi',
     description:
-      "Developed ABAC entitlements and approval workflows that secured BCB Group's French EMI banking licence"
+      'Operating at the intersection of banking standards and crypto innovation. Specializing in architecting platforms that navigate complex regulatory frameworks (KYC/AML) without sacrificing speed or agility.'
   },
   {
     id: 'revenue',
-    title: 'Revenue Generation',
+    title: "The 'Why' Behind the Code",
     description:
-      'Generated $3.7M+ in revenue through support services and custom solutions at TEOCO'
+      'Speaking two languages fluently: TypeScript and Business Risk. Helping stakeholders understand why technical decisions matter to the bottom line, ensuring we build the right things for the right reasons.'
   },
   {
     id: 'leadership',
-    title: 'Team Leadership',
+    title: 'Force-Multiplier Leadership',
     description:
-      'Built and led 24/7 support operations with 34 engineers across US, India, and Australia'
+      'I take ownership of team and organizational standards. I proactively identify areas for improvement, propose and document changes, and champion the adoption of best practices to move the organization toward a more effective and unified standard.'
   }
 ]
+
+export const about = {
+  intro: {
+    title: "I am a 'Builder-Strategist'",
+    description:
+      "An engineer who thinks like a CTO but delivers like a craftsman. With over two decades of experience spanning Technical Directorships and deep-dive engineering, I have consciously chosen to stay close to the metal. I don't just write code; I design the technical architectures that allow businesses to scale, comply, and evolve."
+  },
+  philosophy: {
+    title: 'My Core Philosophy',
+    description:
+      "True ownership is about architecting for long-term stability and preventing future incidents across the system. I focus on designing fault-tolerant systems that are resilient by default, fostering a culture of reliability that doesn't depend on individual heroics."
+  }
+}
