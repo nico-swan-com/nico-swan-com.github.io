@@ -44,7 +44,18 @@ const eslintConfig = [
     'next/typescript',
     'plugin:tailwindcss/recommended',
     'prettier'
-  )
+  ),
+  {
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      '_next/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+      'server.js'
+    ]
+  }
 ]
 
 export default eslintConfig

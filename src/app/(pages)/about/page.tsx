@@ -44,7 +44,7 @@ const About = () => {
               Currently at BCB Group, I developed the entitlements and approval
               workflow capabilities that were critical to securing a French EMI
               banking licence. I combine deep technical expertise with business
-              acumen—having generated $3.7M+ in revenue through technical
+              acumen, having generated $3.7M+ in revenue through technical
               leadership and custom solutions.
             </p>
           </div>
