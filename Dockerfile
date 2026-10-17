@@ -1,5 +1,5 @@
 # Build
-FROM node:current-alpine3.21 AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
@@ -10,7 +10,7 @@ RUN npm run build
 RUN npm prune --omit=dev
 
 # Release image
-FROM node:current-alpine3.21
+FROM node:22-alpine
 COPY --from=builder /app /app
 WORKDIR /app
 
