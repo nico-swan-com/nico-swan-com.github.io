@@ -8,22 +8,22 @@ export const accomplishments: Accomplishment[] = [
   {
     id: 'regulatory',
     iconName: 'Shield',
-    title: 'Regulatory Compliance',
+    title: 'Bridging TradFi & DeFi',
     description:
-      'Expert in ABAC/RBAC authorization, approval workflows, audit trails, and financial compliance (EMI licensing, SARS VAT, FICA)'
+      'Operating at the intersection of banking standards and crypto innovation. Specializing in architecting platforms that navigate complex regulatory frameworks (KYC/AML) without sacrificing speed or agility.'
   },
   {
     id: 'revenue',
     iconName: 'TrendingUp',
-    title: 'Revenue Generation',
+    title: "The 'Why' Behind the Code",
     description:
-      'Generated $3.7M+ in revenue through support services and custom solutions at TEOCO'
+      'Speaking two languages fluently: TypeScript and Business Risk. Helping stakeholders understand why technical decisions matter to the bottom line, ensuring we build the right things for the right reasons.'
   },
   {
     id: 'leadership',
     iconName: 'Users',
-    title: 'Team Leadership',
+    title: 'Force-Multiplier Leadership',
     description:
-      'Built and led 24/7 support operations with 34 engineers across US, India, and Australia'
+      'I take ownership of team and organizational standards. I proactively identify areas for improvement, propose and document changes, and champion the adoption of best practices to move the organization toward a more effective and unified standard.'
   }
 ]

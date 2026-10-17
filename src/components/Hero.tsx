@@ -5,6 +5,7 @@ import { HeroActions } from './hero/HeroActions'
 import { ImpactMetrics } from './hero/ImpactMetrics'
 import { QuickNav } from './hero/QuickNav'
 import { TechStack } from './hero/TechStack'
+import { FeaturedTestimonial } from './hero/FeaturedTestimonial'
 import { Testimonials } from './Testimonials'
 
 const Hero = () => {
@@ -35,7 +36,7 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          Senior Full Stack Software Engineer &amp; Enterprise Systems Architect
+          Principal Software Engineer | Fintech &amp; Crypto Infrastructure
         </p>
 
         {/* Value Proposition */}
@@ -44,12 +45,9 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          25+ years building enterprise systems that{' '}
-          <span className='font-medium text-accent'>generate revenue</span>,{' '}
-          <span className='font-medium text-accent'>ensure compliance</span>,
-          and <span className='font-medium text-accent'>scale globally</span>.
-          Experience across multiple industries and countries, specialising in
-          business management platforms and R&D PoC projects.
+          Subject Matter Expert managing and maintaining complex ecosystems
+          within the tech stack, including full ownership of architecture,
+          release cycles, and system support.
         </p>
 
         <HeroActions isVisible={isVisible} />
@@ -57,7 +55,13 @@ const Hero = () => {
         <ImpactMetrics isVisible={true} />
         <QuickNav isVisible={true} />
         <TechStack isVisible={true} />
+
+        {/* Featured Testimonial & Carousel */}
         <div className='container mx-auto py-12'>
+          <FeaturedTestimonial />
+          <p className='mb-4 text-center text-xs text-muted-foreground'>
+            More recommendations from colleagues
+          </p>
           <Testimonials />
         </div>
       </div>

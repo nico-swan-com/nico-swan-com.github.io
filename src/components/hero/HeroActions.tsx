@@ -3,6 +3,7 @@
 import { ArrowRight, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { ResumeDownloadButton } from '@/components/pdf/ResumeDownloadButton'
 
 interface HeroActionsProps {
   isVisible: boolean
@@ -25,6 +26,7 @@ export function HeroActions({ isVisible }: HeroActionsProps) {
           Connect on LinkedIn
         </a>
       </Button>
+      <ResumeDownloadButton />
       <Button asChild variant='outline' size='lg' className='gap-2'>
         <Link href='/contact'>
           Contact Me

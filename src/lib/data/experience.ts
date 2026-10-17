@@ -29,7 +29,7 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Senior Full Stack Engineer & Architect with 25+ years of experience delivering secure, regulatory-compliant financial platforms (EMI/SARS). Expert in modernizing legacy systems using TypeScript, Node.js, and Cloud-Native architectures. Proven track record of leading distributed teams and driving revenue growth through technical excellence.'
+  'Senior Full Stack Engineer & Architect delivering secure, regulatory-compliant financial platforms (EMI/SARS). Expert in contributing at a high level to company platform and architecture using TypeScript, Node.js, and Cloud-Native architectures. Proven track record of leading distributed teams and driving revenue growth through technical excellence.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',
@@ -46,13 +46,17 @@ export const recentExperience: Experience[] = [
     company: 'BCB Group',
     period: 'July 2021 – Present',
     description:
-      'Senior Full Stack Engineer within the financial industry, placing strong emphasis on regulatory compliance and security throughout the entire development lifecycle. Engineering and maintaining microservices and internal UI consoles essential for delivering business banking services to clients.',
+      'Senior Full Stack Engineer within the financial industry, placing strong emphasis on regulatory compliance and security. Platformized the Entitlements capability, enabling multiple disconnected teams to inherit complex ABAC security controls without rewriting code. Engineering and maintaining microservices and internal UI consoles essential for delivering business banking services.',
     achievements: [
       'Settlements Console Ownership: Took full ownership of the settlements console, used internally to manage client payments and deposits. Streamlined and standardised UI components, resulting in a more maintainable codebase. Enhanced user experience by applying UX principles, improving overall usability',
-      'Entitlements Capability Development: As a member of the platform team, engineered the Entitlements capability to enable attribute-based policy-driven security for authorisation across the stack. This capability met regulatory compliance which facilitated BCB securing a French EMI licence',
+      'Entitlements Capability: Platformized the Entitlements capability, enabling multiple disconnected teams to inherit complex ABAC security controls without rewriting code. This capability met regulatory compliance which facilitated BCB securing a French EMI licence',
       'Approval Flow Capability: Devised and deployed an approval workflow that requires a four-eye process for any user actions that change data, safeguarding against internal fraud. This was instrumental in obtaining the French EMI licence',
       'Billing Capability: Built a comprehensive billing capability spanning multiple functions, ensuring reliable and flexible invoicing for clients through the integration of best practices',
-      'Maintained focus on regulatory compliance and security throughout the entire development lifecycle'
+      'Maintained focus on regulatory compliance and security throughout the entire development lifecycle',
+      'Acted as the SME for managing and maintaining the authentication ecosystem within the whole tech stack, taking full ownership of repositories, release cycles, and system support.',
+      'Architected for long-term stability and prevented future incidents across the system by designing fault-tolerant, fail-closed audit logs and replay defenses.',
+      'Championed improvements to the development lifecycle by shifting security verification to the gateways, ensuring robust processes are in place so reliability does not depend on individual heroics.',
+      'Contributed at a high level to company platform and architecture by publishing technical RFCs and leading the Holder-of-Key security implementation.'
     ],
     technologies: [
       'TypeScript',
@@ -73,7 +77,7 @@ export const recentExperience: Experience[] = [
     company: 'Artesi SA CC',
     period: 'Jan 2024 – Present',
     description:
-      'Architected and delivered the flagship "Enterprise Business Management Platform", a comprehensive system replacing a legacy FileMaker application. Leading full-stack development of this enterprise system featuring SARS VAT compliance, FICA verification, order management, production workflows, and secure file handling.',
+      'Architected and delivered the flagship "Enterprise Business Management Platform". Strategically migrated from legacy FileMaker to Cloud-Native, prioritizing robust, boring technology (PostgreSQL, MinIO) over hype to ensure long-term maintainability and solving the business problem faster.',
     achievements: [
       'Architecting full-stack solution: Next.js frontend, NestJS backend, PostgreSQL, MinIO (S3)',
       'Enforcing South African regulatory compliance (SARS VAT, FICA customer verification)',
@@ -95,7 +99,7 @@ export const recentExperience: Experience[] = [
     ],
     resumeDescription: '',
     resumeAchievements: [
-      'Architecting a cloud-native ERP replacement (Next.js, NestJS, MinIO) to modernize legacy FileMaker systems, reducing operational costs and enhancing scalability.',
+      'Strategically migrated from legacy FileMaker to Cloud-Native, prioritizing robust, boring technology (PostgreSQL, MinIO) over hype to ensure long-term maintainability.',
       'Integrated SARS VAT compliance and FICA verification workflows, ensuring 100% regulatory adherence within a secure environment.'
     ],
     resumeTechnologies: [
