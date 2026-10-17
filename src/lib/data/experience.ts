@@ -151,7 +151,7 @@ export const recentExperience: Experience[] = [
     company: 'Artesi SA CC',
     period: 'January 2014 – July 2015',
     description:
-      'Contract role building the flagship product Incidentia—a business intelligence and analytics platform focused on human capital management, productivity, and process management. Remained on standby after initial development phase.',
+      'Contract role building the flagship product Incidentia, a business intelligence and analytics platform focused on human capital management, productivity, and process management. Remained on standby after initial development phase.',
     achievements: [
       "Architected and built Incidentia's UX v2, RESTful APIs, microservices architecture, and dashboard platforms",
       'Acted as Product Owner implementing AGILE and LEAN methodologies',
