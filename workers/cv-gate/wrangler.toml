@@ -1,0 +1,32 @@
+name = "cv-gate"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+workers_dev = true
+# Disable per-version preview URLs (only the main workers.dev URL is served)
+preview_urls = false
+
+[vars]
+# Comma-separated list of allowed browser origins (CORS).
+ALLOWED_ORIGINS = "https://nicoswan.com,https://www.nicoswan.com,http://localhost:3000"
+# Max successful submissions per IP per hour.
+RATE_LIMIT_PER_HOUR = "5"
+# Set to "true" to email hi@nicoswan.com on each download (needs [[send_email]] below).
+NOTIFY_ENABLED = "false"
+NOTIFY_FROM = "cv-gate@nicoswan.com"
+NOTIFY_TO = "hi@nicoswan.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cv-gate"
+# Replace with the id printed by `npx wrangler d1 create cv-gate`
+database_id = "e9e65402-e851-4b6e-ba8d-e29610f9d9bc"
+
+# Optional: notification via Cloudflare Email Routing.
+# Requires Email Routing enabled on nicoswan.com and hi@nicoswan.com verified
+# as a destination address. Uncomment and set NOTIFY_ENABLED = "true".
+# [[send_email]]
+# name = "NOTIFY"
+# destination_address = "hi@nicoswan.com"
+
+# Secrets (set with `npx wrangler secret put TURNSTILE_SECRET_KEY`):
+# - TURNSTILE_SECRET_KEY

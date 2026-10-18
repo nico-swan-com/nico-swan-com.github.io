@@ -24,6 +24,11 @@ RUN npm ci --ignore-scripts --no-fund \
 # ---- builder ----------------------------------------------------------------
 FROM ${NODE_IMAGE} AS builder
 WORKDIR /app
+# Public (client-inlined) config for the CV email gate; empty = plain download
+ARG NEXT_PUBLIC_CV_GATE_URL=""
+ARG NEXT_PUBLIC_TURNSTILE_SITE_KEY=""
+ENV NEXT_PUBLIC_CV_GATE_URL=${NEXT_PUBLIC_CV_GATE_URL} \
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY=${NEXT_PUBLIC_TURNSTILE_SITE_KEY}
 ENV NEXT_TELEMETRY_DISABLED=1 \
     BUILD_TYPE=standalone
 COPY --from=deps /app/node_modules ./node_modules

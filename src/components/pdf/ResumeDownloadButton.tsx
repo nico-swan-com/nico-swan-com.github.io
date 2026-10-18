@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { FileDown, Loader2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-export const ResumeDownloadButton = () => {
+export const PlainResumeDownloadButton = () => {
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -41,3 +41,10 @@ export const ResumeDownloadButton = () => {
     </PDFDownloadLink>
   )
 }
+
+/**
+ * Public entry point. Renders the email-gated download when the gate is
+ * configured (NEXT_PUBLIC_CV_GATE_URL + NEXT_PUBLIC_TURNSTILE_SITE_KEY),
+ * otherwise falls back to the plain download so the site never breaks.
+ */
+export { ResumeDownloadGate as ResumeDownloadButton } from './ResumeDownloadGate'

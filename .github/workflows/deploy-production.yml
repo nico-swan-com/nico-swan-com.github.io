@@ -45,6 +45,8 @@ jobs:
         env:
           BUILD_TYPE: static
           NEXT_TELEMETRY_DISABLED: 1
+          NEXT_PUBLIC_CV_GATE_URL: ${{ vars.NEXT_PUBLIC_CV_GATE_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
         run: |
           echo "Building $BUILD_TYPE"
           ${{ steps.setup.outputs.runner }} next build
@@ -84,6 +86,8 @@ jobs:
         env:
           BUILD_TYPE: standalone
           NEXT_TELEMETRY_DISABLED: 1
+          NEXT_PUBLIC_CV_GATE_URL: ${{ vars.NEXT_PUBLIC_CV_GATE_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
         run: |
           echo "Building $BUILD_TYPE"
           ${{ steps.setup.outputs.manager }} run build:standalone
@@ -163,3 +167,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            NEXT_PUBLIC_CV_GATE_URL=${{ vars.NEXT_PUBLIC_CV_GATE_URL }}
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ vars.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
