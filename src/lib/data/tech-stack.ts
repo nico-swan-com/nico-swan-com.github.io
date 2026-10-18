@@ -28,15 +28,7 @@ export const techCategories: TechCategory[] = [
   },
   {
     category: 'DevOps & Cloud',
-    items: [
-      'Docker',
-      'Kubernetes',
-      'GCP',
-      'AWS',
-      'Azure',
-      'GitLab CI/CD',
-      'Nix/NixOS'
-    ]
+    items: ['Docker', 'Kubernetes', 'GCP', 'Azure', 'GitLab CI/CD', 'Nix/NixOS']
   }
 ]
 
@@ -68,7 +60,7 @@ export const coreTech: string[] = [
   'NestJS',
   'PostgreSQL',
   'Docker',
-  'AWS/GCP',
+  'GCP',
   'Microservices'
 ]
 

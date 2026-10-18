@@ -9,8 +9,8 @@ export const testimonials: Testimonial[] = [
     id: 'john-andrews',
     name: 'John Andrews',
     title:
-      'Business & Technology Innovation and Transformation | Practice Lead @ Accenture',
-    role: 'Practice Lead @ Accenture',
+      'Senior Colleague at NTT/Dimension Data, then Practice Lead @ Accenture',
+    role: 'then Practice Lead @ Accenture',
     relationship: 'Senior colleague at NTT/Dimension Data',
     date: 'July 2021',
     quote:
@@ -19,8 +19,8 @@ export const testimonials: Testimonial[] = [
   {
     id: 'brian-white',
     name: 'Brian White',
-    title: 'Vice President New Product Introduction for the Americas',
-    role: 'VP New Product Introduction @ TEOCO',
+    title: 'then VP New Product Introduction, TEOCO/AIRCOM (direct manager)',
+    role: 'then VP New Product Introduction, TEOCO/AIRCOM',
     relationship: 'Direct manager at TEOCO/AIRCOM',
     date: 'April 2014',
     quote:

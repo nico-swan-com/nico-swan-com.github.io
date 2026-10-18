@@ -8,22 +8,22 @@ export const accomplishments: Accomplishment[] = [
   {
     id: 'regulatory',
     iconName: 'Shield',
-    title: 'Bridging TradFi & DeFi',
+    title: 'Banking rules, crypto speed',
     description:
-      'Operating at the intersection of banking standards and crypto innovation. Specializing in architecting platforms that navigate complex regulatory frameworks (KYC/AML) without sacrificing speed or agility.'
+      'BCB is a regulated crypto and payments firm. The work there is building features clients want, such as self-service API keys and new payment rails, inside the controls a licence demands: four-eyes approvals, PSD2 one-time passwords, signed requests and a 12-month audit trail.'
   },
   {
     id: 'revenue',
     iconName: 'TrendingUp',
     title: "The 'Why' Behind the Code",
     description:
-      'Speaking two languages fluently: TypeScript and Business Risk. Helping stakeholders understand why technical decisions matter to the bottom line, ensuring we build the right things for the right reasons.'
+      'I explain technical risk in business terms. When I proposed signed client requests, the case was simple: a 29-day bearer token is a stolen-password problem waiting to happen, and a signature is only valid once.'
   },
   {
     id: 'leadership',
     iconName: 'Users',
-    title: 'Force-Multiplier Leadership',
+    title: 'Making it work without me',
     description:
-      'I take ownership of team and organizational standards. I proactively identify areas for improvement, propose and document changes, and champion the adoption of best practices to move the organization toward a more effective and unified standard.'
+      'I write the design down before I build it, as PRDs, RFCs and runbooks, so other engineers can review it, support it and change it. At BCB I revived Tech Talk Fridays, ran the team while my manager was on leave, and showed the BA team how to prototype with AI, which they now do without engineers. I cut a full laptop rebuild from 1-2 weeks to just over 2 hours and made it reproducible for anyone.'
   }
 ]

@@ -16,6 +16,11 @@ import { testimonials } from '@/lib/data'
  * Now imports from centralized testimonials data.
  */
 export function Testimonials() {
+  // Deduplicate: filter out featured testimonial so John Andrews appears only once on the home page
+  const carouselTestimonials = testimonials.filter(
+    (item) => item.id !== 'john-andrews'
+  )
+
   return (
     <Carousel
       opts={{
@@ -25,7 +30,7 @@ export function Testimonials() {
       className='mx-auto w-full max-w-2xl'
     >
       <CarouselContent>
-        {testimonials.map((testimonial) => (
+        {carouselTestimonials.map((testimonial) => (
           <CarouselItem key={testimonial.id}>
             <div className='p-1'>
               <Card className='relative border-accent/20 bg-background/50 p-6 backdrop-blur-sm'>

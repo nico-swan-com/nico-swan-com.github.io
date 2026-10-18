@@ -2,7 +2,7 @@ export const testimonials = [
   {
     name: 'John Andrews',
     title:
-      'Business & Technology Innovation and Transformation | Practice Lead @ Accenture',
+      'Senior Colleague at NTT/Dimension Data, then Practice Lead @ Accenture',
     relationship: 'Senior colleague at NTT/Dimension Data',
     date: 'July 2021',
     quote:
@@ -10,7 +10,7 @@ export const testimonials = [
   },
   {
     name: 'Brian White',
-    title: 'Vice President New Product Introduction for the Americas',
+    title: 'then VP New Product Introduction, TEOCO/AIRCOM (direct manager)',
     relationship: 'Direct manager at TEOCO/AIRCOM',
     date: 'April 2014',
     quote:
@@ -22,33 +22,33 @@ export const testimonials = [
 export const accomplishmentsData = [
   {
     id: 'regulatory',
-    title: 'Bridging TradFi & DeFi',
+    title: 'Banking rules, crypto speed',
     description:
-      'Operating at the intersection of banking standards and crypto innovation. Specializing in architecting platforms that navigate complex regulatory frameworks (KYC/AML) without sacrificing speed or agility.'
+      'BCB is a regulated crypto and payments firm. The work there is building features clients want, such as self-service API keys and new payment rails, inside the controls a licence demands: four-eyes approvals, PSD2 one-time passwords, signed requests and a 12-month audit trail.'
   },
   {
     id: 'revenue',
     title: "The 'Why' Behind the Code",
     description:
-      'Speaking two languages fluently: TypeScript and Business Risk. Helping stakeholders understand why technical decisions matter to the bottom line, ensuring we build the right things for the right reasons.'
+      'I explain technical risk in business terms. When I proposed signed client requests, the case was simple: a 29-day bearer token is a stolen-password problem waiting to happen, and a signature is only valid once.'
   },
   {
     id: 'leadership',
-    title: 'Force-Multiplier Leadership',
+    title: 'Making it work without me',
     description:
-      'I take ownership of team and organizational standards. I proactively identify areas for improvement, propose and document changes, and champion the adoption of best practices to move the organization toward a more effective and unified standard.'
+      'I write the design down before I build it, as PRDs, RFCs and runbooks, so other engineers can review it, support it and change it. At BCB I revived Tech Talk Fridays, ran the team while my manager was on leave, and showed the BA team how to prototype with AI, which they now do without engineers. I cut a full laptop rebuild from 1-2 weeks to just over 2 hours and made it reproducible for anyone.'
   }
 ]
 
 export const about = {
   intro: {
-    title: "I am a 'Builder-Strategist'",
+    title: 'I build, and I write it down',
     description:
-      "An engineer who thinks like a CTO but delivers like a craftsman. With over two decades of experience spanning Technical Directorships and deep-dive engineering, I have consciously chosen to stay close to the metal. I don't just write code; I design the technical architectures that allow businesses to scale, comply, and evolve."
+      'I spent years managing engineering and support teams, then went back to hands-on engineering because I like building things. These days I work on the platform side of a regulated crypto and payments firm: API security, authorisation, approvals and billing. I start with the why. Who will use this, and what goes wrong for them if it fails?'
   },
   philosophy: {
     title: 'My Core Philosophy',
     description:
-      "True ownership is about architecting for long-term stability and preventing future incidents across the system. I focus on designing fault-tolerant systems that are resilient by default, fostering a culture of reliability that doesn't depend on individual heroics."
+      'I think of software as digital woodworking. You measure twice and care about structural integrity before the finish. In a payments platform the joints are the unglamorous parts: who is allowed to do what, what gets written to the audit log, and what happens when a dependency is down. I get those right first, then write them down so the next person can work on it without me.'
   }
 }

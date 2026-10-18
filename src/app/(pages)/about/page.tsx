@@ -31,21 +31,32 @@ const About = () => {
 
           <div className='prose prose-lg mt-6 max-w-none text-secondary'>
             <p className='mb-4 text-lg leading-relaxed'>
-              Senior Full Stack Software Engineer with 25+ years building
-              enterprise systems across multiple industries (financial services,
-              telecommunications, managed services, and more) and countries
-              (United States, United Kingdom, Australia, India, South Africa,
-              Europe, Middle East, Central America and Africa). I specialise in
-              business management platforms, R&D PoC projects, distributed
-              architectures, and leading engineering teams across multiple time
-              zones.
+              I&apos;m a software engineer at BCB Group, a regulated crypto and
+              payments firm, where I&apos;ve worked on the platform team since
+              July 2021. Before that I built ServiceNow capabilities and ran a
+              13-person team at NTT, and managed a 24/7 department of 34
+              engineers across the US and India at TEOCO. I&apos;ve delivered
+              telecom and financial systems for clients in the UK, Europe, the
+              Middle East, the US and South Africa.
+            </p>
+            <p className='mb-4 text-lg leading-relaxed'>
+              At BCB I designed the four-eyes approval engine and the
+              authorisation service behind part of BCB&apos;s controls for its
+              French EMI licence, and led the architecture for client API
+              request signing, which went live in production on 12 October 2026.
             </p>
             <p className='text-lg leading-relaxed'>
-              Currently at BCB Group, I developed the entitlements and approval
-              workflow capabilities that were critical to securing a French EMI
-              banking licence. I combine deep technical expertise with business
-              acumen, having generated $3.7M+ in revenue through technical
-              leadership and custom solutions.
+              I also run a small part-time consultancy,{' '}
+              <a
+                href='https://cygnus-labs.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-accent hover:underline'
+              >
+                Cygnus Labs
+              </a>
+              , building business software for a handful of South African
+              clients.
             </p>
           </div>
 
@@ -138,9 +149,9 @@ const About = () => {
                 </h3>
               </div>
               <p className='text-secondary'>
-                Led teams of 13-34 engineers across US, India, UK, Australia,
-                and South Africa. Experienced with follow-the-sun operations and
-                distributed team collaboration.
+                Led a 34-person engineering department across the US and India
+                (TEOCO) and a 13-person team of analysts and developers across
+                South Africa and Australia (NTT).
               </p>
             </div>
             <div className='space-y-4'>

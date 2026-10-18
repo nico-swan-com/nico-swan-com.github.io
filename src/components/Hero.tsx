@@ -36,7 +36,7 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          Principal Software Engineer | Fintech &amp; Crypto Infrastructure
+          Staff Software Engineer | Fintech platforms, API security and payments
         </p>
 
         {/* Value Proposition */}
@@ -45,9 +45,10 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          Subject Matter Expert managing and maintaining complex ecosystems
-          within the tech stack, including full ownership of architecture,
-          release cycles, and system support.
+          I design and build the parts of a financial platform that have to be
+          right the first time: who can call an API, who can approve a payment,
+          and what a client gets billed. Based in Johannesburg, working remotely
+          with teams in UK and US hours.
         </p>
 
         <HeroActions isVisible={isVisible} />

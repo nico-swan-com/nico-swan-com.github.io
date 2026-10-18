@@ -29,11 +29,11 @@ const Portfolio = () => {
           <div className='flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between'>
             <div className='flex-1'>
               <h1 className='mb-4 text-4xl font-bold text-primary'>
-                Full Stack Engineer & Technical Leader
+                Staff Software Engineer &amp; Technical Leader
               </h1>
               <p className='max-w-3xl text-xl text-secondary'>
-                25+ years building enterprise systems across multiple industries
-                and countries. I solve your toughest problems: regulatory
+                Building enterprise platforms across multiple industries and
+                countries. I solve your toughest problems: regulatory
                 requirements, distributed teams, and complex architectures.
               </p>
             </div>
@@ -202,8 +202,8 @@ const Portfolio = () => {
         {/* Recruiter Call-to-Action Section */}
         <div className='mt-20'>
           <RecruiterCTA
-            headline='Looking for a Senior Full Stack Engineer?'
-            description='I bring 25+ years of experience in business management platforms, R&D PoC projects, and building teams that deliver.'
+            headline='Looking for a Staff Software Engineer?'
+            description="I'm looking for Staff-level engineering work on platforms that have to be secure and correct, remote from Johannesburg. If that sounds like your team, get in touch."
             primaryLink='/experience'
             primaryLabel='Full Experience'
           />
