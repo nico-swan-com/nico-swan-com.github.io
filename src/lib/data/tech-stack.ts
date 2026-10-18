@@ -42,7 +42,7 @@ export const highlightedTech: string[] = [
   'React/Next.js',
   'Angular',
   'PostgreSQL',
-  'MySQL',
+  'gRPC',
   'Microservices',
   'GCP',
   'Kubernetes',
@@ -68,11 +68,11 @@ export const coreTech: string[] = [
  * Domain expertise areas with highlight flags.
  */
 export const domainExpertise: DomainExpertise[] = [
-  { name: 'Business Management Platforms', highlight: true },
-  { name: 'R&D PoC Projects', highlight: true },
-  { name: 'Enterprise Architecture', highlight: false },
+  { name: 'API Security & Request Signing', highlight: true },
+  { name: 'Fintech & Payments Platforms', highlight: true },
+  { name: 'Solution Architecture', highlight: false },
   { name: 'Microservices & APIs', highlight: false },
-  { name: 'Team Leadership', highlight: true },
-  { name: 'Cloud Infrastructure', highlight: false },
-  { name: 'Security & ABAC', highlight: false }
+  { name: 'Technical Leadership', highlight: true },
+  { name: 'Cloud Infrastructure (GCP)', highlight: false },
+  { name: 'Authorisation & ABAC', highlight: false }
 ]

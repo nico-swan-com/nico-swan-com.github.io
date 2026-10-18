@@ -29,14 +29,14 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. I write the design down before I build, so other engineers can review, run and extend it without me.'
+  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, went live in production on 12 October 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',
-  phone: '+27 082 098 2759',
+  phone: '+27 82 098 2759',
   website: 'nicoswan.com',
   linkedin: 'linkedin.com/in/nicoswan',
-  location: 'South Africa'
+  location: 'Johannesburg, South Africa (remote)'
 }
 
 export const recentExperience: Experience[] = [
@@ -48,15 +48,16 @@ export const recentExperience: Experience[] = [
     description:
       'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Client API self-service, live in production on 12 Oct 2026 with first clients onboarding. I led the architecture and core delivery that moved client API authentication from long-lived Auth0 bearer tokens to Holder-of-Key signed requests (FAPI 1.0, Open Banking UK v4.0). Both gateways verify every signature with no bearer fallback, and enforce IP allow-lists.',
-      "Built auth-validator, a new gRPC service for service accounts, signing keys and signature checks. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record can't be stored. Sandbox median verify time was 16.5 to 18.1 ms.",
-      'Client Console: clients create service accounts, upload their own public keys and revoke them. PSD2 one-time passwords protect every change, and each service account is limited to one counterparty.',
-      'Delivered the CPN reverse API gateway so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails.',
-      'Delivered the Entitlements service, attribute-based access control with Cerbos as the policy engine, enforced through a shared NestJS guard in both client gateways.',
-      "Designed and delivered the four-eyes approval engine and the Admin Console controls that formed part of BCB's French EMI licence requirements.",
-      "Led the Admin Console upgrade from Angular 8 to 18 and Node 16 to 20, which delivered one of the company's main tech-debt KPIs.",
-      'Billing per billing entity and legal entity, which ended manual database fixes by Support. Wrote the billing PRD and data model; the core tables are in production and the HubSpot sync is next.',
-      'Wrote the RFCs, as-built docs and Support runbook for the auth work, and presented it at our Tech Day, streamed from London to South Africa.'
+      'Client API self-service, live in production since 12 Oct 2026, with the first clients onboarding. I led the architecture and core delivery that moved client API authentication from long-lived (29-day) Auth0 bearer tokens to Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0. Both API gateways verify every signature, with no bearer fallback, and enforce IP allow-lists.',
+      "Built a new gRPC verification service for service accounts, signing keys and signature checks, after another lead asked for a late change to the architecture. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record can't be stored. In sandbox testing the median verify time was 16.5 to 18.1 ms.",
+      'Client Console: clients create service accounts, upload their own public keys (BCB never holds the private key) and revoke them. PSD2 one-time passwords protect every change, and each service account is limited to one counterparty so a permission change cannot spread across clients.',
+      'Delivered a reverse API gateway for a new payments network integration, so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails. The business recognised me for this delivery.',
+      'Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways.',
+      "Designed and delivered the four-eyes approval engine for data-changing user actions, then built the Admin Console controls that formed part of BCB's French EMI licence requirements.",
+      "Led the Admin Console upgrade from Angular 8 to 18 and Node 16 to 20, a project widely seen as near-impossible at the start. It delivered one of the company's main tech-debt KPIs.",
+      'Billing per billing entity and per legal entity, which ended manual database fixes by Support. I wrote the billing PRD and data model; the core tables are in production and the HubSpot sync is next.',
+      'Wrote the RFCs, as-built docs and Support runbook for the auth work, and presented it at our Tech Day, streamed from London to South Africa.',
+      'Ran the team while my manager was on leave, mentored junior engineers, revived Tech Talk Fridays and built a detector for the Shai-Hulud supply-chain attack.'
     ],
     technologies: [
       'TypeScript',
@@ -65,7 +66,7 @@ export const recentExperience: Experience[] = [
       'Angular',
       'PostgreSQL',
       'gRPC',
-      'Cerbos',
+      'Express',
       'GCP Pub/Sub',
       'Kubernetes',
       'Docker',
@@ -78,7 +79,7 @@ export const recentExperience: Experience[] = [
     company: 'Artesi SA CC',
     period: 'Jan 2024 – Present',
     description:
-      'My own small consultancy, run alongside my full-time role and trading as Cygnus Labs (https://cygnus-labs.com/).',
+      'My own small consultancy, run part-time alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com). Current client: WetInk.',
     achievements: [
       "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
       'Built SARS VAT and FICA verification workflows into the platform.'
@@ -96,7 +97,7 @@ export const recentExperience: Experience[] = [
       'Redis'
     ],
     resumeDescription:
-      'My own small consultancy, run alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com).',
+      'My own small consultancy, run part-time alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com). Current client: WetInk.',
     resumeAchievements: [
       "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
       'Built SARS VAT and FICA verification workflows into the platform.'
@@ -116,9 +117,9 @@ export const recentExperience: Experience[] = [
     company: 'NTT Ltd. (formerly Dimension Data)',
     period: 'August 2015 – July 2021',
     description:
-      'Building customised capabilities into platforms such as Service-Now and engineering microservices to integrate with various platforms within our architecture. Leading a team of 13 members across South-Africa and Australia, managing three portfolios: Managed Networks, Managed Data Centres, and Communication and Collaboration.',
+      'Building customised capabilities into platforms such as ServiceNow and engineering microservices to integrate with various platforms within our architecture. Leading a team of 13 members across South Africa and Australia, managing three portfolios: Managed Networks, Managed Data Centres, and Communication and Collaboration.',
     achievements: [
-      'Building customised capabilities into Service-Now platform for one of the largest implementations',
+      'Building customised capabilities into ServiceNow platform for one of the largest implementations',
       'Engineering microservices to integrate with various platforms within our architecture',
       'Leading team of 13 members consisting of Business Analysts, Technical Analysts, ITSM Application Developers and portfolio Team Leads',
       'Managing day-to-day operations following project management framework and ensuring successful transition into regions',
@@ -137,9 +138,9 @@ export const recentExperience: Experience[] = [
       'Project Management'
     ],
     resumeDescription:
-      'Led a team of 13 members managing three portfolios (Managed Networks, Data Centres, Communication) and built customised capabilities into platforms like Service-Now.',
+      'Led a team of 13 members managing three portfolios (Managed Networks, Data Centres, Communication) and built customised capabilities into platforms like ServiceNow.',
     resumeAchievements: [
-      'Building customised capabilities into Service-Now platform for one of the largest implementations',
+      'Building customised capabilities into ServiceNow platform for one of the largest implementations',
       'Managing day-to-day operations following project management framework and ensuring successful transition into regions',
       'Received multiple awards for Professional Excellence, Technical Excellence, and recognising others (Dimension Data FY18 Winner)'
     ]
@@ -242,10 +243,10 @@ export const earlyCareerExperience: Experience[] = [
     company: 'IBM (Vallent Software Systems)',
     period: 'February 2004 – September 2007',
     description:
-      'Implemented Metrica software solutions. Transformed existing products into solutions via customization, integration, and developing interfaces to telecommunications network equipment. Managed the entire product cycle at various client sites across Europe and the Middle East.',
+      'Implemented Metrica software solutions. Transformed existing products into solutions via customisation, integration, and developing interfaces to telecommunications network equipment. Managed the entire product cycle at various client sites across Europe and the Middle East.',
     achievements: [
       'Deployed Metrica software solutions for telecommunications clients',
-      'Transformed existing products into solutions via customization, integration, and developing interfaces to telecommunications network equipment',
+      'Transformed existing products into solutions via customisation, integration, and developing interfaces to telecommunications network equipment',
       'Acted as administrator for various UNIX environments, creating shell, C, and PERL scripts',
       'Performed Informix database administration on client sites locally and via VPN',
       'Managed the entire product cycle at various client sites across Europe and the Middle East, from functional specification through customization, installation, commissioning, and acceptance',
@@ -307,6 +308,6 @@ export const impactMetrics = [
   {
     icon: TrendingUp,
     value: '$3.7M',
-    label: 'New revenue at TEOCO'
+    label: 'Revenue at TEOCO'
   }
 ]

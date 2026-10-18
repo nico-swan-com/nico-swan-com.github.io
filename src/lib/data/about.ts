@@ -1,17 +1,16 @@
 export const testimonials = [
   {
     name: 'John Andrews',
-    title:
-      'Senior Colleague at NTT/Dimension Data, then Practice Lead @ Accenture',
-    relationship: 'Senior colleague at NTT/Dimension Data',
+    title: 'Strategic & Enterprise Accounts, Southeast Asia, Planview',
+    relationship: 'Senior colleague at NTT/Dimension Data at the time',
     date: 'July 2021',
     quote:
       "Nico is a smart thinking professional, technology savvy, with the business acumen and execution focus to make a real difference in any team, function or organisation. Moreover, he's able to communicate in an engaging way, bringing people along with him in a collaborative and open style. Nico has high ambitions, has achieved a great deal, and no doubt will continue to deliver against his ambitions, being an asset to whatever organisation he works with."
   },
   {
     name: 'Brian White',
-    title: 'then VP New Product Introduction, TEOCO/AIRCOM (direct manager)',
-    relationship: 'Direct manager at TEOCO/AIRCOM',
+    title: 'Vice President New Product Introduction for the Americas, Ericsson',
+    relationship: 'My direct manager at TEOCO/AIRCOM at the time',
     date: 'April 2014',
     quote:
       'Nico was a pivotal leader in the delivery of perhaps the largest Telecom Performance Management platform deployed to date. He took on increasingly important positions and surpassed expectations in each role. His work ethic and professionalism are second to none. I look forward to the opportunity to work with Nico again in future.'
@@ -49,6 +48,6 @@ export const about = {
   philosophy: {
     title: 'My Core Philosophy',
     description:
-      'I think of software as digital woodworking. You measure twice and care about structural integrity before the finish. In a payments platform the joints are the unglamorous parts: who is allowed to do what, what gets written to the audit log, and what happens when a dependency is down. I get those right first, then write them down so the next person can work on it without me.'
+      'Software engineering is digital woodworking. It takes patience, precision and an obsession with structural integrity. In a payments platform the joints are the unglamorous parts: who is allowed to do what, what goes into the audit log, and what happens when a dependency is down. I get those right first and write them down, so the system still holds years later, when someone else is working on it.'
   }
 }

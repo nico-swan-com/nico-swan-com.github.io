@@ -55,8 +55,8 @@ const About = () => {
               >
                 Cygnus Labs
               </a>
-              , building business software for a handful of South African
-              clients.
+              , building business software for small businesses in South Africa.
+              My current client is WetInk.
             </p>
           </div>
 
@@ -119,26 +119,28 @@ const About = () => {
               <div className='flex items-center gap-2'>
                 <Rocket className='size-5 text-accent' />
                 <h3 className='text-xl font-semibold text-primary'>
-                  Enterprise Architecture
+                  Solution Architecture
                 </h3>
               </div>
               <p className='text-secondary'>
-                Designing three-layer architectures, microservices, and
-                event-driven systems. Experience with feature-based code
-                organization that scales with team size and complexity.
+                I design services and the boundaries between them, then write it
+                down as RFCs, PRDs and as-built docs. At BCB that has covered
+                client API signing, authorisation, four-eyes approvals and
+                billing.
               </p>
             </div>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
                 <Shield className='size-5 text-accent' />
                 <h3 className='text-xl font-semibold text-primary'>
-                  Regulatory Compliance
+                  Building Inside Regulation
                 </h3>
               </div>
               <p className='text-secondary'>
-                Deep experience with ABAC/RBAC authorization, approval
-                workflows, audit trails, and financial compliance (EMI
-                licensing, SARS VAT, FICA). I understand what regulators need.
+                Most of my recent work sits under a licence: attribute-based
+                authorisation, four-eyes approvals, PSD2 one-time passwords and
+                audit trails at BCB, and SARS VAT and FICA checks for a South
+                African client. I build the controls in from the start.
               </p>
             </div>
             <div className='space-y-4'>
@@ -151,7 +153,8 @@ const About = () => {
               <p className='text-secondary'>
                 Led a 34-person engineering department across the US and India
                 (TEOCO) and a 13-person team of analysts and developers across
-                South Africa and Australia (NTT).
+                South Africa and Australia (NTT). Today I work remotely from
+                Johannesburg with a London-based team.
               </p>
             </div>
             <div className='space-y-4'>
@@ -162,9 +165,11 @@ const About = () => {
                 </h3>
               </div>
               <p className='text-secondary'>
-                Every technical decision tied to business outcomes. Track record
-                of generating revenue ($3.7M+), reducing costs, and delivering
-                capabilities that unlock business opportunities (EMI license).
+                I tie technical work to something the business can see. At TEOCO
+                that was $3M in support revenue on a $20M project and $700K from
+                professional services. At BCB it was French EMI licence
+                controls, and billing changes that ended manual database fixes
+                by Support.
               </p>
             </div>
           </div>
@@ -223,8 +228,8 @@ const About = () => {
 
         {/* Recruiter Call-to-Action */}
         <RecruiterCTA
-          headline="Let's Build Something Great"
-          description="Looking for a senior engineer who can architect solutions, lead teams, and deliver business value? Let's talk about how I can contribute to your organisation."
+          headline='Hiring a Staff Engineer?'
+          description="I'm looking for a remote Staff Software Engineer role on a fintech platform: API security, authorisation, payments or billing. Have a look at my experience, or message me on LinkedIn."
           primaryLink='/experience'
           primaryLabel='View Experience'
           showTechBadges={false}

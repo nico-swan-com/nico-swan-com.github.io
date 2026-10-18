@@ -51,7 +51,7 @@ interface RecruiterCTAProps {
  */
 export function RecruiterCTA({
   headline = 'Interested in Working Together?',
-  description = "I'm looking for Staff-level engineering work on platforms that have to be secure and correct, remote from Johannesburg. If that sounds like your team, get in touch.",
+  description = "I'm looking for Staff-level engineering work on fintech platforms that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time. If that sounds like your team, get in touch.",
   primaryLink = '/portfolio',
   primaryLabel = 'View Portfolio',
   showTechBadges = true,

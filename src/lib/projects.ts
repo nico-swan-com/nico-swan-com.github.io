@@ -18,12 +18,12 @@ export const projects: Project[] = [
     id: 'artiverse-galleria',
     title: 'Artiverse Galleria',
     description:
-      'Portfolio demonstration project: A full-stack e-commerce art gallery platform built with Next.js 16, showcasing modern architecture patterns, security best practices, and enterprise-grade features.',
-    longDescription: `Artiverse Galleria is a portfolio demonstration project showcasing full-stack development capabilities through a comprehensive e-commerce platform designed for art galleries. This project demonstrates proficiency in modern web technologies, architectural patterns, and enterprise-grade security implementations.
+      'A demonstration project that shows how I structure a full-stack app: an e-commerce art gallery on Next.js 16 with role-based access, rate limiting and an image-processing pipeline.',
+    longDescription: `Artiverse Galleria is a demonstration project: an e-commerce platform for art galleries that I built to show how I put a full-stack app together.
 
-The application features a feature-based architecture that promotes scalability and maintainability. It implements a three-layer pattern (Repository → Service → Action) ensuring clean separation of concerns. The platform includes advanced features like image processing with watermarking, rate limiting for API protection, role-based access control, and comprehensive security measures.
+The application features a feature-based architecture that promotes scalability and maintainability. It implements a three-layer pattern (Repository → Service → Action) ensuring clean separation of concerns. It includes image processing with watermarking, rate limiting on the API, role-based access control, security headers and CSRF protection.
 
-Why this project? Built to demonstrate expertise in: modern React/Next.js patterns, TypeScript best practices, database design with Drizzle ORM, authentication flows with NextAuth.js v5, image processing pipelines, and production-ready architecture patterns.`,
+I built it to work through current Next.js and React patterns, database design with Drizzle ORM, authentication with NextAuth.js v5 and an image-processing pipeline, end to end.`,
     technologies: [
       'Next.js 16',
       'TypeScript',
@@ -47,7 +47,7 @@ Why this project? Built to demonstrate expertise in: modern React/Next.js patter
       'Automated order processing',
       'PayFast payment integration',
       'Media management with bytea storage',
-      'Comprehensive admin dashboard',
+      'Admin dashboard',
       'Artist profile management',
       'Product catalogue with advanced filtering',
       'Security headers and CSRF protection',
@@ -73,9 +73,9 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
       'Managing complex state across multiple features'
     ],
     achievements: [
-      'Demonstrates production-ready e-commerce platform development',
-      'Showcases clean separation of concerns with three-layer architecture',
-      'Implements comprehensive security measures including rate limiting and CSRF protection',
+      'Code organised by feature, in three layers (repository, service, action), so a new feature slots in without touching the rest',
+      'Clear separation between data access, business logic and server actions',
+      'Rate limiting, security headers and CSRF protection built in',
       'Features scalable feature-based architecture supporting easy feature additions',
       'Includes optimised image processing pipeline with automatic format conversion',
       'Demonstrates admin dashboard patterns with role-based permissions'
@@ -83,131 +83,108 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
   },
   {
     id: 'bcb-entitlements-platform',
-    title: 'BCB Entitlements & Authorization Platform',
+    title: 'Client API Security & Authorisation (BCB Group)',
     description:
-      'Enterprise-grade attribute-based access control (ABAC) system that enabled BCB Group to secure their French EMI licence. Powers authorisation across the entire banking technology stack.',
-    longDescription: `Developed a comprehensive Entitlements capability for BCB Group, a regulated financial services company. This platform implements attribute-based policy-driven security for authorisation across the entire technology stack.
-        
-The system was critical to BCB Group securing their French Electronic Money Institution (EMI) licence, demonstrating its compliance with stringent European financial regulations. The platform handles complex authorisation scenarios across microservices, ensuring that every action within the banking system is properly authorised based on user attributes, roles, and contextual policies.
+      'Signed client API requests, self-service keys and attribute-based authorisation for a regulated crypto and payments group. Client API signing went live in production on 12 October 2026.',
+    longDescription: `BCB Group is a regulated crypto and payments group. I work on the platform team, on the services that decide who can call the client APIs and what they are allowed to do.
 
-This project showcases deep expertise in financial services security, regulatory compliance, and enterprise architecture patterns essential for banking technology.`,
+In 2022 I delivered the entitlements capability: attribute-based access control, with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways. I've since advised other teams on using it.
+
+In 2026 I led the architecture and core delivery of client API self-service. Clients used to authenticate with long-lived (29-day) Auth0 bearer tokens. Now each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. It went live in production on 12 October 2026 and the first clients are onboarding. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
     technologies: [
       'TypeScript',
       'Node.js',
-      'Microservices',
+      'NestJS',
+      'Express',
+      'gRPC',
+      'PostgreSQL',
+      'GCP Pub/Sub',
       'ABAC (Attribute-Based Access Control)',
       'Policy Engine',
-      'REST APIs',
-      'PostgreSQL',
-      'Docker',
-      'Kubernetes',
-      'Event-Driven Architecture'
+      'Detached JWS (PS256/ES256)',
+      'Kubernetes'
     ],
     imageUrl: '/placeholder.svg',
     features: [
-      'Attribute-Based Access Control (ABAC) implementation',
-      'Policy-driven authorisation engine',
-      'Cross-service authorisation propagation',
-      'Audit logging for regulatory compliance',
-      'Fine-grained permission management',
-      'Real-time policy evaluation',
-      'Integration with existing authentication systems',
-      'Compliance reporting dashboards',
-      'Role hierarchy management',
-      'Contextual access decisions'
+      'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0',
+      'Signature checks on both client API gateways, with no bearer-token fallback',
+      'Replay protection: each signed request is accepted once',
+      'Audit log of every allow and deny decision, kept for at least 12 months',
+      'Fail-closed: a request is refused if its replay or audit record cannot be stored',
+      'Client self-service in the console: service accounts, public-key upload (CSR/PEM) and key revocation',
+      'PSD2 one-time passwords on every service-account and key change',
+      'IP allow-lists on both gateways',
+      'Attribute-based access control with a central policy decision point',
+      'Shared NestJS guard library for policy enforcement'
     ],
-    architecture: `The entitlements platform follows a centralized policy decision point (PDP) architecture with distributed policy enforcement points (PEP) across all microservices.
+    architecture: `Authorisation uses a central policy decision point: an open-source policy engine behind a gRPC service. Each client API gateway enforces its decisions through a shared guard library.
 
-Key architectural components:
-1. Policy Decision Point (PDP): Central service that evaluates access requests against defined policies
-2. Policy Enforcement Points (PEPs): Middleware integrated into each microservice
-3. Policy Administration Point (PAP): Admin interface for managing policies and attributes
-4. Policy Information Point (PIP): Aggregates user and resource attributes from various sources
-
-The system uses an event-driven approach for attribute synchronization and implements caching strategies to minimize latency in authorization decisions.`,
+Request signing adds a verification step in front of that:
+1. The client signs each request with its own private key (detached JWS, PS256 or ES256). BCB only ever holds the public key.
+2. The gateway (a NestJS guard in one stack, Express middleware in the other) sends the signature to a gRPC verification service.
+3. The service checks the key, the signature and a single-use transaction number stored in PostgreSQL, so a replayed request is rejected.
+4. Every allow or deny is written to an audit log with a SHA-256 hash of the signed bytes, through GCP Pub/Sub, with a synchronous fallback for large payloads.
+5. If the replay store or the audit write fails, the request is refused.`,
     challenges: [
-      'Designing a system that meets stringent financial regulatory requirements',
-      'Implementing low-latency authorisation across distributed microservices',
-      'Creating a flexible policy language that non-technical compliance officers can understand',
-      'Ensuring complete audit trails for regulatory audits',
-      'Migrating from legacy RBAC to ABAC without service disruption'
+      'Redesigning the architecture late in the project, after another lead asked for a change, and still shipping a new greenfield service',
+      'Adding PSD2 one-time passwords and a one-counterparty limit per service account part-way through delivery',
+      'Applying the same security rules across two gateway stacks, NestJS and Express',
+      'Keeping signature verification fast: in sandbox testing the median verify time was 16.5 to 18.1 ms'
     ],
     achievements: [
-      'Critical contribution to BCB Group securing French EMI licence',
-      'Sub-millisecond authorisation decisions across the stack',
-      'Zero security incidents since deployment',
-      'Reduced compliance audit preparation time by 60%',
-      'Enabled complex multi-tenancy scenarios for enterprise clients'
+      'Client API signing live in production since 12 October 2026, with the first clients onboarding',
+      'The UAT test client found the console easy to use and said the documentation was spot on',
+      'Delivered the entitlements capability by its September 2022 target',
+      'Wrote the RFC set, as-built architecture docs and Support runbook, and presented the design at our Tech Day'
     ]
   },
   {
     id: 'bcb-approval-workflow',
-    title: 'Four-Eye Approval Workflow System',
+    title: 'Four-Eyes Approval Engine (BCB Group)',
     description:
-      'Financial-grade approval workflow implementing four-eye principle for all data-modifying operations. Safeguards against internal fraud and meets banking regulatory requirements.',
-    longDescription: `Designed and implemented a comprehensive approval workflow system for BCB Group that requires a four-eye process for any user actions that change data. This system is essential for safeguarding against internal fraud and meeting banking regulatory requirements.
+      "An approval engine that makes a second person sign off data-changing actions in BCB's internal consoles. The Admin Console controls built on it formed part of BCB's French EMI licence requirements.",
+    longDescription: `In the second half of 2023 I designed and delivered a new four-eyes approval engine for BCB Group. A user action that changes data goes to a second person for approval before it takes effect, which protects against mistakes and internal fraud.
 
-The workflow engine handles complex approval scenarios including multi-level approvals, delegation, escalation, and time-based expiration. It integrates seamlessly with all internal consoles and microservices, ensuring that no critical data modification can occur without proper authorisation and review.
-
-This capability was instrumental in BCB Group obtaining their French EMI licence, demonstrating the company's commitment to operational security and regulatory compliance.`,
+Integrating it with the existing payment workflow service took far more work than planned, and taught me a lot about the payments flow and event sourcing. In 2024 I extended it and built the Admin Console controls that formed part of BCB's French EMI licence requirements.`,
     technologies: [
       'TypeScript',
       'Node.js',
-      'React',
+      'NestJS',
+      'Angular',
       'PostgreSQL',
-      'Message Queues',
       'Event Sourcing',
-      'CQRS',
-      'WebSockets',
       'REST APIs'
     ],
     imageUrl: '/placeholder.svg',
     features: [
-      'Four-eye principle enforcement',
-      'Multi-level approval chains',
-      'Delegation and escalation workflows',
-      'Time-based approval expiration',
-      'Complete audit trail',
-      'Real-time notification system',
-      'Approval analytics dashboard',
-      'Integration with existing services',
-      'Role-based approval routing',
-      'Bulk approval capabilities'
+      'Four-eyes approval for data-changing user actions',
+      'Approval flow from the console UI through the API gateway to the approval engine',
+      'Integration with the existing payment workflow service and the legacy API',
+      'Admin Console controls for French EMI licence requirements',
+      'Approvals for account fee edits'
     ],
-    architecture: `The approval workflow system implements an event-sourced architecture ensuring complete auditability and the ability to reconstruct the approval history at any point.
-
-The system consists of:
-1. Workflow Engine: Manages approval state transitions and routing
-2. Notification Service: Handles real-time and email notifications
-3. Audit Service: Records all approval events for compliance
-4. Integration Layer: Connects with all data-modifying services
-
-CQRS pattern separates read and write operations, allowing for optimised query patterns for approval dashboards while maintaining strict consistency for approval decisions.`,
+    architecture: `A request that changes data goes from the console UI through the API gateway to the approval engine. The engine holds the change until a second, authorised person approves it, then passes it to the existing payment workflow service or the legacy API to apply.`,
     challenges: [
-      'Ensuring zero-downtime deployment for a critical financial system',
-      'Handling complex approval scenarios with multiple conditional branches',
-      'Implementing real-time notifications across multiple channels',
-      'Maintaining performance with complete event sourcing',
-      'Integrating with legacy systems that had no approval concepts'
+      'Integrating approvals with an existing payment workflow service, a much bigger job than planned',
+      'Adding approvals to legacy endpoints that had no concept of them',
+      'Meeting French EMI licence control requirements in the Admin Console'
     ],
     achievements: [
-      'Key contribution to French EMI licence approval',
-      'Zero internal fraud incidents since implementation',
-      '99.99% system availability',
-      'Processes over 10,000 approvals daily',
-      'Reduced approval cycle time by 40% through workflow optimisation'
+      'Designed and delivered the new four-eyes approval engine in the second half of 2023',
+      "Built the Admin Console controls that formed part of BCB's French EMI licence requirements (2024)",
+      'Extended the engine in 2024, including approvals for account fee edits'
     ]
   },
   {
     id: 'ntt-servicenow-platform',
     title: 'Enterprise ServiceNow Implementation',
     description:
-      'Led one of the largest ServiceNow implementations globally, building customised capabilities and integrations for NTT/Dimension Data serving millions of users across managed networks and data centres.',
-    longDescription: `As R&D Software Engineer and Senior Services Manager at NTT Ltd. (formerly Dimension Data), led the development of customised capabilities for one of the largest ServiceNow implementations in the world.
+      "Custom ServiceNow capabilities and integration microservices for NTT's global managed services, built while leading a 13-person team across South Africa and Australia.",
+    longDescription: `At NTT Ltd. (formerly Dimension Data) I was an R&D software engineer and later a Senior Services Manager. I built custom capabilities on one of the largest ServiceNow implementations, and microservices that connected it to other platforms in NTT's architecture.
 
-This platform serves NTT's global managed services operations across Managed Networks, Managed Data Centres, and Communication and Collaboration portfolios. Led a team of 13 members across South Africa and Australia, ensuring successful delivery and regional transitions.
+The platform supported NTT's global managed services across three portfolios: Managed Networks, Managed Data Centres, and Communication and Collaboration. I led a team of 13 business analysts, technical analysts, ITSM developers and team leads across South Africa and Australia, and handed solutions over to the regions.
 
-Recognised with multiple excellence awards including Dimension Data FY18 Quarterly winner for Professional Excellence, demonstrating exceptional technical and leadership capabilities.`,
+I was a Dimension Data FY18 quarterly winner for Professional Excellence.`,
     technologies: [
       'ServiceNow',
       'JavaScript',
@@ -241,14 +218,14 @@ Key architectural decisions:
 3. Reporting Layer: Real-time dashboards and analytics for operations
 4. CMDB: Extended configuration management for network and data centre assets`,
     challenges: [
-      'Scaling ServiceNow for one of the world largest implementations',
+      'Building on one of the largest ServiceNow implementations',
       'Integrating with diverse legacy systems across multiple regions',
       'Managing development team across multiple continents and time zones',
       'Ensuring ITIL compliance while meeting custom business requirements',
       'Transitioning solutions to regional teams with different skill levels'
     ],
     achievements: [
-      'Delivered one of the largest ServiceNow implementations globally',
+      'Built custom capabilities for one of the largest ServiceNow implementations',
       'Led team of 13 across South Africa and Australia',
       'Won Dimension Data FY18 Quarterly Award for Professional Excellence',
       'Received 3 recognition awards for Professional Excellence, Technical Excellence, and Recognising Others',
@@ -259,12 +236,10 @@ Key architectural decisions:
     id: 'teoco-support-operations',
     title: 'Global 24/7 Support Operations',
     description:
-      'Built and managed a $3.7M revenue-generating support organisation with 34 engineers across US and India, serving enterprise telecommunications clients including AT&T.',
-    longDescription: `At TEOCO (formally AIRCOM International), established and managed a world-class 24/7 technical support organisation from the ground up. This department served major telecommunications clients including AT&T, delivering custom solutions and enterprise support.
+      'Set up and ran a 24/7 support department of 34 engineers across the US and India for enterprise telecoms clients, including AT&T: $3M in support revenue on a $20M project, plus $700K from professional services.',
+    longDescription: `At TEOCO (formerly AIRCOM International) I set up and managed a 24/7 technical support department for telecoms clients, including AT&T. I recruited, onboarded and coached the team, and wrote the processes it ran on.
 
-Generated significant revenue through both support services ($3M on a $20M project) and professional services ($700K in custom solutions). Built the team from scratch, implementing processes, training programs, and operational excellence frameworks.
-
-This role demonstrates strong leadership capabilities, revenue generation, and the ability to build high-performing teams across multiple time zones and cultures.`,
+Support services brought in $3M on a $20M project. I also set up a Professional Services team for AT&T that brought in a further $700K by building custom solutions. After three years I merged the department into the regional support group.`,
     technologies: [
       'ITIL',
       'Telecommunications',
@@ -290,7 +265,7 @@ This role demonstrates strong leadership capabilities, revenue generation, and t
       'Change control management',
       'Data quality assurance'
     ],
-    architecture: `Built a scalable support organisation following ITIL best practices:
+    architecture: `Built the support organisation on ITIL practice:
 
 1. Tier Structure: Three-tier support model with clear escalation paths
 2. Follow-the-Sun: 24/7 coverage with teams in US and India
@@ -316,7 +291,7 @@ This role demonstrates strong leadership capabilities, revenue generation, and t
     id: 'incidentia-platform',
     title: 'Incidentia BI & Analytics Platform',
     description:
-      'Business intelligence platform for human capital management, productivity analytics, and process management. Built as Technical Consultant for Artesi SA CC (2014-2024).',
+      'Business intelligence platform for human capital management, productivity analytics, and process management. Built as technical consultant for Artesi SA CC.',
     longDescription: `As Technical Consultant and Product Developer for Artesi SA, architected and developed Incidentia, a business intelligence and analytics platform focused on human capital management, productivity tracking, and process management.
 
 Implemented AGILE and LEAN methodologies, provided system architecture direction, and developed the platform's UX v2, RESTful APIs, microservices architecture, and dashboard components.
@@ -362,7 +337,7 @@ This contract work laid the foundation for a long-term relationship that eventua
       'Balancing feature requests with platform stability'
     ],
     achievements: [
-      'Successfully launched Incidentia v2 with modernized UX',
+      'Launched Incidentia v2 with a new UX',
       'Implemented AGILE and LEAN methodologies across the development cycle',
       'Designed scalable microservices architecture',
       'Established product roadmap and technical direction',
@@ -375,7 +350,7 @@ This contract work laid the foundation for a long-term relationship that eventua
     title: 'Enterprise Business Management Platform',
     description:
       'Full-stack enterprise platform replacing a legacy FileMaker system for a South African company. Features SARS VAT compliance, FICA verification, order management, production workflows, and secure client file uploads.',
-    longDescription: `Acquired Artesi SA CC to deliver this comprehensive business management platform for a South African client. The platform replaces a legacy FileMaker system that suffered from desktop-only access, poor performance, and high operational risk.
+    longDescription: `Acquired Artesi SA CC to deliver this business management platform for a South African client. The platform replaces a legacy FileMaker system that suffered from desktop-only access, poor performance, and high operational risk.
 
 The new solution provides universal web accessibility, role-based workflows, complete SARS VAT and FICA compliance, secure file handling via MinIO (S3), and integration with payment gateways and SMS services.
 

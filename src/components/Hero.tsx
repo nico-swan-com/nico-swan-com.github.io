@@ -47,8 +47,8 @@ const Hero = () => {
         >
           I design and build the parts of a financial platform that have to be
           right the first time: who can call an API, who can approve a payment,
-          and what a client gets billed. Based in Johannesburg, working remotely
-          with teams in UK and US hours.
+          and what a client gets billed. I work remotely from Johannesburg,
+          South Africa, and my day overlaps UK and US Eastern hours.
         </p>
 
         <HeroActions isVisible={isVisible} />

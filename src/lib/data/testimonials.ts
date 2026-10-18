@@ -8,10 +8,9 @@ export const testimonials: Testimonial[] = [
   {
     id: 'john-andrews',
     name: 'John Andrews',
-    title:
-      'Senior Colleague at NTT/Dimension Data, then Practice Lead @ Accenture',
-    role: 'then Practice Lead @ Accenture',
-    relationship: 'Senior colleague at NTT/Dimension Data',
+    title: 'Strategic & Enterprise Accounts, Southeast Asia, Planview',
+    role: 'Planview; senior colleague at NTT/Dimension Data at the time',
+    relationship: 'Senior colleague at NTT/Dimension Data at the time',
     date: 'July 2021',
     quote:
       "Nico is a smart thinking professional, technology savvy, with the business acumen and execution focus to make a real difference in any team, function or organisation. Moreover, he's able to communicate in an engaging way, bringing people along with him in a collaborative and open style. Nico has high ambitions, has achieved a great deal, and no doubt will continue to deliver against his ambitions, being an asset to whatever organisation he works with."
@@ -19,9 +18,9 @@ export const testimonials: Testimonial[] = [
   {
     id: 'brian-white',
     name: 'Brian White',
-    title: 'then VP New Product Introduction, TEOCO/AIRCOM (direct manager)',
-    role: 'then VP New Product Introduction, TEOCO/AIRCOM',
-    relationship: 'Direct manager at TEOCO/AIRCOM',
+    title: 'Vice President New Product Introduction for the Americas, Ericsson',
+    role: 'Ericsson; my direct manager at TEOCO/AIRCOM at the time',
+    relationship: 'My direct manager at TEOCO/AIRCOM at the time',
     date: 'April 2014',
     quote:
       'Nico was a pivotal leader in the delivery of perhaps the largest Telecom Performance Management platform deployed to date. He took on increasingly important positions and surpassed expectations in each role. His work ethic and professionalism are second to none. I look forward to the opportunity to work with Nico again in future.'

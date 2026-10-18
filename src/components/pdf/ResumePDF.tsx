@@ -151,7 +151,9 @@ export const ResumePDF = () => (
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.name}>Nico Swan</Text>
-        <Text style={styles.title}>Staff Software Engineer</Text>
+        <Text style={styles.title}>
+          Staff Software Engineer | Fintech platforms, API security and payments
+        </Text>
         <View style={styles.contact}>
           <Text>{contactInfo.email}</Text>
           <Text>|</Text>

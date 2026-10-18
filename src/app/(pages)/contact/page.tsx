@@ -39,7 +39,7 @@ const Contact = () => {
     const body = encodeURIComponent(
       `Name: ${formState.name}\nEmail: ${formState.email}\nCompany: ${formState.company}\nRole Type: ${formState.roleType}\n\nMessage:\n${formState.message}`
     )
-    window.location.href = `mailto:nico@nicoswan.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:hi@nicoswan.com?subject=${subject}&body=${body}`
 
     setTimeout(() => {
       setIsSubmitting(false)
@@ -74,9 +74,8 @@ const Contact = () => {
                 Let&apos;s Work Together
               </h1>
               <p className='max-w-2xl text-lg text-secondary'>
-                Looking for a senior engineer who can architect solutions, lead
-                teams, and deliver business value? I&apos;d love to hear about
-                your opportunity.
+                Hiring a Staff Software Engineer for a fintech platform? Tell me
+                about the role, the team and the problem you need solved.
               </p>
             </div>
           </div>
@@ -276,7 +275,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href='mailto:nico@nicoswan.com'
+                  href='mailto:hi@nicoswan.com'
                   className='flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-accent/10'
                 >
                   <div className='rounded-lg bg-accent/10 p-2'>
@@ -284,7 +283,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className='font-medium text-primary'>Email</p>
-                    <p className='text-sm text-secondary'>nico@nicoswan.com</p>
+                    <p className='text-sm text-secondary'>hi@nicoswan.com</p>
                   </div>
                   <ArrowRight className='ml-auto size-4 text-muted-foreground' />
                 </a>
@@ -296,7 +295,7 @@ const Contact = () => {
                   <div>
                     <p className='font-medium text-primary'>Location</p>
                     <p className='text-sm text-secondary'>
-                      South Africa (Remote-friendly)
+                      Johannesburg, South Africa (remote)
                     </p>
                   </div>
                 </div>
@@ -308,7 +307,7 @@ const Contact = () => {
                   <div>
                     <p className='font-medium text-primary'>Timezone</p>
                     <p className='text-sm text-secondary'>
-                      SAST (UTC+2) • Flexible for global teams
+                      SAST (UTC+2) • overlaps UK and US Eastern hours
                     </p>
                   </div>
                 </div>
@@ -327,19 +326,20 @@ const Contact = () => {
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
-                      Senior/Lead Full Stack Developer roles
+                      Staff Software Engineer roles
                     </span>
                   </li>
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
-                      Business management platforms and R&D PoC projects
+                      Fintech platforms: API security, authorisation, payments
+                      and billing
                     </span>
                   </li>
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
-                      Remote or hybrid arrangements
+                      Fully remote, from Johannesburg
                     </span>
                   </li>
                   <li className='flex items-start gap-2'>
@@ -351,7 +351,7 @@ const Contact = () => {
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
-                      Technical leadership opportunities
+                      Technical leadership on platform and architecture work
                     </span>
                   </li>
                 </ul>
