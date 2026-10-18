@@ -29,7 +29,7 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Senior Full Stack Engineer & Architect delivering secure, regulatory-compliant financial platforms (EMI/SARS). Expert in contributing at a high level to company platform and architecture using TypeScript, Node.js, and Cloud-Native architectures. Proven track record of leading distributed teams and driving revenue growth through technical excellence.'
+  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. I write the design down before I build, so other engineers can review, run and extend it without me.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',
@@ -46,44 +46,42 @@ export const recentExperience: Experience[] = [
     company: 'BCB Group',
     period: 'July 2021 – Present',
     description:
-      'Senior Full Stack Engineer within the financial industry, placing strong emphasis on regulatory compliance and security. Platformized the Entitlements capability, enabling multiple disconnected teams to inherit complex ABAC security controls without rewriting code. Engineering and maintaining microservices and internal UI consoles essential for delivering business banking services.',
+      'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Settlements Console Ownership: Took full ownership of the settlements console, used internally to manage client payments and deposits. Streamlined and standardised UI components, resulting in a more maintainable codebase. Enhanced user experience by applying UX principles, improving overall usability',
-      'Entitlements Capability: Platformized the Entitlements capability, enabling multiple disconnected teams to inherit complex ABAC security controls without rewriting code. This capability met regulatory compliance which facilitated BCB securing a French EMI licence',
-      'Approval Flow Capability: Devised and deployed an approval workflow that requires a four-eye process for any user actions that change data, safeguarding against internal fraud. This was instrumental in obtaining the French EMI licence',
-      'Billing Capability: Built a comprehensive billing capability spanning multiple functions, ensuring reliable and flexible invoicing for clients through the integration of best practices',
-      'Maintained focus on regulatory compliance and security throughout the entire development lifecycle',
-      'Acted as the SME for managing and maintaining the authentication ecosystem within the whole tech stack, taking full ownership of repositories, release cycles, and system support.',
-      'Architected for long-term stability and prevented future incidents across the system by designing fault-tolerant, fail-closed audit logs and replay defenses.',
-      'Championed improvements to the development lifecycle by shifting security verification to the gateways, ensuring robust processes are in place so reliability does not depend on individual heroics.',
-      'Contributed at a high level to company platform and architecture by publishing technical RFCs and leading the Holder-of-Key security implementation.'
+      'Client API self-service, live in production on 12 Oct 2026 with first clients onboarding. I led the architecture and core delivery that moved client API authentication from long-lived Auth0 bearer tokens to Holder-of-Key signed requests (FAPI 1.0, Open Banking UK v4.0). Both gateways verify every signature with no bearer fallback, and enforce IP allow-lists.',
+      "Built auth-validator, a new gRPC service for service accounts, signing keys and signature checks. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record can't be stored. Sandbox median verify time was 16.5 to 18.1 ms.",
+      'Client Console: clients create service accounts, upload their own public keys and revoke them. PSD2 one-time passwords protect every change, and each service account is limited to one counterparty.',
+      'Delivered the CPN reverse API gateway so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails.',
+      'Delivered the Entitlements service, attribute-based access control with Cerbos as the policy engine, enforced through a shared NestJS guard in both client gateways.',
+      "Designed and delivered the four-eyes approval engine and the Admin Console controls that formed part of BCB's French EMI licence requirements.",
+      "Led the Admin Console upgrade from Angular 8 to 18 and Node 16 to 20, which delivered one of the company's main tech-debt KPIs.",
+      'Billing per billing entity and legal entity, which ended manual database fixes by Support. Wrote the billing PRD and data model; the core tables are in production and the HubSpot sync is next.',
+      'Wrote the RFCs, as-built docs and Support runbook for the auth work, and presented it at our Tech Day, streamed from London to South Africa.'
     ],
     technologies: [
       'TypeScript',
       'Node.js',
-      'React',
+      'NestJS',
+      'Angular',
       'PostgreSQL',
-      'Microservices',
-      'REST APIs',
+      'gRPC',
+      'Cerbos',
+      'GCP Pub/Sub',
+      'Kubernetes',
       'Docker',
-      'Google Cloud Platform',
-      'ABAC/RBAC',
-      'Event-Driven Architecture'
+      'GitLab CI/CD'
     ]
   },
   {
     id: 3,
-    role: 'Principal Architect (Concurrent)',
+    role: 'Principal Architect (part-time, own consultancy)',
     company: 'Artesi SA CC',
     period: 'Jan 2024 – Present',
     description:
-      'Architected and delivered the flagship "Enterprise Business Management Platform". Strategically migrated from legacy FileMaker to Cloud-Native, prioritizing robust, boring technology (PostgreSQL, MinIO) over hype to ensure long-term maintainability and solving the business problem faster.',
+      'My own small consultancy, run alongside my full-time role and trading as Cygnus Labs (https://cygnus-labs.com/).',
     achievements: [
-      'Architecting full-stack solution: Next.js frontend, NestJS backend, PostgreSQL, MinIO (S3)',
-      'Enforcing South African regulatory compliance (SARS VAT, FICA customer verification)',
-      'Structuring role-based workflows for intake, production, and management staff',
-      'Building secure client file upload portal replacing third-party file transfer services',
-      'Managing complete project lifecycle: requirements, architecture, development, and deployment'
+      "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
+      'Built SARS VAT and FICA verification workflows into the platform.'
     ],
     technologies: [
       'TypeScript',
@@ -97,10 +95,11 @@ export const recentExperience: Experience[] = [
       'SARS/FICA Compliance',
       'Redis'
     ],
-    resumeDescription: '',
+    resumeDescription:
+      'My own small consultancy, run alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com).',
     resumeAchievements: [
-      'Strategically migrated from legacy FileMaker to Cloud-Native, prioritizing robust, boring technology (PostgreSQL, MinIO) over hype to ensure long-term maintainability.',
-      'Integrated SARS VAT compliance and FICA verification workflows, ensuring 100% regulatory adherence within a secure environment.'
+      "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
+      'Built SARS VAT and FICA verification workflows into the platform.'
     ],
     resumeTechnologies: [
       'TypeScript',
@@ -268,121 +267,20 @@ export const earlyCareerExperience: Experience[] = [
   },
   {
     id: 7,
-    role: 'Contractor, Analyst / Software Developer',
-    company: 'Venditor Auctioneers Ltd.',
-    period: 'November 2002 – August 2003',
+    role: 'Earlier Engineering & Systems Roles',
+    company: 'Various (South Africa)',
+    period: '1996 – 2003',
     description:
-      'Contract role providing software development and analysis services for auction systems and business applications.',
+      'Earlier roles: developer, analyst and systems administration in South Africa.',
     achievements: [
-      'Created and maintained software solutions for auction management systems',
-      'Performed system analysis and requirements gathering',
-      'Delivered custom software solutions to meet business needs'
+      'Earlier roles: developer, analyst and systems administration in South Africa'
     ],
     technologies: [
       'Software Development',
       'System Analysis',
+      'UNIX',
       'Database Design',
-      'Business Applications'
-    ]
-  },
-  {
-    id: 8,
-    role: 'Analyst / Software Developer',
-    company: 'I.T. for Africa Ltd.',
-    period: 'May 2002 – June 2003',
-    description:
-      'Software development and system analysis role focusing on business applications and IT solutions for African markets.',
-    achievements: [
-      'Built software solutions for business applications',
-      'Performed system analysis and requirements gathering',
-      'Contributed to IT solutions tailored for African markets'
-    ],
-    technologies: [
-      'Software Development',
-      'System Analysis',
-      'Business Applications',
-      'Database Design'
-    ]
-  },
-  {
-    id: 9,
-    role: 'Senior Analyst / Software Developer',
-    company: 'Manasa (PTY) Ltd',
-    period: 'February 2001 – March 2002',
-    description:
-      'Senior role in software development and system analysis, leading development initiatives and providing technical expertise.',
-    achievements: [
-      'Led software development projects and initiatives',
-      'Provided senior-level technical expertise and guidance',
-      'Engineered and maintained enterprise software solutions',
-      'Mentored junior developers and analysts'
-    ],
-    technologies: [
-      'Software Development',
-      'System Analysis',
-      'Enterprise Applications',
-      'Database Administration',
-      'Team Leadership'
-    ]
-  },
-  {
-    id: 10,
-    role: 'Contractor, Analyst / Software Developer',
-    company: 'University of Pretoria',
-    period: 'January 2001 – March 2001',
-    description:
-      'Contract role providing software development and analysis services for university systems and academic applications.',
-    achievements: [
-      'Produced software solutions for university systems',
-      'Performed system analysis for academic applications',
-      'Delivered custom solutions to meet institutional needs'
-    ],
-    technologies: [
-      'Software Development',
-      'System Analysis',
-      'Academic Systems',
-      'Database Design'
-    ]
-  },
-  {
-    id: 11,
-    role: 'Operator / Support Engineer',
-    company: 'Allianz Insurance',
-    period: 'February 2000 – December 2000',
-    description:
-      'Provided technical support and system operations for insurance systems, ensuring reliable operation of critical business applications.',
-    achievements: [
-      'Maintained and supported insurance systems and applications',
-      'Provided technical support to end users',
-      'Ensured reliable operation of critical business systems',
-      'Troubleshot and resolved system issues'
-    ],
-    technologies: [
-      'System Operations',
-      'Technical Support',
-      'Insurance Systems',
-      'Troubleshooting',
       'System Administration'
-    ]
-  },
-  {
-    id: 12,
-    role: 'Assistant System Administrator',
-    company: 'Contract Lease Management',
-    period: 'January 1996 – December 1999',
-    description:
-      'Early career role providing system administration support and IT services for lease management systems.',
-    achievements: [
-      'Assisted with system administration tasks',
-      'Maintained and supported IT infrastructure',
-      'Provided technical support for lease management systems',
-      'Gained foundational experience in IT operations and support'
-    ],
-    technologies: [
-      'System Administration',
-      'IT Support',
-      'Network Administration',
-      'Database Management'
     ]
   }
 ]
@@ -392,23 +290,23 @@ export const experienceData = [...recentExperience, ...earlyCareerExperience]
 
 export const impactMetrics = [
   {
-    icon: TrendingUp,
-    value: '$3.7M+',
-    label: 'Revenue Generated'
-  },
-  {
-    icon: Users,
-    value: '34+',
-    label: 'Engineers Led'
-  },
-  {
     icon: Shield,
-    value: 'EMI Licence',
-    label: 'Regulatory Compliance'
+    value: '12 Oct 2026',
+    label: 'Client API signing live in production'
   },
   {
     icon: Award,
-    value: '25+ Years',
-    label: 'Industry Experience'
+    value: 'Angular 8 → 18',
+    label: 'Legacy admin console upgraded'
+  },
+  {
+    icon: Users,
+    value: '34',
+    label: 'Engineers managed, US and India'
+  },
+  {
+    icon: TrendingUp,
+    value: '$3.7M',
+    label: 'New revenue at TEOCO'
   }
 ]

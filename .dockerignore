@@ -7,6 +7,7 @@
 .vscode
 .idea
 .agents
+.docs
 *.md
 Dockerfile*
 .dockerignore

@@ -6,28 +6,28 @@ import type { ImpactMetric } from './types'
  */
 export const impactMetrics: ImpactMetric[] = [
   {
-    iconName: 'TrendingUp',
-    value: '$3.7M+',
-    label: 'Revenue Generated',
-    description: 'Through support services and custom solutions'
+    iconName: 'Shield',
+    value: '12 Oct 2026',
+    label: 'Client API signing live in production',
+    description:
+      'Holder-of-Key request signing under FAPI 1.0 and Open Banking UK v4.0'
+  },
+  {
+    iconName: 'Briefcase',
+    value: 'Angular 8 → 18',
+    label: 'Legacy admin console upgraded',
+    description: 'Node 16 to 20 upgrade delivering key tech-debt KPI'
   },
   {
     iconName: 'Users',
-    value: '34+',
-    label: 'Engineers Led',
-    description: '24/7 global teams across US, India, Australia'
+    value: '34',
+    label: 'Engineers managed, US and India',
+    description: '24/7 global support department at TEOCO'
   },
   {
-    iconName: 'Shield',
-    value: 'Compliance',
-    label: 'Regulatory Expertise',
-    description:
-      'EMI licensing, SARS VAT, FICA verification, ABAC authorization systems'
-  },
-  {
-    iconName: 'Award',
-    value: '25+ Years',
-    label: 'Industry Experience',
-    description: 'Business management platforms, R&D, enterprise systems'
+    iconName: 'TrendingUp',
+    value: '$3.7M',
+    label: 'New revenue at TEOCO',
+    description: 'Support services on $20M project plus custom solutions'
   }
 ]
