@@ -213,7 +213,7 @@ const Experience = () => {
         <div className='mt-16'>
           <RecruiterCTA
             headline='Open to Conversations'
-            description='Open to conversations about Staff-level platform engineering on fintech systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.'
+            description='Open to conversations about Staff-level platform engineering on systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.'
             primaryLink='/contact'
             primaryLabel='Contact Me'
             animationDelay={0.5}

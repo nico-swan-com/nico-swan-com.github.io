@@ -74,8 +74,8 @@ const Contact = () => {
                 Let&apos;s Work Together
               </h1>
               <p className='max-w-2xl text-lg text-secondary'>
-                Interested in discussing fintech platform engineering? Tell me
-                about the role, the team and the problem you need solved.
+                Interested in discussing platform engineering? Tell me about the
+                role, the team and the problem you need solved.
               </p>
             </div>
           </div>
@@ -332,8 +332,8 @@ const Contact = () => {
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
-                      Fintech platforms: API security, authorisation, payments
-                      and billing
+                      Business management platforms: API security,
+                      authorisation, payments and billing
                     </span>
                   </li>
                   <li className='flex items-start gap-2'>

@@ -29,7 +29,7 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, was released to production in 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
+  'Software engineer building business management platforms, currently in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: PKI-based holder-of-key authentication for client APIs, authorisation, four-eyes approvals and billing. My latest design, holder-of-key authentication for client APIs, was released to production in 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',
@@ -48,14 +48,14 @@ export const recentExperience: Experience[] = [
     description:
       'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Led architecture of client API request signing and self-service credential management for enterprise clients, released to production in 2026.',
+      'Led the architecture of PKI-based holder-of-key authentication for client APIs, with self-service credential management for enterprise clients. Released to production in 2026.',
       'Built a verification service for service accounts, signing keys and signature checks, with replay protection and audit logging.',
       'Client Console: clients create service accounts, upload public keys and revoke them through a self-service interface.',
       'Delivered a reverse API gateway for a new payments network integration, so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails. The business recognised me for this delivery.',
       "Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control enforced across both client API gateways. Part of BCB's French EMI licence requirements.",
       "Designed and delivered the four-eyes approval engine for data-changing user actions, then built the Admin Console controls. The approval engine, entitlements and Admin Console controls all formed part of BCB's French EMI licence requirements.",
-      "Led the Admin Console upgrade (Angular 8 to 18, Node 16 to 20, NestJS 9 to 11) through technical unknowns and stakeholder resistance. Delivered one of the company's main tech-debt KPIs.",
-      'Improved a key Admin Console list from tenths of seconds to milliseconds; identified nearly 16,000 lines of deprecated code for removal.',
+      "Led a major modernisation of the Admin Console frontend and backend (Angular, Node.js and NestJS brought up to current versions), widely seen as near-impossible at the start. Carried it through technical unknowns and stakeholder resistance, delivering one of the company's main tech-debt KPIs.",
+      'Improved a key Admin Console list from tenths of seconds to single-digit milliseconds; identified nearly 16,000 lines of deprecated code for removal.',
       'Designed the billing data model and validated it against current and anticipated requirements; core tables now in production, ending manual database fixes by Support.',
       'Used generative AI to greatly improve unit test coverage on a complex onboarding integration; asked by peers to champion AI adoption across engineering.',
       'Builds prototypes and PRDs that Product now requests because they speed up decisions. Writes RFCs and proposals for platform improvements, including AI-assisted support and operations.',
@@ -297,12 +297,12 @@ export const impactMetrics = [
   {
     icon: Shield,
     value: '2026',
-    label: 'Client API signing released to production'
+    label: 'PKI-based client API auth released to production'
   },
   {
     icon: Award,
-    value: 'Angular 8 → 18',
-    label: 'Legacy admin console upgraded'
+    value: 'Modernised',
+    label: 'Admin Console frontend and backend'
   },
   {
     icon: Users,

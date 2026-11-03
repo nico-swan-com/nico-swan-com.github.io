@@ -40,12 +40,13 @@ const About = () => {
               Middle East, the US and South Africa.
             </p>
             <p className='mb-4 text-lg leading-relaxed'>
-              At BCB I lead authentication and authorisation work: client API
-              request signing (released to production in 2026), the entitlements
-              capability that controls what each client can do, and the
-              four-eyes approval engine. The entitlements capability, approval
-              engine and Admin Console controls all formed part of BCB&apos;s
-              French EMI licence requirements.
+              At BCB I lead authentication and authorisation work: PKI-based
+              holder-of-key authentication for client APIs (released to
+              production in 2026), the entitlements capability that controls
+              what each client can do, and the four-eyes approval engine. The
+              entitlements capability, approval engine and Admin Console
+              controls all formed part of BCB&apos;s French EMI licence
+              requirements.
             </p>
             <p className='text-lg leading-relaxed'>
               I also own a small company,{' '}
@@ -127,8 +128,8 @@ const About = () => {
               <p className='text-secondary'>
                 I design services and the boundaries between them, then write it
                 down as RFCs, PRDs and as-built docs. At BCB that has covered
-                client API signing, authorisation, four-eyes approvals and
-                billing.
+                holder-of-key authentication, authorisation, four-eyes approvals
+                and billing.
               </p>
             </div>
             <div className='space-y-4'>
