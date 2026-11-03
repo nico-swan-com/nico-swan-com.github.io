@@ -40,10 +40,12 @@ const About = () => {
               Middle East, the US and South Africa.
             </p>
             <p className='mb-4 text-lg leading-relaxed'>
-              At BCB I designed the four-eyes approval engine and the Admin
-              Console controls that formed part of BCB&apos;s French EMI licence
-              requirements, and led the architecture for client API request
-              signing, released to production in 2026.
+              At BCB I lead authentication and authorisation work: client API
+              request signing (released to production in 2026), the entitlements
+              capability that controls what each client can do, and the
+              four-eyes approval engine. The entitlements capability, approval
+              engine and Admin Console controls all formed part of BCB&apos;s
+              French EMI licence requirements.
             </p>
             <p className='text-lg leading-relaxed'>
               I also own a small company,{' '}

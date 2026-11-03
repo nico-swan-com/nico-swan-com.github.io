@@ -88,7 +88,7 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
       'Signed client API requests, self-service credential management and attribute-based authorisation for a regulated crypto and payments group. Released to production in 2026.',
     longDescription: `BCB Group is a regulated crypto and payments group. I work on the platform team, on the services that decide who can call the client APIs and what they are allowed to do.
 
-In 2022 I delivered the entitlements capability: attribute-based access control enforced across both client API gateways. I've since advised other teams on using it.
+In 2022 I delivered the entitlements capability: attribute-based access control enforced across both client API gateways. This authorisation layer, alongside the approval engine and Admin Console controls, formed part of BCB's French EMI licence requirements. I've since advised other teams on using it.
 
 In 2026 I led the architecture and core delivery of client API self-service. Each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. Released to production in 2026. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
     technologies: [
@@ -121,7 +121,7 @@ Request signing adds a verification step:
     ],
     achievements: [
       'Client API signing released to production in 2026',
-      'Delivered the entitlements capability by its September 2022 target',
+      "Delivered the entitlements (authorisation) capability by its September 2022 target, part of BCB's French EMI licence requirements",
       'Wrote the RFC set, as-built architecture docs and Support runbook, and ran a session at the company Tech Day'
     ]
   },
@@ -129,10 +129,10 @@ Request signing adds a verification step:
     id: 'bcb-approval-workflow',
     title: 'Four-Eyes Approval Engine (BCB Group)',
     description:
-      "An approval engine that makes a second person sign off data-changing actions in BCB's internal consoles. The Admin Console controls built on it formed part of BCB's French EMI licence requirements.",
+      "An approval engine that makes a second person sign off data-changing actions in BCB's internal consoles. Together with the entitlements capability and Admin Console controls, formed part of BCB's French EMI licence requirements.",
     longDescription: `In the second half of 2023 I designed and delivered a new four-eyes approval engine for BCB Group. A user action that changes data goes to a second person for approval before it takes effect, which protects against mistakes and internal fraud.
 
-Integrating it with the existing payment workflow service took far more work than planned, and taught me a lot about the payments flow and event sourcing. In 2024 I extended it and built the Admin Console controls that formed part of BCB's French EMI licence requirements.`,
+Integrating it with the existing payment workflow service took far more work than planned, and taught me a lot about the payments flow and event sourcing. In 2024 I extended it and built the Admin Console controls. Together with the entitlements (authorisation) capability, the approval engine and Admin Console controls formed part of BCB's French EMI licence requirements.`,
     technologies: [
       'TypeScript',
       'Node.js',
