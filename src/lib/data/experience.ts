@@ -59,8 +59,9 @@ export const recentExperience: Experience[] = [
       'Designed the billing data model and validated it against current and anticipated requirements; core tables now in production, ending manual database fixes by Support.',
       'Used generative AI to greatly improve unit test coverage on a complex onboarding integration; asked by peers to champion AI adoption across engineering.',
       'Builds prototypes and PRDs that Product now requests because they speed up decisions. Writes RFCs and proposals for platform improvements, including AI-assisted support and operations.',
-      'Ran a session at the company Tech Day. Mentors engineers beyond own team and interviews candidates.',
-      'Ran the team while my manager was on leave and revived Tech Talk Fridays.'
+      'Presented two sessions at the company Tech/Build Day. Organised and led engineering knowledge-sharing sessions (Tech Talk Fridays) in 2025, presenting multiple sessions himself.',
+      'Owned and managed the Software Engineering Guide in 2024. Mentors engineers beyond own team and interviews candidates.',
+      'Ran the team while my manager was on leave.'
     ],
     technologies: [
       'TypeScript',

@@ -122,7 +122,7 @@ Request signing adds a verification step:
     achievements: [
       'Client API signing released to production in 2026',
       "Delivered the entitlements (authorisation) capability by its September 2022 target, part of BCB's French EMI licence requirements",
-      'Wrote the RFC set, as-built architecture docs and Support runbook, and ran a session at the company Tech Day'
+      'Wrote the RFC set, as-built architecture docs and Support runbook, and presented two sessions at the company Tech/Build Day'
     ]
   },
   {
