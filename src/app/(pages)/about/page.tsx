@@ -40,13 +40,15 @@ const About = () => {
               Middle East, the US and South Africa.
             </p>
             <p className='mb-4 text-lg leading-relaxed'>
-              At BCB I designed the four-eyes approval engine and the
-              authorisation service behind part of BCB&apos;s controls for its
-              French EMI licence, and led the architecture for client API
-              request signing, which went live in production on 12 October 2026.
+              At BCB I lead authentication and authorisation work: client API
+              request signing (released to production in 2026), the entitlements
+              capability that controls what each client can do, and the
+              four-eyes approval engine. The entitlements capability, approval
+              engine and Admin Console controls all formed part of BCB&apos;s
+              French EMI licence requirements.
             </p>
             <p className='text-lg leading-relaxed'>
-              I also run a small part-time consultancy,{' '}
+              I also own a small company,{' '}
               <a
                 href='https://cygnus-labs.com/'
                 target='_blank'
@@ -54,9 +56,9 @@ const About = () => {
                 className='text-accent hover:underline'
               >
                 Cygnus Labs
-              </a>
-              , building business software for small businesses in South Africa.
-              My current client is WetInk.
+              </a>{' '}
+              (Aretsi SA CC), building bespoke software for small businesses in
+              South Africa, part-time outside my full-time role.
             </p>
           </div>
 
@@ -228,8 +230,8 @@ const About = () => {
 
         {/* Recruiter Call-to-Action */}
         <RecruiterCTA
-          headline='Hiring a Staff Engineer?'
-          description="I'm looking for a remote Staff Software Engineer role on a fintech platform: API security, authorisation, payments or billing. Have a look at my experience, or message me on LinkedIn."
+          headline='Open to Conversations'
+          description='Open to conversations about Staff-level platform engineering roles: API security, authorisation, payments or billing. Have a look at my experience, or message me on LinkedIn.'
           primaryLink='/experience'
           primaryLabel='View Experience'
           showTechBadges={false}

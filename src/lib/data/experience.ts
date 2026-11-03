@@ -29,7 +29,7 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, went live in production on 12 October 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
+  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, was released to production in 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',
@@ -48,16 +48,20 @@ export const recentExperience: Experience[] = [
     description:
       'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Client API self-service, live in production since 12 Oct 2026, with the first clients onboarding. I led the architecture and core delivery that moved client API authentication from long-lived (29-day) Auth0 bearer tokens to Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0. Both API gateways verify every signature, with no bearer fallback, and enforce IP allow-lists.',
-      "Built a new gRPC verification service for service accounts, signing keys and signature checks, after another lead asked for a late change to the architecture. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record can't be stored. In sandbox testing the median verify time was 16.5 to 18.1 ms.",
-      'Client Console: clients create service accounts, upload their own public keys (BCB never holds the private key) and revoke them. PSD2 one-time passwords protect every change, and each service account is limited to one counterparty so a permission change cannot spread across clients.',
+      'Led architecture of client API request signing and self-service credential management for enterprise clients, released to production in 2026.',
+      'Built a verification service for service accounts, signing keys and signature checks, with replay protection and audit logging.',
+      'Client Console: clients create service accounts, upload public keys and revoke them through a self-service interface.',
       'Delivered a reverse API gateway for a new payments network integration, so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails. The business recognised me for this delivery.',
-      'Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways.',
-      "Designed and delivered the four-eyes approval engine for data-changing user actions, then built the Admin Console controls that formed part of BCB's French EMI licence requirements.",
-      "Led the Admin Console upgrade from Angular 8 to 18 and Node 16 to 20, a project widely seen as near-impossible at the start. It delivered one of the company's main tech-debt KPIs.",
-      'Billing per billing entity and per legal entity, which ended manual database fixes by Support. I wrote the billing PRD and data model; the core tables are in production and the HubSpot sync is next.',
-      'Wrote the RFCs, as-built docs and Support runbook for the auth work, and presented it at our Tech Day, streamed from London to South Africa.',
-      'Ran the team while my manager was on leave, mentored junior engineers, revived Tech Talk Fridays and built a detector for the Shai-Hulud supply-chain attack.'
+      "Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control enforced across both client API gateways. Part of BCB's French EMI licence requirements.",
+      "Designed and delivered the four-eyes approval engine for data-changing user actions, then built the Admin Console controls. The approval engine, entitlements and Admin Console controls all formed part of BCB's French EMI licence requirements.",
+      "Led the Admin Console upgrade (Angular 8 to 18, Node 16 to 20, NestJS 9 to 11) through technical unknowns and stakeholder resistance. Delivered one of the company's main tech-debt KPIs.",
+      'Improved a key Admin Console list from tenths of seconds to milliseconds; identified nearly 16,000 lines of deprecated code for removal.',
+      'Designed the billing data model and validated it against current and anticipated requirements; core tables now in production, ending manual database fixes by Support.',
+      'Used generative AI to greatly improve unit test coverage on a complex onboarding integration; asked by peers to champion AI adoption across engineering.',
+      'Builds prototypes and PRDs that Product now requests because they speed up decisions. Writes RFCs and proposals for platform improvements, including AI-assisted support and operations.',
+      'Presented two sessions at the company Tech/Build Day. Organised and led engineering knowledge-sharing sessions (Tech Talk Fridays) in 2025, presenting multiple sessions himself.',
+      'Owned and managed the Software Engineering Guide in 2024. Mentors engineers beyond own team and interviews candidates.',
+      'Ran the team while my manager was on leave.'
     ],
     technologies: [
       'TypeScript',
@@ -75,11 +79,11 @@ export const recentExperience: Experience[] = [
   },
   {
     id: 3,
-    role: 'Principal Architect (part-time, own consultancy)',
-    company: 'Artesi SA CC',
-    period: 'Jan 2024 – Present',
+    role: 'Owner & Principal Engineer (part-time)',
+    company: 'Aretsi SA CC, trading as Cygnus Labs',
+    period: '2026 – Present',
     description:
-      'My own small consultancy, run part-time alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com). Current client: WetInk.',
+      "Owner of Aretsi SA CC (previously my father's company) since 2026, trading as Cygnus Labs. Bespoke software development for small businesses, run part-time outside my full-time role.",
     achievements: [
       "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
       'Built SARS VAT and FICA verification workflows into the platform.'
@@ -97,7 +101,7 @@ export const recentExperience: Experience[] = [
       'Redis'
     ],
     resumeDescription:
-      'My own small consultancy, run part-time alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com). Current client: WetInk.',
+      "Owner of Aretsi SA CC (previously my father's company) since 2026, trading as Cygnus Labs. Bespoke software development for small businesses, run part-time outside my full-time role.",
     resumeAchievements: [
       "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
       'Built SARS VAT and FICA verification workflows into the platform.'
@@ -115,7 +119,7 @@ export const recentExperience: Experience[] = [
     id: 2,
     role: 'R&D Software Engineer, Senior Services Manager',
     company: 'NTT Ltd. (formerly Dimension Data)',
-    period: 'August 2015 – July 2021',
+    period: 'August 2015 – June 2021',
     description:
       'Building customised capabilities into platforms such as ServiceNow and engineering microservices to integrate with various platforms within our architecture. Leading a team of 13 members across South Africa and Australia, managing three portfolios: Managed Networks, Managed Data Centres, and Communication and Collaboration.',
     achievements: [
@@ -148,7 +152,7 @@ export const recentExperience: Experience[] = [
   {
     id: 13,
     role: 'Technical Consultant / Product Developer',
-    company: 'Artesi SA CC',
+    company: 'Aretsi SA CC',
     period: 'January 2014 – July 2015',
     description:
       'Contract role building the flagship product Incidentia, a business intelligence and analytics platform focused on human capital management, productivity, and process management. Remained on standby after initial development phase.',
@@ -292,8 +296,8 @@ export const experienceData = [...recentExperience, ...earlyCareerExperience]
 export const impactMetrics = [
   {
     icon: Shield,
-    value: '12 Oct 2026',
-    label: 'Client API signing live in production'
+    value: '2026',
+    label: 'Client API signing released to production'
   },
   {
     icon: Award,

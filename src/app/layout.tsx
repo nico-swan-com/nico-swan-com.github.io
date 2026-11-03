@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Nico Swan | Staff Software Engineer',
+  title: 'Nico Swan | Senior Software Engineer',
   description:
-    'Nico Swan, Staff Software Engineer: fintech platforms, API security and payments. Remote from Johannesburg, South Africa.'
+    'Nico Swan, Senior Software Engineer: fintech platforms, API security and payments. Remote from Johannesburg, South Africa.'
 }
 
 export default function RootLayout({

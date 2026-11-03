@@ -85,67 +85,54 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
     id: 'bcb-entitlements-platform',
     title: 'Client API Security & Authorisation (BCB Group)',
     description:
-      'Signed client API requests, self-service keys and attribute-based authorisation for a regulated crypto and payments group. Client API signing went live in production on 12 October 2026.',
+      'Signed client API requests, self-service credential management and attribute-based authorisation for a regulated crypto and payments group. Released to production in 2026.',
     longDescription: `BCB Group is a regulated crypto and payments group. I work on the platform team, on the services that decide who can call the client APIs and what they are allowed to do.
 
-In 2022 I delivered the entitlements capability: attribute-based access control, with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways. I've since advised other teams on using it.
+In 2022 I delivered the entitlements capability: attribute-based access control enforced across both client API gateways. This authorisation layer, alongside the approval engine and Admin Console controls, formed part of BCB's French EMI licence requirements. I've since advised other teams on using it.
 
-In 2026 I led the architecture and core delivery of client API self-service. Clients used to authenticate with long-lived (29-day) Auth0 bearer tokens. Now each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. It went live in production on 12 October 2026 and the first clients are onboarding. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
+In 2026 I led the architecture and core delivery of client API self-service. Each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. Released to production in 2026. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
     technologies: [
       'TypeScript',
       'Node.js',
       'NestJS',
       'Express',
-      'gRPC',
       'PostgreSQL',
       'GCP Pub/Sub',
       'ABAC (Attribute-Based Access Control)',
       'Policy Engine',
-      'Detached JWS (PS256/ES256)',
       'Kubernetes'
     ],
     imageUrl: '/placeholder.svg',
     features: [
       'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0',
-      'Signature checks on both client API gateways, with no bearer-token fallback',
-      'Replay protection: each signed request is accepted once',
-      'Audit log of every allow and deny decision, kept for at least 12 months',
-      'Fail-closed: a request is refused if its replay or audit record cannot be stored',
-      'Client self-service in the console: service accounts, public-key upload (CSR/PEM) and key revocation',
-      'PSD2 one-time passwords on every service-account and key change',
-      'IP allow-lists on both gateways',
-      'Attribute-based access control with a central policy decision point',
-      'Shared NestJS guard library for policy enforcement'
+      'Replay protection and audit logging',
+      'Client self-service: service accounts, public-key upload and revocation',
+      'Attribute-based access control enforced across both client API gateways'
     ],
-    architecture: `Authorisation uses a central policy decision point: an open-source policy engine behind a gRPC service. Each client API gateway enforces its decisions through a shared guard library.
+    architecture: `Authorisation uses a central policy decision point. Each client API gateway enforces access control decisions.
 
-Request signing adds a verification step in front of that:
-1. The client signs each request with its own private key (detached JWS, PS256 or ES256). BCB only ever holds the public key.
-2. The gateway (a NestJS guard in one stack, Express middleware in the other) sends the signature to a gRPC verification service.
-3. The service checks the key, the signature and a single-use transaction number stored in PostgreSQL, so a replayed request is rejected.
-4. Every allow or deny is written to an audit log with a SHA-256 hash of the signed bytes, through GCP Pub/Sub, with a synchronous fallback for large payloads.
-5. If the replay store or the audit write fails, the request is refused.`,
+Request signing adds a verification step:
+1. The client signs each request with its own private key.
+2. A verification service checks the key, the signature and a single-use transaction number, so a replayed request is rejected.
+3. Every allow or deny is written to an audit log.`,
     challenges: [
       'Redesigning the architecture late in the project, after another lead asked for a change, and still shipping a new greenfield service',
-      'Adding PSD2 one-time passwords and a one-counterparty limit per service account part-way through delivery',
-      'Applying the same security rules across two gateway stacks, NestJS and Express',
-      'Keeping signature verification fast: in sandbox testing the median verify time was 16.5 to 18.1 ms'
+      'Applying the same security rules across two gateway stacks'
     ],
     achievements: [
-      'Client API signing live in production since 12 October 2026, with the first clients onboarding',
-      'The UAT test client found the console easy to use and said the documentation was spot on',
-      'Delivered the entitlements capability by its September 2022 target',
-      'Wrote the RFC set, as-built architecture docs and Support runbook, and presented the design at our Tech Day'
+      'Client API signing released to production in 2026',
+      "Delivered the entitlements (authorisation) capability by its September 2022 target, part of BCB's French EMI licence requirements",
+      'Wrote the RFC set, as-built architecture docs and Support runbook, and presented two sessions at the company Tech/Build Day'
     ]
   },
   {
     id: 'bcb-approval-workflow',
     title: 'Four-Eyes Approval Engine (BCB Group)',
     description:
-      "An approval engine that makes a second person sign off data-changing actions in BCB's internal consoles. The Admin Console controls built on it formed part of BCB's French EMI licence requirements.",
+      "An approval engine that makes a second person sign off data-changing actions in BCB's internal consoles. Together with the entitlements capability and Admin Console controls, formed part of BCB's French EMI licence requirements.",
     longDescription: `In the second half of 2023 I designed and delivered a new four-eyes approval engine for BCB Group. A user action that changes data goes to a second person for approval before it takes effect, which protects against mistakes and internal fraud.
 
-Integrating it with the existing payment workflow service took far more work than planned, and taught me a lot about the payments flow and event sourcing. In 2024 I extended it and built the Admin Console controls that formed part of BCB's French EMI licence requirements.`,
+Integrating it with the existing payment workflow service took far more work than planned, and taught me a lot about the payments flow and event sourcing. In 2024 I extended it and built the Admin Console controls. Together with the entitlements (authorisation) capability, the approval engine and Admin Console controls formed part of BCB's French EMI licence requirements.`,
     technologies: [
       'TypeScript',
       'Node.js',
@@ -291,12 +278,12 @@ Support services brought in $3M on a $20M project. I also set up a Professional 
     id: 'incidentia-platform',
     title: 'Incidentia BI & Analytics Platform',
     description:
-      'Business intelligence platform for human capital management, productivity analytics, and process management. Built as technical consultant for Artesi SA CC.',
-    longDescription: `As Technical Consultant and Product Developer for Artesi SA, architected and developed Incidentia, a business intelligence and analytics platform focused on human capital management, productivity tracking, and process management.
+      'Business intelligence platform for human capital management, productivity analytics, and process management. Built as technical consultant for Aretsi SA CC.',
+    longDescription: `As Technical Consultant and Product Developer for Aretsi SA CC, architected and developed Incidentia, a business intelligence and analytics platform focused on human capital management, productivity tracking, and process management.
 
 Implemented AGILE and LEAN methodologies, provided system architecture direction, and developed the platform's UX v2, RESTful APIs, microservices architecture, and dashboard components.
 
-This contract work laid the foundation for a long-term relationship that eventually led to acquiring the company in 2024 after securing a new business management platform contract.`,
+This contract work laid the foundation for a long-term relationship.`,
     technologies: [
       'JavaScript',
       'TypeScript',
@@ -341,8 +328,7 @@ This contract work laid the foundation for a long-term relationship that eventua
       'Implemented AGILE and LEAN methodologies across the development cycle',
       'Designed scalable microservices architecture',
       'Established product roadmap and technical direction',
-      'Created reusable component library for rapid feature development',
-      'Built lasting client relationship that led to company acquisition opportunity'
+      'Created reusable component library for rapid feature development'
     ]
   },
   {
@@ -350,7 +336,7 @@ This contract work laid the foundation for a long-term relationship that eventua
     title: 'Enterprise Business Management Platform',
     description:
       'Full-stack enterprise platform replacing a legacy FileMaker system for a South African company. Features SARS VAT compliance, FICA verification, order management, production workflows, and secure client file uploads.',
-    longDescription: `Acquired Artesi SA CC to deliver this business management platform for a South African client. The platform replaces a legacy FileMaker system that suffered from desktop-only access, poor performance, and high operational risk.
+    longDescription: `Delivering this business management platform for a South African client through Aretsi SA CC (trading as Cygnus Labs). The platform replaces a legacy FileMaker system that suffered from desktop-only access, poor performance, and high operational risk.
 
 The new solution provides universal web accessibility, role-based workflows, complete SARS VAT and FICA compliance, secure file handling via MinIO (S3), and integration with payment gateways and SMS services.
 
@@ -405,7 +391,6 @@ Compliance Layer: Tax calculation engine supporting VAT, GST/HST/PST, FICA verif
     ],
     achievements: [
       'Secured contract for complete enterprise platform delivery',
-      'Acquired Artesi SA CC to execute the project independently',
       'Designed phased delivery plan with clear milestones and acceptance criteria',
       'Architecture supports future multi-country expansion',
       'Platform eliminates single-person maintenance risk of legacy system'

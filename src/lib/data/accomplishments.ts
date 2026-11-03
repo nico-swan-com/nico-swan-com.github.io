@@ -17,13 +17,13 @@ export const accomplishments: Accomplishment[] = [
     iconName: 'TrendingUp',
     title: "The 'Why' Behind the Code",
     description:
-      'I explain technical risk in business terms. When I proposed signed client requests, the case was simple: a 29-day bearer token is a stolen-password problem waiting to happen, and a signature is only valid once.'
+      'I explain technical risk in business terms. When I proposed signed client requests, the case was simple: a long-lived bearer token is a stolen-password problem waiting to happen, and a signature is only valid once.'
   },
   {
     id: 'leadership',
     iconName: 'Users',
     title: 'Making it work without me',
     description:
-      'I write the design down before I build it, as PRDs, RFCs and runbooks, so other engineers can review it, support it and change it. At BCB I revived Tech Talk Fridays, ran the team while my manager was on leave, and showed the BA team how to prototype with AI, which they now do without engineers. I cut a full laptop rebuild from 1-2 weeks to just over 2 hours and made it reproducible for anyone.'
+      'I write the design down before I build it, as PRDs, RFCs and runbooks, so other engineers can review it, support it and change it. At BCB I organised and led Tech Talk Fridays in 2025, owned the Software Engineering Guide in 2024, ran the team while my manager was on leave, and showed the BA team how to prototype with AI. I cut a full laptop rebuild from 1-2 weeks to just over 2 hours and made it reproducible for anyone.'
   }
 ]

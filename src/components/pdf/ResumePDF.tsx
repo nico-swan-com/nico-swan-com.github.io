@@ -152,7 +152,8 @@ export const ResumePDF = () => (
       <View style={styles.header}>
         <Text style={styles.name}>Nico Swan</Text>
         <Text style={styles.title}>
-          Staff Software Engineer | Fintech platforms, API security and payments
+          Senior Software Engineer | Fintech platforms, API security and
+          payments
         </Text>
         <View style={styles.contact}>
           <Text>{contactInfo.email}</Text>
