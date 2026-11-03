@@ -48,7 +48,7 @@ export const recentExperience: Experience[] = [
     description:
       'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Led architecture of client API request signing and self-service credential management for enterprise clients, released to production in 2026 with client sandbox trials under way.',
+      'Led architecture of client API request signing and self-service credential management for enterprise clients, released to production in 2026.',
       'Built a verification service for service accounts, signing keys and signature checks, with replay protection and audit logging.',
       'Client Console: clients create service accounts, upload public keys and revoke them through a self-service interface.',
       'Delivered a reverse API gateway for a new payments network integration, so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails. The business recognised me for this delivery.',

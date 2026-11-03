@@ -90,7 +90,7 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
 
 In 2022 I delivered the entitlements capability: attribute-based access control enforced across both client API gateways. I've since advised other teams on using it.
 
-In 2026 I led the architecture and core delivery of client API self-service. Each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. Released to production in 2026 with client sandbox trials under way. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
+In 2026 I led the architecture and core delivery of client API self-service. Each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. Released to production in 2026. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
     technologies: [
       'TypeScript',
       'Node.js',
@@ -120,7 +120,7 @@ Request signing adds a verification step:
       'Applying the same security rules across two gateway stacks'
     ],
     achievements: [
-      'Client API signing released to production in 2026 with client sandbox trials under way',
+      'Client API signing released to production in 2026',
       'Delivered the entitlements capability by its September 2022 target',
       'Wrote the RFC set, as-built architecture docs and Support runbook, and ran a session at the company Tech Day'
     ]
