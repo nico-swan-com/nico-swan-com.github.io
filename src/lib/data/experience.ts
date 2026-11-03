@@ -115,7 +115,7 @@ export const recentExperience: Experience[] = [
     id: 2,
     role: 'R&D Software Engineer, Senior Services Manager',
     company: 'NTT Ltd. (formerly Dimension Data)',
-    period: 'August 2015 – July 2021',
+    period: 'August 2015 – June 2021',
     description:
       'Building customised capabilities into platforms such as ServiceNow and engineering microservices to integrate with various platforms within our architecture. Leading a team of 13 members across South Africa and Australia, managing three portfolios: Managed Networks, Managed Data Centres, and Communication and Collaboration.',
     achievements: [
