@@ -90,13 +90,12 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
 
 In 2022 I delivered the entitlements capability: attribute-based access control, with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways. I've since advised other teams on using it.
 
-In 2026 I led the architecture and core delivery of client API self-service. Clients used to authenticate with long-lived (29-day) Auth0 bearer tokens. Now each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. It went live in production on 12 October 2026 and the first clients are onboarding. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
+In 2026 I led the architecture and core delivery of client API self-service. Each request is now signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. It went live in production on 12 October 2026 and the first clients are onboarding. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
     technologies: [
       'TypeScript',
       'Node.js',
       'NestJS',
       'Express',
-      'gRPC',
       'PostgreSQL',
       'GCP Pub/Sub',
       'ABAC (Attribute-Based Access Control)',
@@ -107,29 +106,25 @@ In 2026 I led the architecture and core delivery of client API self-service. Cli
     imageUrl: '/placeholder.svg',
     features: [
       'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0',
-      'Signature checks on both client API gateways, with no bearer-token fallback',
       'Replay protection: each signed request is accepted once',
       'Audit log of every allow and deny decision, kept for at least 12 months',
       'Fail-closed: a request is refused if its replay or audit record cannot be stored',
       'Client self-service in the console: service accounts, public-key upload (CSR/PEM) and key revocation',
       'PSD2 one-time passwords on every service-account and key change',
-      'IP allow-lists on both gateways',
       'Attribute-based access control with a central policy decision point',
       'Shared NestJS guard library for policy enforcement'
     ],
-    architecture: `Authorisation uses a central policy decision point: an open-source policy engine behind a gRPC service. Each client API gateway enforces its decisions through a shared guard library.
+    architecture: `Authorisation uses a central policy decision point: an open-source policy engine. Each client API gateway enforces its decisions through a shared guard library.
 
 Request signing adds a verification step in front of that:
 1. The client signs each request with its own private key (detached JWS, PS256 or ES256). BCB only ever holds the public key.
-2. The gateway (a NestJS guard in one stack, Express middleware in the other) sends the signature to a gRPC verification service.
-3. The service checks the key, the signature and a single-use transaction number stored in PostgreSQL, so a replayed request is rejected.
-4. Every allow or deny is written to an audit log with a SHA-256 hash of the signed bytes, through GCP Pub/Sub, with a synchronous fallback for large payloads.
-5. If the replay store or the audit write fails, the request is refused.`,
+2. A verification service checks the key, the signature and a single-use transaction number, so a replayed request is rejected.
+3. Every allow or deny is written to an audit log with a hash of the signed bytes.
+4. If the replay store or the audit write fails, the request is refused.`,
     challenges: [
       'Redesigning the architecture late in the project, after another lead asked for a change, and still shipping a new greenfield service',
       'Adding PSD2 one-time passwords and a one-counterparty limit per service account part-way through delivery',
-      'Applying the same security rules across two gateway stacks, NestJS and Express',
-      'Keeping signature verification fast: in sandbox testing the median verify time was 16.5 to 18.1 ms'
+      'Applying the same security rules across two gateway stacks'
     ],
     achievements: [
       'Client API signing live in production since 12 October 2026, with the first clients onboarding',
@@ -291,12 +286,12 @@ Support services brought in $3M on a $20M project. I also set up a Professional 
     id: 'incidentia-platform',
     title: 'Incidentia BI & Analytics Platform',
     description:
-      'Business intelligence platform for human capital management, productivity analytics, and process management. Built as technical consultant for Artesi SA CC.',
-    longDescription: `As Technical Consultant and Product Developer for Artesi SA, architected and developed Incidentia, a business intelligence and analytics platform focused on human capital management, productivity tracking, and process management.
+      'Business intelligence platform for human capital management, productivity analytics, and process management. Built as technical consultant for Aretsi SA CC.',
+    longDescription: `As Technical Consultant and Product Developer for Aretsi SA CC, architected and developed Incidentia, a business intelligence and analytics platform focused on human capital management, productivity tracking, and process management.
 
 Implemented AGILE and LEAN methodologies, provided system architecture direction, and developed the platform's UX v2, RESTful APIs, microservices architecture, and dashboard components.
 
-This contract work laid the foundation for a long-term relationship that eventually led to acquiring the company in 2024 after securing a new business management platform contract.`,
+This contract work laid the foundation for a long-term relationship.`,
     technologies: [
       'JavaScript',
       'TypeScript',
@@ -341,8 +336,7 @@ This contract work laid the foundation for a long-term relationship that eventua
       'Implemented AGILE and LEAN methodologies across the development cycle',
       'Designed scalable microservices architecture',
       'Established product roadmap and technical direction',
-      'Created reusable component library for rapid feature development',
-      'Built lasting client relationship that led to company acquisition opportunity'
+      'Created reusable component library for rapid feature development'
     ]
   },
   {
@@ -350,7 +344,7 @@ This contract work laid the foundation for a long-term relationship that eventua
     title: 'Enterprise Business Management Platform',
     description:
       'Full-stack enterprise platform replacing a legacy FileMaker system for a South African company. Features SARS VAT compliance, FICA verification, order management, production workflows, and secure client file uploads.',
-    longDescription: `Acquired Artesi SA CC to deliver this business management platform for a South African client. The platform replaces a legacy FileMaker system that suffered from desktop-only access, poor performance, and high operational risk.
+    longDescription: `Delivering this business management platform for a South African client through Aretsi SA CC (trading as Cygnus Labs). The platform replaces a legacy FileMaker system that suffered from desktop-only access, poor performance, and high operational risk.
 
 The new solution provides universal web accessibility, role-based workflows, complete SARS VAT and FICA compliance, secure file handling via MinIO (S3), and integration with payment gateways and SMS services.
 
@@ -405,7 +399,6 @@ Compliance Layer: Tax calculation engine supporting VAT, GST/HST/PST, FICA verif
     ],
     achievements: [
       'Secured contract for complete enterprise platform delivery',
-      'Acquired Artesi SA CC to execute the project independently',
       'Designed phased delivery plan with clear milestones and acceptance criteria',
       'Architecture supports future multi-country expansion',
       'Platform eliminates single-person maintenance risk of legacy system'

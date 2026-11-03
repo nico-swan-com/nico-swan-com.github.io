@@ -29,7 +29,7 @@ const Portfolio = () => {
           <div className='flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between'>
             <div className='flex-1'>
               <h1 className='mb-4 text-4xl font-bold text-primary'>
-                Staff Software Engineer: fintech platforms, API security and
+                Senior Software Engineer: fintech platforms, API security and
                 payments
               </h1>
               <p className='max-w-3xl text-xl text-secondary'>
@@ -203,8 +203,8 @@ const Portfolio = () => {
         {/* Recruiter Call-to-Action Section */}
         <div className='mt-20'>
           <RecruiterCTA
-            headline='Looking for a Staff Software Engineer?'
-            description="I'm looking for Staff-level engineering work on fintech platforms that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time. If that sounds like your team, get in touch."
+            headline='Open to Conversations'
+            description='Open to conversations about Staff-level platform engineering on fintech systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.'
             primaryLink='/experience'
             primaryLabel='Full Experience'
           />

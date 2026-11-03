@@ -212,8 +212,8 @@ const Experience = () => {
         {/* Recruiter Call-to-Action */}
         <div className='mt-16'>
           <RecruiterCTA
-            headline='Interested in Working Together?'
-            description="I'm looking for Staff-level engineering work on fintech platforms that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time. If that sounds like your team, get in touch."
+            headline='Open to Conversations'
+            description='Open to conversations about Staff-level platform engineering on fintech systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.'
             primaryLink='/contact'
             primaryLabel='Contact Me'
             animationDelay={0.5}

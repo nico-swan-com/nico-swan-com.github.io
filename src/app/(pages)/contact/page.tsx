@@ -74,7 +74,7 @@ const Contact = () => {
                 Let&apos;s Work Together
               </h1>
               <p className='max-w-2xl text-lg text-secondary'>
-                Hiring a Staff Software Engineer for a fintech platform? Tell me
+                Interested in discussing fintech platform engineering? Tell me
                 about the role, the team and the problem you need solved.
               </p>
             </div>
@@ -318,7 +318,7 @@ const Contact = () => {
             <Card>
               <CardHeader>
                 <CardTitle className='text-primary'>
-                  What I&apos;m Looking For
+                  Areas of Interest
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -326,7 +326,7 @@ const Contact = () => {
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
-                      Staff Software Engineer roles
+                      Staff-level platform engineering
                     </span>
                   </li>
                   <li className='flex items-start gap-2'>
@@ -340,12 +340,6 @@ const Contact = () => {
                     <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
                     <span className='text-secondary'>
                       Fully remote, from Johannesburg
-                    </span>
-                  </li>
-                  <li className='flex items-start gap-2'>
-                    <CheckCircle className='mt-0.5 size-4 shrink-0 text-accent' />
-                    <span className='text-secondary'>
-                      Contract or permanent positions
                     </span>
                   </li>
                   <li className='flex items-start gap-2'>

@@ -17,7 +17,7 @@ export const accomplishments: Accomplishment[] = [
     iconName: 'TrendingUp',
     title: "The 'Why' Behind the Code",
     description:
-      'I explain technical risk in business terms. When I proposed signed client requests, the case was simple: a 29-day bearer token is a stolen-password problem waiting to happen, and a signature is only valid once.'
+      'I explain technical risk in business terms. When I proposed signed client requests, the case was simple: a long-lived bearer token is a stolen-password problem waiting to happen, and a signature is only valid once.'
   },
   {
     id: 'leadership',

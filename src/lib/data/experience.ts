@@ -48,16 +48,16 @@ export const recentExperience: Experience[] = [
     description:
       'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Client API self-service, live in production since 12 Oct 2026, with the first clients onboarding. I led the architecture and core delivery that moved client API authentication from long-lived (29-day) Auth0 bearer tokens to Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0. Both API gateways verify every signature, with no bearer fallback, and enforce IP allow-lists.',
-      "Built a new gRPC verification service for service accounts, signing keys and signature checks, after another lead asked for a late change to the architecture. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record can't be stored. In sandbox testing the median verify time was 16.5 to 18.1 ms.",
+      'Client API self-service, live in production since 12 Oct 2026, with the first clients onboarding. I led the architecture and core delivery that moved client API authentication to Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0.',
+      'Built a verification service for service accounts, signing keys and signature checks. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record cannot be stored.',
       'Client Console: clients create service accounts, upload their own public keys (BCB never holds the private key) and revoke them. PSD2 one-time passwords protect every change, and each service account is limited to one counterparty so a permission change cannot spread across clients.',
       'Delivered a reverse API gateway for a new payments network integration, so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails. The business recognised me for this delivery.',
       'Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways.',
       "Designed and delivered the four-eyes approval engine for data-changing user actions, then built the Admin Console controls that formed part of BCB's French EMI licence requirements.",
       "Led the Admin Console upgrade from Angular 8 to 18 and Node 16 to 20, a project widely seen as near-impossible at the start. It delivered one of the company's main tech-debt KPIs.",
-      'Billing per billing entity and per legal entity, which ended manual database fixes by Support. I wrote the billing PRD and data model; the core tables are in production and the HubSpot sync is next.',
+      'Billing per billing entity and per legal entity, which ended manual database fixes by Support. I wrote the billing PRD and data model; the core tables are in production.',
       'Wrote the RFCs, as-built docs and Support runbook for the auth work, and presented it at our Tech Day, streamed from London to South Africa.',
-      'Ran the team while my manager was on leave, mentored junior engineers, revived Tech Talk Fridays and built a detector for the Shai-Hulud supply-chain attack.'
+      'Ran the team while my manager was on leave, mentored junior engineers and revived Tech Talk Fridays.'
     ],
     technologies: [
       'TypeScript',
@@ -75,11 +75,11 @@ export const recentExperience: Experience[] = [
   },
   {
     id: 3,
-    role: 'Principal Architect (part-time, own consultancy)',
-    company: 'Artesi SA CC',
-    period: 'Jan 2024 – Present',
+    role: 'Owner & Principal Engineer (part-time)',
+    company: 'Aretsi SA CC, trading as Cygnus Labs',
+    period: '2026 – Present',
     description:
-      'My own small consultancy, run part-time alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com). Current client: WetInk.',
+      "Owner of Aretsi SA CC (previously my father's company) since 2026, trading as Cygnus Labs. Bespoke software development for small businesses, run part-time outside my full-time role.",
     achievements: [
       "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
       'Built SARS VAT and FICA verification workflows into the platform.'
@@ -97,7 +97,7 @@ export const recentExperience: Experience[] = [
       'Redis'
     ],
     resumeDescription:
-      'My own small consultancy, run part-time alongside my full-time role and trading as Cygnus Labs (cygnus-labs.com). Current client: WetInk.',
+      "Owner of Aretsi SA CC (previously my father's company) since 2026, trading as Cygnus Labs. Bespoke software development for small businesses, run part-time outside my full-time role.",
     resumeAchievements: [
       "Replacing a client's FileMaker system with a business-management platform on PostgreSQL, MinIO, NestJS and Next.js. I chose plain, well-known tools a small business can keep running.",
       'Built SARS VAT and FICA verification workflows into the platform.'
@@ -148,7 +148,7 @@ export const recentExperience: Experience[] = [
   {
     id: 13,
     role: 'Technical Consultant / Product Developer',
-    company: 'Artesi SA CC',
+    company: 'Aretsi SA CC',
     period: 'January 2014 – July 2015',
     description:
       'Contract role building the flagship product Incidentia, a business intelligence and analytics platform focused on human capital management, productivity, and process management. Remained on standby after initial development phase.',

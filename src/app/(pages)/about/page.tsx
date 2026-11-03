@@ -46,7 +46,7 @@ const About = () => {
               request signing, which went live in production on 12 October 2026.
             </p>
             <p className='text-lg leading-relaxed'>
-              I also run a small part-time consultancy,{' '}
+              I also own a small company,{' '}
               <a
                 href='https://cygnus-labs.com/'
                 target='_blank'
@@ -54,9 +54,9 @@ const About = () => {
                 className='text-accent hover:underline'
               >
                 Cygnus Labs
-              </a>
-              , building business software for small businesses in South Africa.
-              My current client is WetInk.
+              </a>{' '}
+              (Aretsi SA CC), building bespoke software for small businesses in
+              South Africa, part-time outside my full-time role.
             </p>
           </div>
 
@@ -228,8 +228,8 @@ const About = () => {
 
         {/* Recruiter Call-to-Action */}
         <RecruiterCTA
-          headline='Hiring a Staff Engineer?'
-          description="I'm looking for a remote Staff Software Engineer role on a fintech platform: API security, authorisation, payments or billing. Have a look at my experience, or message me on LinkedIn."
+          headline='Open to Conversations'
+          description='Open to conversations about Staff-level platform engineering roles: API security, authorisation, payments or billing. Have a look at my experience, or message me on LinkedIn.'
           primaryLink='/experience'
           primaryLabel='View Experience'
           showTechBadges={false}
