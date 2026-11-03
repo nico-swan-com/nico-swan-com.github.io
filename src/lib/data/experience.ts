@@ -29,7 +29,7 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, was released to production in 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
+  'Software engineer building business management platforms, currently in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: PKI-based holder-of-key authentication for client APIs, authorisation, four-eyes approvals and billing. My latest design, holder-of-key authentication for client APIs, was released to production in 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',

@@ -36,8 +36,8 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          Senior Software Engineer | Fintech platforms, API security and
-          payments
+          Senior Software Engineer | Business management platforms and API
+          security
         </p>
 
         {/* Value Proposition */}

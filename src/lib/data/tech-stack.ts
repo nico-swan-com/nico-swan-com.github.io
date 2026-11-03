@@ -69,7 +69,7 @@ export const coreTech: string[] = [
  */
 export const domainExpertise: DomainExpertise[] = [
   { name: 'API Security & Request Signing', highlight: true },
-  { name: 'Fintech & Payments Platforms', highlight: true },
+  { name: 'Business Management Platforms', highlight: true },
   { name: 'Solution Architecture', highlight: false },
   { name: 'Microservices & APIs', highlight: false },
   { name: 'Technical Leadership', highlight: true },
