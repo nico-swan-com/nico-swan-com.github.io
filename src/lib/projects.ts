@@ -21,7 +21,7 @@ export const projects: Project[] = [
       'A demonstration project that shows how I structure a full-stack app: an e-commerce art gallery on Next.js 16 with role-based access, rate limiting and an image-processing pipeline.',
     longDescription: `Artiverse Galleria is a demonstration project: an e-commerce platform for art galleries that I built to show how I put a full-stack app together.
 
-The application features a feature-based architecture that promotes scalability and maintainability. It implements a three-layer pattern (Repository → Service → Action) ensuring clean separation of concerns. It includes image processing with watermarking, rate limiting on the API, role-based access control, security headers and CSRF protection.
+The application features a feature-based architecture that promotes scalability and maintainability. It implements a three-layer pattern (Repository, Service, Action) ensuring clean separation of concerns. It includes image processing with watermarking, rate limiting on the API, role-based access control, security headers and CSRF protection.
 
 I built it to work through current Next.js and React patterns, database design with Drizzle ORM, authentication with NextAuth.js v5 and an image-processing pipeline, end to end.`,
     technologies: [
@@ -39,7 +39,7 @@ I built it to work through current Next.js and React patterns, database design w
     imageUrl: '/placeholder.svg',
     features: [
       'Feature-based architecture for scalability',
-      'Three-layer architecture pattern (Repository → Service → Action)',
+      'Three-layer architecture pattern (Repository, Service, Action)',
       'NextAuth.js v5 authentication with role-based access control',
       'Advanced image processing with watermarking and optimization',
       'Rate limiting for API protection',
@@ -120,7 +120,7 @@ Request signing adds a verification step:
       'Applying the same security rules across two gateway stacks'
     ],
     achievements: [
-      'Client API signing released to production in 2026',
+      'PKI-based holder-of-key authentication for client APIs released to production in 2026',
       "Delivered the entitlements (authorisation) capability by its September 2022 target, part of BCB's French EMI licence requirements",
       'Wrote the RFC set, as-built architecture docs and Support runbook, and presented two sessions at the company Tech/Build Day'
     ]

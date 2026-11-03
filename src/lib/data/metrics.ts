@@ -8,16 +8,16 @@ export const impactMetrics: ImpactMetric[] = [
   {
     iconName: 'Shield',
     value: '2026',
-    label: 'Client API signing released to production',
+    label: 'PKI-based client API auth released to production',
     description:
-      'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0'
+      'Holder-of-key authentication aligned with FAPI 1.0 and Open Banking UK v4.0'
   },
   {
     iconName: 'Briefcase',
-    value: 'Angular 8 → 18',
-    label: 'Legacy admin console upgraded',
+    value: 'Modernised',
+    label: 'Admin Console frontend and backend',
     description:
-      'Plus Node 16 to 20; delivered one of the main tech-debt KPIs at BCB'
+      'Angular, Node.js and NestJS brought up to current versions; delivered one of the main tech-debt KPIs at BCB'
   },
   {
     iconName: 'Users',
