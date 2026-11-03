@@ -29,7 +29,7 @@ export const skills = {
 }
 
 export const experienceSummary =
-  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, went live in production on 12 October 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
+  'Software engineer in regulated fintech. At BCB Group I lead the architecture and core build of platform services that clients and support teams depend on: signed client API requests and key management, authorisation, four-eyes approvals and billing. My latest design, client API request signing, was released to production in 2026. I write the design down before I build, so other engineers can review, run and extend it without me. I work remotely from Johannesburg, South Africa, and my day overlaps UK and US Eastern hours.'
 
 export const contactInfo = {
   email: 'hi@nicoswan.com',
@@ -48,16 +48,19 @@ export const recentExperience: Experience[] = [
     description:
       'Platform team at a regulated crypto and payments group. I design and build the services that other teams and clients rely on.',
     achievements: [
-      'Client API self-service, live in production since 12 Oct 2026, with the first clients onboarding. I led the architecture and core delivery that moved client API authentication to Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0.',
-      'Built a verification service for service accounts, signing keys and signature checks. Each signed request is accepted once, every allow or deny is written to an audit log, and the request is refused if either record cannot be stored.',
-      'Client Console: clients create service accounts, upload their own public keys (BCB never holds the private key) and revoke them. PSD2 one-time passwords protect every change, and each service account is limited to one counterparty so a permission change cannot spread across clients.',
+      'Led architecture of client API request signing and self-service credential management for enterprise clients, released to production in 2026 with client sandbox trials under way.',
+      'Built a verification service for service accounts, signing keys and signature checks, with replay protection and audit logging.',
+      'Client Console: clients create service accounts, upload public keys and revoke them through a self-service interface.',
       'Delivered a reverse API gateway for a new payments network integration, so the team could start end-to-end testing on time, then added GBP, USD and EUR on SEPA, CHAPS and SWIFT rails. The business recognised me for this delivery.',
-      'Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways.',
+      'Delivered the entitlements (authorisation) capability by its September 2022 target: attribute-based access control enforced across both client API gateways.',
       "Designed and delivered the four-eyes approval engine for data-changing user actions, then built the Admin Console controls that formed part of BCB's French EMI licence requirements.",
-      "Led the Admin Console upgrade from Angular 8 to 18 and Node 16 to 20, a project widely seen as near-impossible at the start. It delivered one of the company's main tech-debt KPIs.",
-      'Billing per billing entity and per legal entity, which ended manual database fixes by Support. I wrote the billing PRD and data model; the core tables are in production.',
-      'Wrote the RFCs, as-built docs and Support runbook for the auth work, and presented it at our Tech Day, streamed from London to South Africa.',
-      'Ran the team while my manager was on leave, mentored junior engineers and revived Tech Talk Fridays.'
+      "Led the Admin Console upgrade (Angular 8 to 18, Node 16 to 20, NestJS 9 to 11) through technical unknowns and stakeholder resistance. Delivered one of the company's main tech-debt KPIs.",
+      'Improved a key Admin Console list from tenths of seconds to milliseconds; identified nearly 16,000 lines of deprecated code for removal.',
+      'Designed the billing data model and validated it against current and anticipated requirements; core tables now in production, ending manual database fixes by Support.',
+      'Used generative AI to greatly improve unit test coverage on a complex onboarding integration; asked by peers to champion AI adoption across engineering.',
+      'Builds prototypes and PRDs that Product now requests because they speed up decisions. Writes RFCs and proposals for platform improvements, including AI-assisted support and operations.',
+      'Ran a session at the company Tech Day. Mentors engineers beyond own team and interviews candidates.',
+      'Ran the team while my manager was on leave and revived Tech Talk Fridays.'
     ],
     technologies: [
       'TypeScript',
@@ -292,8 +295,8 @@ export const experienceData = [...recentExperience, ...earlyCareerExperience]
 export const impactMetrics = [
   {
     icon: Shield,
-    value: '12 Oct 2026',
-    label: 'Client API signing live in production'
+    value: '2026',
+    label: 'Client API signing released to production'
   },
   {
     icon: Award,

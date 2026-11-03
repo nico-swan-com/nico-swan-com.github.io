@@ -7,10 +7,10 @@ import type { ImpactMetric } from './types'
 export const impactMetrics: ImpactMetric[] = [
   {
     iconName: 'Shield',
-    value: '12 Oct 2026',
-    label: 'Client API signing live in production',
+    value: '2026',
+    label: 'Client API signing released to production',
     description:
-      'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0; first clients onboarding'
+      'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0'
   },
   {
     iconName: 'Briefcase',

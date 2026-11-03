@@ -85,12 +85,12 @@ Caching is implemented at multiple levels: Next.js cache, unstable cache for ser
     id: 'bcb-entitlements-platform',
     title: 'Client API Security & Authorisation (BCB Group)',
     description:
-      'Signed client API requests, self-service keys and attribute-based authorisation for a regulated crypto and payments group. Client API signing went live in production on 12 October 2026.',
+      'Signed client API requests, self-service credential management and attribute-based authorisation for a regulated crypto and payments group. Released to production in 2026.',
     longDescription: `BCB Group is a regulated crypto and payments group. I work on the platform team, on the services that decide who can call the client APIs and what they are allowed to do.
 
-In 2022 I delivered the entitlements capability: attribute-based access control, with an open-source policy engine as the decision point, enforced by a shared NestJS guard in both client API gateways. I've since advised other teams on using it.
+In 2022 I delivered the entitlements capability: attribute-based access control enforced across both client API gateways. I've since advised other teams on using it.
 
-In 2026 I led the architecture and core delivery of client API self-service. Each request is now signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. It went live in production on 12 October 2026 and the first clients are onboarding. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
+In 2026 I led the architecture and core delivery of client API self-service. Each request is signed with the client's own key (Holder-of-Key, aligned with FAPI 1.0 and Open Banking UK v4.0) and verified by BCB. Released to production in 2026 with client sandbox trials under way. I built it with product and engineering colleagues; my part was the solution architecture, the verification service and much of the core build.`,
     technologies: [
       'TypeScript',
       'Node.js',
@@ -100,37 +100,29 @@ In 2026 I led the architecture and core delivery of client API self-service. Eac
       'GCP Pub/Sub',
       'ABAC (Attribute-Based Access Control)',
       'Policy Engine',
-      'Detached JWS (PS256/ES256)',
       'Kubernetes'
     ],
     imageUrl: '/placeholder.svg',
     features: [
       'Holder-of-Key signed requests aligned with FAPI 1.0 and Open Banking UK v4.0',
-      'Replay protection: each signed request is accepted once',
-      'Audit log of every allow and deny decision, kept for at least 12 months',
-      'Fail-closed: a request is refused if its replay or audit record cannot be stored',
-      'Client self-service in the console: service accounts, public-key upload (CSR/PEM) and key revocation',
-      'PSD2 one-time passwords on every service-account and key change',
-      'Attribute-based access control with a central policy decision point',
-      'Shared NestJS guard library for policy enforcement'
+      'Replay protection and audit logging',
+      'Client self-service: service accounts, public-key upload and revocation',
+      'Attribute-based access control enforced across both client API gateways'
     ],
-    architecture: `Authorisation uses a central policy decision point: an open-source policy engine. Each client API gateway enforces its decisions through a shared guard library.
+    architecture: `Authorisation uses a central policy decision point. Each client API gateway enforces access control decisions.
 
-Request signing adds a verification step in front of that:
-1. The client signs each request with its own private key (detached JWS, PS256 or ES256). BCB only ever holds the public key.
+Request signing adds a verification step:
+1. The client signs each request with its own private key.
 2. A verification service checks the key, the signature and a single-use transaction number, so a replayed request is rejected.
-3. Every allow or deny is written to an audit log with a hash of the signed bytes.
-4. If the replay store or the audit write fails, the request is refused.`,
+3. Every allow or deny is written to an audit log.`,
     challenges: [
       'Redesigning the architecture late in the project, after another lead asked for a change, and still shipping a new greenfield service',
-      'Adding PSD2 one-time passwords and a one-counterparty limit per service account part-way through delivery',
       'Applying the same security rules across two gateway stacks'
     ],
     achievements: [
-      'Client API signing live in production since 12 October 2026, with the first clients onboarding',
-      'The UAT test client found the console easy to use and said the documentation was spot on',
+      'Client API signing released to production in 2026 with client sandbox trials under way',
       'Delivered the entitlements capability by its September 2022 target',
-      'Wrote the RFC set, as-built architecture docs and Support runbook, and presented the design at our Tech Day'
+      'Wrote the RFC set, as-built architecture docs and Support runbook, and ran a session at the company Tech Day'
     ]
   },
   {
