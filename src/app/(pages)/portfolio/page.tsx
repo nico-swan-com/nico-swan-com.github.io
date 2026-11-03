@@ -29,13 +29,13 @@ const Portfolio = () => {
           <div className='flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between'>
             <div className='flex-1'>
               <h1 className='mb-4 text-4xl font-bold text-primary'>
-                Senior Software Engineer: fintech platforms, API security and
-                payments
+                Senior Software Engineer: business management platforms and API
+                security
               </h1>
               <p className='max-w-3xl text-xl text-secondary'>
-                Work from regulated fintech, telecoms and my own consultancy.
-                Each project says what I built, what it was for and what came of
-                it.
+                Work from business management platforms: currently in regulated
+                fintech, plus telecoms and my own consultancy. Each project says
+                what I built, what it was for and what came of it.
               </p>
             </div>
             <SocialButtons
@@ -82,8 +82,8 @@ const Portfolio = () => {
             Featured Projects
           </h2>
           <p className='mt-2 text-secondary'>
-            API security, authorisation and approvals in fintech, plus earlier
-            telecoms and consultancy work
+            API security, authorisation and approvals (currently in fintech),
+            plus earlier telecoms and consultancy work
           </p>
         </motion.div>
 
@@ -204,7 +204,7 @@ const Portfolio = () => {
         <div className='mt-20'>
           <RecruiterCTA
             headline='Open to Conversations'
-            description='Open to conversations about Staff-level platform engineering on fintech systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.'
+            description='Open to conversations about Staff-level platform engineering on systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.'
             primaryLink='/experience'
             primaryLabel='Full Experience'
           />

@@ -51,7 +51,7 @@ interface RecruiterCTAProps {
  */
 export function RecruiterCTA({
   headline = 'Open to Conversations',
-  description = 'Open to conversations about Staff-level platform engineering on fintech systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.',
+  description = 'Open to conversations about Staff-level platform engineering on systems that have to be secure and correct, remote from Johannesburg with hours that overlap US Eastern time.',
   primaryLink = '/portfolio',
   primaryLabel = 'View Portfolio',
   showTechBadges = true,
